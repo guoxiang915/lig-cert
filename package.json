@@ -4,7 +4,7 @@
 	"scripts": {
 		"dev": "meteor --port 4000 --settings settings-development.json",
 		"deploy": "mup deploy --settings=settings.json",
-		"visualize": "meteor --port 4000  --settings settings-development.json --production --extra-packages bundle-visualizer",
+		"visualize": "meteor --port 4000  --settings settings-development.json --production --extra-packages bundle-visualizer"
 	},
 	"dependencies": {
 		"@babel/runtime": "^7.8.4",
