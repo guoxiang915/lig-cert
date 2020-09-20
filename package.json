@@ -4,7 +4,9 @@
 	"scripts": {
 		"dev": "meteor --port 4000 --settings settings-development.json",
 		"deploy": "mup deploy --settings=settings.json",
-		"visualize": "meteor --port 4000  --settings settings-development.json --production --extra-packages bundle-visualizer"
+		"visualize": "meteor --port 4000  --settings settings-development.json --production --extra-packages bundle-visualizer",
+		"lint": "npx eslint imports/**/*js",
+		"lint:fix": "npx eslint imports/**/*js --fix"
 	},
 	"dependencies": {
 		"@babel/runtime": "^7.8.4",
@@ -18,5 +20,12 @@
 			"server": "server/main.js"
 		},
 		"testModule": "tests/main.js"
+	},
+	"devDependencies": {
+		"eslint": "^7.9.0",
+		"eslint-config-standard": "^14.1.1",
+		"eslint-plugin-import": "^2.22.0",
+		"eslint-plugin-promise": "^4.2.1",
+		"eslint-plugin-standard": "^4.0.1"
 	}
 }

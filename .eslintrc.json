@@ -1,0 +1,55 @@
+{
+	"env": {
+		"browser": true,
+		"commonjs": true,
+		"es2020": true
+	},
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": 11,
+		"sourceType": "module"
+	},
+	"rules": {
+		"eol-last": 2, // Rule on as error
+		"indent": [
+			"error",
+			"tab"
+		],
+		"object-curly-spacing": [
+			"error",
+			"always"
+		],
+		"no-unreachable": 2,
+		"no-duplicate-imports": 2,
+		"no-console": [
+			1,
+			{
+				"allow": [
+					"warn",
+					"error"
+				]
+			}
+		],
+		"no-useless-concat": 2,
+		"no-unneeded-ternary": 2,
+		"no-undefined": 2,
+		"no-var": 2,
+		"prefer-const": 2,
+		"prefer-template": 2,
+		"quotes": [
+			"error",
+			"double"
+		],
+		"semi": [
+			"error",
+			"always"
+		],
+		"space-before-blocks": 2,
+		"spaced-comment": [
+			"error",
+			"always"
+		]
+	}
+}
