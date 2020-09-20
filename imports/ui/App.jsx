@@ -1,11 +1,12 @@
-import React from 'react';
-import { Hello } from './Hello.jsx';
-import { Info } from './Info.jsx';
+import React from "react";
+import loadable from "@loadable/component";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+const Homepage = loadable(() => import("/imports/ui/homepage"));
 
 export const App = () => (
-	<div>
-		<h1>Welcome to Meteor!</h1>
-		<Hello/>
-		<Info/>
-	</div>
+	<Router>
+		<Switch>
+			<Route path='/' exact component={Homepage} />
+		</Switch>
+	</Router>
 );
