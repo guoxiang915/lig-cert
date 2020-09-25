@@ -48,22 +48,22 @@ export default Signup = ({ actionModal }) => {
 
 			<label className={`${authHasError("first_name", values.errorState) ? "error" : ""}`}>
 				First Name
-				<input type="text" name="first_name" value={values.first_name} onChange={handleChange} placeholder="First name" />
+				<input type="text" name="first_name" value={values.first_name} onChange={handleChange} placeholder="e.g. John" />
 			</label>
 
 			<label className={`${authHasError("last_name", values.errorState) ? "error" : ""}`}>
 				Last Name
-				<input type="text" name="last_name" value={values.last_name} onChange={handleChange} placeholder="Last name" />
+				<input type="text" name="last_name" value={values.last_name} onChange={handleChange} placeholder="e.g. Doe" />
 			</label>
 
 			<label className={`${authHasError("email", values.errorState) ? "error" : ""}`}>
 				Email Address
-				<input type="text" name="email" value={values.email} onChange={handleChange} placeholder="Email Address" />
+				<input type="text" name="email" value={values.email} onChange={handleChange} placeholder="e.g. john.doe@example.com" />
 			</label>
 
 			<label className={`${authHasError("password", values.errorState) ? "error" : ""}`}>
 				Password
-				<input name="password" type="password" value={values.password} onChange={handleChange} placeholder="Password" />
+				<input name="password" type="password" value={values.password} onChange={handleChange} placeholder="e.g. password123" />
 			</label>
 
 			{values.errorState && <p><IconWarning/>{authErrorMessage(values.errorState)}</p>}

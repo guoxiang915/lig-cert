@@ -1,0 +1,10 @@
+.table-item div.invitation-col {
+	padding-right: 30px;
+	width: calc(100% - 310px);
+}
+
+.table-item div.invitation-state-col {
+	padding-right: 30px;
+	text-align: right;
+	width: 150px;
+}

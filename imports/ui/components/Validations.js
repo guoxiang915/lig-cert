@@ -45,3 +45,27 @@ export const authHasError = (inputField, errorState) => {
 		break;
 	}
 };
+
+export const invitationErrorMessage = (errorState) => {
+	switch (errorState) {
+	case "missing-email":
+		return "Email address is required";
+	case "invalid-email":
+		return "Enter a valid email";
+	case "already-used-email":
+		return "Email address has already been taken";
+	case "already-exist-invitation":
+		return "Email address has already been invited";
+	default:
+		return;
+	}
+};
+
+export const invitationHasError = (inputField, errorState) => {
+	switch (inputField) {
+	case "email":
+		return ["missing-email","invalid-email","already-used-email","already-exist-invitation"].includes(errorState);
+	default:
+		break;
+	}
+};

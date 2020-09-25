@@ -40,12 +40,12 @@ export default Login = ({ actionModal }) => {
 
 			<label className={`${authHasError("email", values.errorState) ? "error" : ""}`}>
 				Email Address
-				<input type="text" name="email" value={values.email} onChange={handleChange} placeholder="Email Address" />
+				<input type="text" name="email" value={values.email} onChange={handleChange} placeholder="e.g. john.doe@example.com" />
 			</label>
 
 			<label className={`${authHasError("password", values.errorState) ? "error" : ""}`}>
 				Password
-				<input name="password" type="password" value={values.password} onChange={handleChange} placeholder="Password" />
+				<input name="password" type="password" value={values.password} onChange={handleChange} placeholder="e.g. password123" />
 			</label>
 
 			<p><a onClick={(event) => actionModal(event, true, "RecoverPassword")} href="">Forgot password?</a></p>

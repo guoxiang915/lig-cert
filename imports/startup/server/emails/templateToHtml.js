@@ -1,6 +1,6 @@
 import handlebars from "handlebars";
 
-export default (layoutHtml, context) => {
+export const templateToHtml = (layoutHtml, context) => {
 	if (layoutHtml && context) {
 		const template = handlebars.compile(layoutHtml);
 		const content = template(context);

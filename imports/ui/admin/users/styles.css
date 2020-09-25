@@ -3,11 +3,7 @@
 	padding-right: 30px;
 }
 
-.table-item div.user-col p {
-	margin: 0;
-}
-
-.table-item div.access-col {
+.table-item div.user-access-col {
 	width: 30%;
 	text-align: right;
 	padding-right: 30px;

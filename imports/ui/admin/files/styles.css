@@ -2,7 +2,3 @@
 	width: calc(100% - 310px);
 	padding-right: 30px;
 }
-
-.table-item div.file-col p {
-	margin: 0;
-}

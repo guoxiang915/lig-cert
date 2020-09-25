@@ -28,7 +28,7 @@ export default FilesList = () => {
 		<Fragment>
 			<SEO
 				title='Files Administrator'
-				description='Welcome to the Art of Visualization files administrator section.'
+				description='Welcome to the files administrator section.'
 				contentType="website"
 				path='admin/files'
 			/>

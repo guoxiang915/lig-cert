@@ -5,16 +5,20 @@ import { useAccount } from "/imports/ui/components/hooks/useAccount";
 const AdminLayout = loadable(() => import("/imports/ui/layouts/AdminLayout"));
 const Homepage = loadable(() => import("/imports/ui/homepage"));
 const ResetPassword = loadable(() => import("/imports/ui/authentication/ResetPassword"));
+const CompleteInvitation = loadable(() => import("/imports/ui/authentication/CompleteInvitation"));
 const UsersList = loadable(() => import("/imports/ui/admin/users/UsersList"));
 const FilesList = loadable(() => import("/imports/ui/admin/files/FilesList"));
+const InvitationsList = loadable(() => import("/imports/ui/admin/invitations/InvitationsList"));
 
 export const App = () => (
 	<Router>
 		<Switch>
 			<Route path='/' exact component={Homepage} />
 			<Route path="/reset-password/:token" component={ResetPassword} />
+			<Route path="/invite/:token" component={CompleteInvitation} />
 			<LoggedRoute path="/admin/users" layout={AdminLayout} component={UsersList} />
 			<LoggedRoute path="/admin/files" layout={AdminLayout} component={FilesList} />
+			<LoggedRoute path="/admin/invitations" layout={AdminLayout} component={InvitationsList} />
 		</Switch>
 	</Router>
 );

@@ -15,7 +15,7 @@ export default UserItem = ({ user }) => {
 				<p>{user.profile.name.first} {user.profile.name.last}</p>
 			</div>
 
-			<div className="access-col">
+			<div className="user-access-col">
 				<p>{hasRights(["admin"], user._id) ? "Administrator" : "Free Member"}</p>
 			</div>
 

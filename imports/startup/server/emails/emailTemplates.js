@@ -1,6 +1,6 @@
 import { Meteor } from "meteor/meteor";
 import { Accounts } from "meteor/accounts-base";
-import templateToHtml from "/imports/startup/server/emails/templateToHtml";
+import { templateToHtml } from "/imports/startup/server/emails/templateToHtml";
 
 const { emailTemplates } = Accounts;
 const { productName } = Meteor.settings.public;

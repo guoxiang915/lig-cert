@@ -47,7 +47,7 @@ export default ResetPassword = ({ actionModal }) => {
 
 					<label className={`${authHasError("email", values.errorState) ? "error" : ""}`}>
 						Email Address
-						<input type="text" name="email" value={values.email} onChange={handleChange} placeholder="Email Address" />
+						<input type="text" name="email" value={values.email} onChange={handleChange} placeholder="e.g. john.doe@example.com" />
 					</label>
 
 					{values.errorState && <p><IconWarning/>{authErrorMessage(values.errorState)}</p>}
