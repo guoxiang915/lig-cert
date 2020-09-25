@@ -1,0 +1,48 @@
+.table {
+	border: 1px solid #d4dbe0;
+	border-radius: 4px;
+}
+
+.table-item {
+	border-top: 1px solid #e6eaf3;
+	line-height: 45px;
+	padding: 0 15px;
+	font-size: 14px;
+	color: rgb(17,17,17);
+	background-color: #fff;
+	display: flex;
+	align-items: center;
+	height: 84px;
+}
+
+.table-item:first-child {
+	border-top: none;
+}
+
+.table-item div.action-col {
+	text-align: center;
+	width: 80px;
+}
+
+.table-item div.action-col span {
+	display: inline-block;
+	transition: .2s transform ease-in-out;
+	margin: 0 3px;
+}
+
+.table-item div.action-col span:hover {
+	transform:scale(1.1);
+	color: var(--primary);
+}
+
+.table-item div.action-col svg {
+	height: 28px;
+	cursor: pointer;
+	padding: 5px;
+	vertical-align: middle;
+}
+
+.table-item div.date-col {
+	width: 230px;
+	text-align: center;
+}

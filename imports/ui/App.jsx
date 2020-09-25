@@ -6,6 +6,7 @@ const AdminLayout = loadable(() => import("/imports/ui/layouts/AdminLayout"));
 const Homepage = loadable(() => import("/imports/ui/homepage"));
 const ResetPassword = loadable(() => import("/imports/ui/authentication/ResetPassword"));
 const UsersList = loadable(() => import("/imports/ui/admin/users/UsersList"));
+const FilesList = loadable(() => import("/imports/ui/admin/files/FilesList"));
 
 export const App = () => (
 	<Router>
@@ -13,6 +14,7 @@ export const App = () => (
 			<Route path='/' exact component={Homepage} />
 			<Route path="/reset-password/:token" component={ResetPassword} />
 			<LoggedRoute path="/admin/users" layout={AdminLayout} component={UsersList} />
+			<LoggedRoute path="/admin/files" layout={AdminLayout} component={FilesList} />
 		</Switch>
 	</Router>
 );

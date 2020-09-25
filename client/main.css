@@ -1,3 +1,8 @@
+:root {
+	--primary: #FF6E41;
+	--primary-dark: #001E4A;
+}
+
 html {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -40,4 +45,5 @@ h1, h2, h4, h5, strong, b {
 p {
 	font-size: 16px;
 	line-height: 1.4;
+	margin: 0;
 }

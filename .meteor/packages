@@ -21,3 +21,5 @@ react-meteor-data              # React higher-order component for reactively tra
 accounts-password
 alanning:roles@1.2.19
 force-ssl
+aldeed:collection2
+edgee:slingshot

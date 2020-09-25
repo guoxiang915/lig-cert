@@ -35,3 +35,11 @@ export const dateFormat = (date, format) => {
 		throw new Error(`[func.dateFormat] ${exception.message}`);
 	}
 };
+
+export const _pluck = (array, field) => {
+	try {
+		return array.map((option) => option[field]);
+	} catch (exception) {
+		throw new Error(`[func._pluck] ${exception.message}`);
+	}
+};

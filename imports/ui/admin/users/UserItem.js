@@ -15,16 +15,16 @@ export default UserItem = ({ user }) => {
 				<p>{user.profile.name.first} {user.profile.name.last}</p>
 			</div>
 
-			<div className="action-col">
-				<span onClick={toggleModal}><IconOptions /></span>
+			<div className="access-col">
+				<p>{hasRights(["admin"], user._id) ? "Administrator" : "Free Member"}</p>
 			</div>
 
 			<div className="date-col">
 				<p>{dateFormat(user.createdAt, "MMM DD, YYYY - hh:mm A")}</p>
 			</div>
 
-			<div className="state-col">
-				<p>{hasRights(["admin"], user._id) ? "Administrator" : "Free Member"}</p>
+			<div className="action-col">
+				<span onClick={toggleModal}><IconOptions /></span>
 			</div>
 
 			{showModal && <UserModal user={user} isOpen={showModal} onClose={toggleModal} />}

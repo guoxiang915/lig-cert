@@ -4,6 +4,7 @@ import { Meteor } from "meteor/meteor";
 import { SEO } from "/imports/ui/components/SEO";
 import { SearchInput } from "/imports/ui/components/SearchInput";
 import UserItem from "/imports/ui/admin/users/UserItem";
+import "/imports/ui/stylesheets/table.css";
 import "/imports/ui/admin/users/styles.css";
 
 export default UsersList = () => {
