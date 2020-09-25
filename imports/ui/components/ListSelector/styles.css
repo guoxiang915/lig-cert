@@ -1,0 +1,12 @@
+.list-selector-container {
+	margin-bottom: 10px;
+}
+
+.list-selector-container label {
+	margin-bottom: 0;
+}
+
+.list-selector-container label input[type="checkbox"] {
+	width: 15px;
+	display: inline-block;
+}

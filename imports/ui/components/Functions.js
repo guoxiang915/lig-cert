@@ -1,4 +1,5 @@
 import { Roles } from "meteor/alanning:roles";
+import dayjs from "dayjs";
 
 export const isEmail = (email) => {
 	try {
@@ -23,5 +24,14 @@ export const hasRights = (roles, userId) => {
 		return Roles.userIsInRole(uniqueId, roles);
 	} catch (exception) {
 		throw new Error(`[func.hasRights] ${exception.message}`);
+	}
+};
+
+export const dateFormat = (date, format) => {
+	const finalFormat = format ? format : "MMM DD, YYYY";
+	try {
+		return dayjs(date).format(finalFormat);
+	} catch (exception) {
+		throw new Error(`[func.dateFormat] ${exception.message}`);
 	}
 };
