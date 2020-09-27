@@ -1,0 +1,45 @@
+/* Header Block */
+section.homepage-header {
+	background-image: linear-gradient(135deg,#FF9200 0, #FF4477 100%);
+	padding-bottom: 100px;
+}
+
+section.homepage-header .main-wrapper {
+	z-index: 1;
+}
+
+section.homepage-header .information-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-top: 30px;
+	position: relative;
+}
+
+section.homepage-header .information-container .left-content {
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 50%;
+}
+
+section.homepage-header .information-container .left-content h1 {
+	margin-top: 0;
+}
+
+section.homepage-header .information-container .left-content p {
+	max-width: 400px;
+}
+
+section.homepage-header .information-container .right-content {
+	width: 50%;
+}
+
+section.homepage-header .connection-pattern {
+	left: 50%;
+	position: absolute;
+	top: 50px;
+	transform: translate(-50%);
+	width: 1400px;
+}

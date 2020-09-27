@@ -3,6 +3,7 @@ import { Accounts } from "meteor/accounts-base";
 import { IconWarning } from "/imports/ui/components/Icons";
 import { isEmail, isValidPassword } from "/imports/ui/components/Functions";
 import { authHasError, authErrorMessage } from "/imports/ui/components/Validations";
+import "/imports/ui/authentication/styles.css";
 
 export default Signup = ({ actionModal }) => {
 	const [values, setValues] = useState({ first_name: "", last_name: "", email: "", password: "", errorState: "", loading: false });
@@ -68,7 +69,7 @@ export default Signup = ({ actionModal }) => {
 
 			{values.errorState && <p><IconWarning/>{authErrorMessage(values.errorState)}</p>}
 
-			<button type="submit" disabled={values.loading}>
+			<button type="submit" className="button primary-dark" disabled={values.loading}>
 				{values.loading ? "Creating Account" : "Create Account"}
 			</button>
 

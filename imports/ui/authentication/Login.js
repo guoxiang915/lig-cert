@@ -3,6 +3,7 @@ import { Meteor } from "meteor/meteor";
 import { isEmail } from "/imports/ui/components/Functions";
 import { IconWarning } from "/imports/ui/components/Icons";
 import { authHasError, authErrorMessage } from "/imports/ui/components/Validations";
+import "/imports/ui/authentication/styles.css";
 
 export default Login = ({ actionModal }) => {
 	const [values, setValues] = useState({ email: "", password: "", errorState: "", loading: false });
@@ -52,7 +53,7 @@ export default Login = ({ actionModal }) => {
 
 			{values.errorState && <p><IconWarning/> {authErrorMessage(values.errorState)}</p>}
 
-			<button type="submit" disabled={values.loading}>
+			<button type="submit" className="button primary-dark" disabled={values.loading}>
 				{values.loading ? "Signing in" : "Sign in"}
 			</button>
 

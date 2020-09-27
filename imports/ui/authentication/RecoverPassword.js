@@ -52,7 +52,7 @@ export default ResetPassword = ({ actionModal }) => {
 
 					{values.errorState && <p><IconWarning/>{authErrorMessage(values.errorState)}</p>}
 
-					<button type="submit" disabled={values.loading}>
+					<button type="submit" className="button primary-dark" disabled={values.loading}>
 						{values.loading ? "Resetting Password" : "Reset Password"}
 					</button>
 

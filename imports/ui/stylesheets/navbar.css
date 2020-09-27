@@ -1,0 +1,107 @@
+nav {
+	align-items: center;
+	color: #fff;
+	display: flex;
+	justify-content: space-between;
+	padding: 20px 0 40px 0;
+}
+
+nav img {
+	height: 30px;
+}
+
+nav ul {
+	list-style: none;
+}
+
+nav li {
+	display: inline-block;
+	line-height: 25px;
+	margin-left: 25px;
+	transition: .2s color ease-in-out;
+}
+
+nav li a {
+	background-image: linear-gradient(0deg, rgba(255,255,255,.7) 0, rgba(255,255,255,.7) 100%);
+	background-position: 0 100%;
+	background-repeat: no-repeat;
+	background-size: 0 2px;
+	cursor: pointer;
+	float: left;
+	padding-top: 10.5px;
+	transition: .2s all ease-in-out;
+}
+
+nav li:hover a {
+	background-size: 100% 2px;
+}
+
+nav .buttons {
+	float: right;
+	margin-left: 15px;
+}
+
+nav .buttons .button {
+	margin-left: 15px;
+}
+
+nav .nav-dropdown {
+	margin-bottom: -8px;
+	margin-left: 15px;
+	padding-bottom: 8px;
+	position: relative;
+}
+
+nav .nav-dropdown:hover .dropdown-content {
+	display: block;
+}
+
+nav .nav-dropdown .dropdown-content {
+	background-color: #fff;
+	border-radius: 4px;
+	box-shadow: 0 20px 40px rgba(0,0,0,.1);
+	display: none;
+	min-width: 180px;
+	padding: 8px 0;
+	position: absolute;
+	right: calc(50% - 65px);
+	text-align: left;
+	top: 50px;
+	z-index: 1;
+}
+
+nav .nav-dropdown .dropdown-content:after {
+	border: solid transparent;
+	border-bottom-color: #fff;
+	border-width: 4px;
+	bottom: 100%;
+	content: " ";
+	height: 0;
+	left: 50%;
+	position: absolute;
+	top: -8px;
+}
+
+nav .nav-dropdown .dropdown-item {
+	color: #333333;
+	cursor: pointer;
+	display: block;
+	padding: 4px 24px;
+	text-decoration: none;
+}
+
+nav .nav-dropdown .dropdown-item:hover {
+	background-color: #f8f9fa;
+}
+
+/* Mobile View */
+@media (max-width: 767px) {
+	nav {
+		display: block;
+		text-align: center;
+	}
+
+	nav h4 {
+		margin: 0;
+	}
+}

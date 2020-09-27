@@ -1,0 +1,209 @@
+/* Video Player */
+.jwplayer {
+	z-index: 0;
+}
+
+/* Time progression bar */
+.jwplayer .jw-slider-time {
+	padding-top: 10px;
+	padding-bottom: 5px;
+}
+
+/* Actions bar */
+.jwplayer .jw-button-container {
+	margin-bottom: 5px;
+}
+
+/* Video length text */
+.jwplayer .jw-text-elapsed {
+	font-family: 'Roboto', sans-serif;
+	font-size: 13px;
+}
+
+.jwplayer .jw-text-duration {
+	color: rgba(255,255,255,.7);
+	font-family: 'Roboto', sans-serif;
+	font-size: 13px;
+}
+
+/* Play icon */
+.jw-svg-icon-play path {
+	display: none;
+}
+
+.jw-svg-icon-play {
+	background-image: url('/player/play.svg');
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.jw-icon-playback:hover .jw-svg-icon-play {
+	background-image: url('/player/play-hover.svg');
+}
+
+.jw-svg-icon-play.jw-svg-icon {
+	height: 19px;
+}
+
+.jw-icon-play.jw-icon-inline {
+	width: 36px;
+}
+
+/* Pause icon */
+.jw-svg-icon-pause.jw-svg-icon {
+	margin-left: -10px;
+}
+
+/* Rewind icon */
+.jw-icon-rewind {
+	display: none!important;
+}
+
+/* Volume icon */
+.jw-icon-volume.jw-icon-tooltip {
+	width: 36px;
+}
+
+.jw-svg-icon-volume-100 path {
+	display: none;
+}
+
+.jw-svg-icon-volume-100 {
+	background-image: url('/player/volume-up.svg');
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.jw-icon-volume:hover .jw-svg-icon-volume-100 {
+	background-image: url('/player/volume-up-hover.svg');
+}
+
+.jw-svg-icon-volume-50 path {
+	display: none;
+}
+
+.jw-svg-icon-volume-50 {
+	background-image: url("/player/volume.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.jw-icon-volume:hover .jw-svg-icon-volume-50 {
+	background-image: url('/player/volume-hover.svg');
+}
+
+.jw-svg-icon-volume-0 path {
+	display: none;
+}
+
+.jw-svg-icon-volume-0 {
+	background-image: url('/player/volume-mute.svg');
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.jw-icon-volume:hover .jw-svg-icon-volume-0 {
+	background-image: url('/player/volume-mute-hover.svg');
+}
+
+/* Volume icon bottom line on hover*/
+.jwplayer .jw-icon-tooltip.jw-open {
+	color: transparent!important;
+}
+
+.jw-button-color.jw-icon-volume {
+	color: transparent!important;
+}
+
+/* Skip Unit Icon */
+.jw-icon-skip:hover .jw-icon {
+	background-image: url('/player/skip-hover.svg')!important;
+}
+
+.jw-icon-skip.jw-icon-inline {
+	width: 36px;
+}
+
+.jw-controlbar .jw-icon-skip .jw-button-image {
+	max-height: 20px;
+}
+
+/* Settings icon */
+.jw-svg-icon-settings path {
+	display: none;
+}
+
+.jw-svg-icon-settings {
+	background-image: url('/player/settings.svg');
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.jw-icon-settings:hover .jw-svg-icon-settings {
+	background-image: url('/player/settings-hover.svg');
+}
+
+.jw-svg-icon-settings.jw-svg-icon {
+	height: 21px;
+}
+
+.jw-icon-settings.jw-icon-inline {
+	width: 36px;
+}
+
+.jw-icon-settings.jw-icon-inline:after {
+	box-shadow: none;
+}
+
+/* Open fullscreen icon */
+.jw-svg-icon-fullscreen-on path {
+	display: none;
+}
+
+.jw-svg-icon-fullscreen-on {
+	background-image: url('/player/fullscreen-on.svg');
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.jw-icon-fullscreen:hover .jw-svg-icon-fullscreen-on {
+	background-image: url("/player/fullscreen-on-hover.svg");
+}
+
+/* Close fullscreen icon */
+.jw-svg-icon-fullscreen-off path {
+	display: none;
+}
+
+.jw-svg-icon-fullscreen-off {
+	background-image: url('/player/fullscreen-off.svg');
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.jw-icon-fullscreen:hover .jw-svg-icon-fullscreen-off {
+	background-image: url("/player/fullscreen-off-hover.svg");
+}
+
+.jw-icon-fullscreen.jw-icon-inline {
+	width: 36px;
+}
+
+/* Big Screen/Full Screen */
+.jw-breakpoint-7 .jw-controlbar .jw-button-container {
+	padding: 0 20px 10px!important;
+}
+
+.jw-breakpoint-7 .jw-controlbar .jw-slider-time {
+	padding: 0 30px!important;
+}
+
+.jw-breakpoint-7 .jw-icon-forward .jw-icon {
+	width: 30px;
+	height: 30px;
+	max-height: 30px;
+}
+
+.jw-breakpoint-7 .jw-controlbar .jw-icon-skip .jw-button-image {
+	max-height: 26px;
+}
