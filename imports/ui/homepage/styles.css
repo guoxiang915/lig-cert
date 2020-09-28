@@ -1,7 +1,7 @@
 /* Header Block */
 section.homepage-header {
 	background-image: linear-gradient(135deg,#FF9200 0, #FF4477 100%);
-	padding-bottom: 100px;
+	padding-bottom: 220px;
 }
 
 section.homepage-header .main-wrapper {
@@ -12,7 +12,7 @@ section.homepage-header .information-container {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	margin-top: 30px;
+	margin-top: 50px;
 	position: relative;
 }
 
@@ -37,9 +37,305 @@ section.homepage-header .information-container .right-content {
 }
 
 section.homepage-header .connection-pattern {
-	left: 50%;
-	position: absolute;
 	top: 50px;
-	transform: translate(-50%);
 	width: 1400px;
+}
+
+section.homepage-header .bottom-pattern {
+	bottom: 0;
+	min-width: 2000px;
+	width: 100%;
+}
+
+/* Skills BLock */
+section.homepage-skills {
+	padding: 70px 0;
+}
+
+section.homepage-skills h1 {
+	color: #425166;
+	text-align: center;
+	margin: 0 0 50px 0;
+}
+
+section.homepage-skills .skills-container {
+	display: flex;
+}
+
+section.homepage-skills .left-content {
+	width: 50%;
+	margin-right: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+section.homepage-skills .left-content img {
+	max-width: 400px;
+	width: 80%;
+}
+
+section.homepage-skills .right-content {
+	width: 50%;
+}
+
+section.homepage-skills .skill-item {
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 1px 5px rgba(95, 110, 130, .3);
+	cursor: pointer;
+	margin-bottom: 20px;
+}
+
+section.homepage-skills .skill-item:last-child {
+	margin-bottom: 0;
+}
+
+section.homepage-skills .skill-item .header {
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	color: #6C737C;
+	padding: 15px 20px;
+}
+
+section.homepage-skills .skill-item .header svg {
+	height: 20px;
+	float: left;
+	margin-right: 20px;
+	color: var(--primary);
+}
+
+section.homepage-skills .skill-item .description {
+	padding: 20px 20px 20px 55px;
+}
+
+section.homepage-skills .skill-item.active .header {
+	background-image: linear-gradient(135deg,#FF9200 0, #FF4477 100%);
+	color: #fff;
+}
+
+section.homepage-skills .skill-item.active .header svg {
+	color: #fff;
+}
+
+section.homepage-skills .right-pattern {
+	top: calc(50% - 100px);
+	height: 200px;
+	position: absolute;
+	right: -200px;
+}
+
+/* Features Block */
+section.homepage-advantages {
+	background-color: #F0F0F0;
+	padding: 180px 0 170px 0;
+}
+
+section.homepage-advantages .top-pattern {
+	top: 0;
+	min-width: 2000px;
+	width: 100%;
+}
+
+section.homepage-advantages .main-wrapper {
+	display: flex;
+}
+
+section.homepage-advantages .left-content {
+	width: 40%;
+	padding-right: 80px;
+}
+
+section.homepage-advantages .left-content h1 {
+	color: #425166;
+	margin: 50px 0;
+}
+
+section.homepage-advantages .left-content p {
+	margin-bottom: 30px;
+}
+
+section.homepage-advantages .right-content {
+	width: 60%;
+	display: flex;
+}
+
+section.homepage-advantages .right-content .column {
+	width: 50%;
+	margin: 0 15px;
+}
+
+section.homepage-advantages .right-content .column:last-child {
+	margin-top: 50px;
+}
+
+section.homepage-advantages .advantage-item {
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 1px 5px rgba(95, 110, 130, .3);
+	cursor: default;
+	margin: 0 15px 20px 15px;
+	padding: 30px 20px;
+	transition: transform .2s ease-in-out;
+	width: 100%;
+	height: 265px;
+}
+
+section.homepage-advantages .advantage-item:hover {
+	transform: translateY(-5px);
+}
+
+section.homepage-advantages .advantage-item img {
+	height: 60px;
+}
+
+section.homepage-advantages .advantage-item h5 {
+	color: #425166;
+	margin: 20px 0;
+}
+
+section.homepage-advantages .advantage-item p {
+	color: #333;
+	font-size: 15px;
+}
+
+section.homepage-advantages .left-pattern {
+	top: calc(50% - 150px);
+	height: 300px;
+	position: absolute;
+	left: -300px;
+}
+
+section.homepage-advantages .bottom-pattern {
+	bottom: 0;
+	min-width: 2000px;
+	width: 100%;
+}
+
+/* Features Block */
+section.homepage-expertise {
+	padding: 50px 0 70px 0;
+}
+
+section.homepage-expertise .instructor {
+	position: relative;
+	z-index: 1;
+}
+
+section.homepage-expertise .instructor h1 {
+	text-align: center;
+	color: #425166;
+	margin: 0;
+	padding: 30px 0;
+}
+
+section.homepage-expertise .instructor .subtitle {
+	max-width: 400px;
+	font-size: 17px;
+	margin: 0 auto 60px auto;
+	text-align: center;
+}
+
+section.homepage-expertise .instructor-container {
+	display: flex;
+	margin: 0 auto;
+	max-width: 900px;
+}
+
+section.homepage-expertise .instructor-container .left-content {
+	background-color: var(--primary-dark);
+	box-shadow: 0 15px 40px rgba(0,0,0,.3);
+	border-radius: 10px;
+	color: #fff;
+	display: inline-block;
+	width: calc(50% - 80px);
+	margin: 0 40px;
+	padding: 30px;
+}
+
+section.homepage-expertise .instructor-container .left-content .image {
+	background-color: #4A4A4A;
+	height: 300px;
+}
+
+section.homepage-expertise .instructor-container .left-content .image img {
+	width: 100%;
+	object-fit: cover;
+	height: 100%;
+}
+
+section.homepage-expertise .instructor-container .stats-item {
+	align-items: center;
+	margin-top: 30px;
+	display: flex;
+}
+
+section.homepage-expertise .instructor-container .stats-item svg {
+	height: 30px;
+	margin-right: 20px;
+}
+
+section.homepage-expertise .instructor-container .right-content {
+	display: inline-block;
+	padding: 0 30px;
+	width: 50%;
+}
+
+section.homepage-expertise .instructor-container .right-content h1 {
+	font-weight: 400;
+	text-align: left;
+}
+
+section.homepage-expertise .instructor-container .right-content .links {
+	margin: 15px 0 40px 0;
+}
+
+section.homepage-expertise .instructor-container .right-content .links svg {
+	color: var(--primary-dark);
+	height: 28px;
+	margin-right: 15px;
+}
+
+section.homepage-expertise .instructor-container .right-content .button {
+	margin-right: 20px;
+}
+
+section.homepage-expertise .instructor-container .right-content a {
+	color: #B2BCC3;
+}
+
+section.homepage-expertise .instructor .right-pattern {
+	top: calc(50% - 150px);
+	height: 300px;
+	position: absolute;
+	right: -200px;
+}
+
+section.homepage-expertise .insurance {
+	text-align: center;
+	padding-top: 150px;
+	position: relative;
+}
+
+section.homepage-expertise .insurance img.image {
+	height: 230px;
+}
+
+section.homepage-expertise .insurance h1,
+section.homepage-expertise .insurance h2 {
+	color: #425166;
+	margin: 5px 0;
+}
+
+section.homepage-expertise .insurance h2 {
+	margin: 0;
+	font-weight: 300;
+	font-size: 26px;
+}
+
+section.homepage-expertise .bottom-pattern {
+	bottom: 0;
+	width: 1400px;
+	left: calc(50% - 250px);
+	top: -460px;
 }

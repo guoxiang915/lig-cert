@@ -1,6 +1,7 @@
 :root {
 	--primary: #FF6E41;
 	--primary-dark: #001E4A;
+	/* --gray-dark: #425166; */
 }
 
 html {
@@ -38,12 +39,22 @@ html, body {
 	position: relative;
 }
 
+.image-pattern {
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%);
+}
+
 h1, h2, h4, h5, strong, b {
 	font-weight: 500;
 }
 
 h1 {
 	font-size: 36px;
+}
+
+h5 {
+	font-size: 20px;
 }
 
 p {
@@ -59,6 +70,7 @@ p {
 	border-radius: 6px;
 	color: #fff;
 	cursor: pointer;
+	display: inline-block;
 	font-family: 'Roboto', sans-serif;
 	font-size: 15px;
 	font-weight: 500;
@@ -81,4 +93,11 @@ p {
 .button.primary-dark:hover {
 	background-color: transparent;
 	color: #fff;
+}
+
+/* Mobile View */
+@media (max-width: 767px) {
+	.hidden-xs {
+		display: none!important;
+	}
 }
