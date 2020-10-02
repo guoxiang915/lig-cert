@@ -19,6 +19,11 @@
 	border-top: none;
 }
 
+.table-item div.date-col {
+	width: 230px;
+	text-align: center;
+}
+
 .table-item div.action-col {
 	text-align: center;
 	width: 80px;
@@ -42,7 +47,6 @@
 	vertical-align: middle;
 }
 
-.table-item div.date-col {
-	width: 230px;
-	text-align: center;
+.table-item div.action-col.three {
+	width: 120px;
 }

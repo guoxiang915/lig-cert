@@ -18,6 +18,14 @@ export const isValidPassword = (password) => {
 	}
 };
 
+export const cleanPermalink = (input) => {
+	try {
+		return input.replace(/ /g, "-").toLowerCase();
+	} catch (exception) {
+		throw new Error(`[func.cleanPermalink] ${exception.message}`);
+	}
+};
+
 export const hasRights = (roles, userId) => {
 	const uniqueId = userId ? userId : Meteor.userId();
 	try {
@@ -36,6 +44,7 @@ export const dateFormat = (date, format) => {
 	}
 };
 
+// Underscore Functions
 export const _pluck = (array, field) => {
 	try {
 		return array.map((option) => option[field]);

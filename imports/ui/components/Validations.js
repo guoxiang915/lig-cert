@@ -69,3 +69,47 @@ export const invitationHasError = (inputField, errorState) => {
 		break;
 	}
 };
+
+export const courseHasError = (inputField, errorState) => {
+	switch (inputField) {
+	case "title":
+		return ["missing-title"].includes(errorState);
+	case "permalink":
+		return ["missing-permalink","already-used-permalink"].includes(errorState);
+	case "mediaId":
+		return ["missing-media-id"].includes(errorState);
+	case "mediaLength":
+		return ["missing-media-length"].includes(errorState);
+	case "description":
+		return ["missing-description"].includes(errorState);
+	case "text":
+		return ["missing-text"].includes(errorState);
+	case "questions":
+		return ["missing-questions"].includes(errorState);
+	default:
+		break;
+	}
+};
+
+export const courseErrorMessage = (errorState) => {
+	switch (errorState) {
+	case "missing-title":
+		return "Title is required";
+	case "missing-permalink":
+		return "Permalink is required";
+	case "already-used-permalink":
+		return "Permalink has already been used";
+	case "missing-media-id":
+		return "Video ID is required";
+	case "missing-media-length":
+		return "Video length is required";
+	case "missing-description":
+		return "Description is required";
+	case "missing-text":
+		return "Content text is required";
+	case "missing-questions":
+		return "At least 1 question is required";
+	default:
+		return;
+	}
+};
