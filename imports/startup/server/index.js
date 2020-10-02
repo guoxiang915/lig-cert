@@ -13,7 +13,7 @@ import "/imports/startup/server/slingshot";
 WebApp.addHtmlAttributeHook(() => ({ lang: "en" })); // Adds language attribute to the <html> tag
 
 Meteor.startup(function () {
-	const userRoles = ["admin"];
+	const userRoles = ["admin","course-1"];
 
 	if (Roles.getAllRoles().count() === 0) {
 		userRoles.forEach((role) => { Roles.createRole(role); });

@@ -95,9 +95,17 @@ p {
 	color: #fff;
 }
 
+.visible-xs {
+	display: none;
+}
+
 /* Mobile View */
 @media (max-width: 767px) {
 	.hidden-xs {
 		display: none!important;
+	}
+
+	.visible-xs {
+		display: block!important;
 	}
 }
