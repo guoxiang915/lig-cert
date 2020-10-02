@@ -5,7 +5,7 @@ import { hasRights } from "/imports/ui/components/Functions";
 import AuthModal from "/imports/ui/authentication/AuthModal";
 import { VideoPlayer } from "/imports/ui/components/VideoPlayer";
 import { LazyImage } from "/imports/ui/components/LazyImage";
-import { IconPlus, IconMinus, IconAward, IconLinkedin, IconUdemy } from "/imports/ui/components/Icons";
+import { IconPlus, IconMinus, IconAward, IconLinkedin, IconUdemy, IconCircleCheck } from "/imports/ui/components/Icons";
 import "/imports/ui/stylesheets/navbar.css";
 import "/imports/ui/homepage/styles.css";
 
@@ -70,7 +70,6 @@ export default Homepage = () => {
 				</div>
 
 				<img src="/connection-pattern.svg" alt="Connection Pattern" className="image-pattern connection-pattern"/>
-
 				<img src="/landing/header-bottom-pattern.svg" alt="Header Bottom Pattern" className="image-pattern bottom-pattern"/>
 			</section>
 
@@ -186,6 +185,81 @@ export default Homepage = () => {
 						<LazyImage src="/landing/insurance-pattern.svg" alt="Insurance Pattern" classes="image-pattern bottom-pattern"/>
 					</div>
 				</div>
+			</section>
+
+			<section className="section homepage-courses">
+				<LazyImage src="/landing/courses-top-pattern.svg" alt="Courses Top Pattern" classes="image-pattern top-pattern"/>
+
+				<div className="main-wrapper">
+					<div className="features-container">
+						<div className="feature-item">
+							<div className="image"></div>
+							<h5>Lifetime Access</h5>
+							<p>Lifetime-access to all video courses and extra supportive learning material. Updates included!</p>
+						</div>
+
+						<div className="feature-item">
+							<div className="image"></div>
+							<h5>Certified Tutor</h5>
+							<p>Lifetime-access to all video courses and extra supportive learning material. Updates included!</p>
+						</div>
+
+						<div className="feature-item">
+							<div className="image"></div>
+							<h5>Best Price</h5>
+							<p>Lifetime-access to all video courses and extra supportive learning material. Updates included!</p>
+						</div>
+					</div>
+
+					<div className="courses-container">
+						<h1>Your Certificate Is Waiting</h1>
+						<p className="subtitle">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam</p>
+
+						<div className="course-item">
+							<div className="video-content">
+								<div className="price-label">
+									<h2>$199</h2>
+								</div>
+
+								<VideoPlayer playerId="homepage-course-tca" mediaId="0YytwiBG" />
+								<a href="/courses/tableau-certified-associate" className="button white">Go to Course</a>
+							</div>
+							<div className="description-content">
+								<h2>Tableau Certificate Associate</h2>
+								<p>Starting from scratch or building on existing skills? No matter the skill level, this course builds up your Tableau, visualization and BI skills to the level needed to pass the Tableau Certified Associate Exam, deliver professional results at work, and establish the foundation to obtain advanced certifications.</p>
+								<p>Plus, gain hands-on practice as you solve real-world case studies from top companies such as Spotify, Airbnb, Kaggle, NBA, WorldBank, and Glassdoor to help you build world-class instincts at exam time and in business.</p>
+
+								<div className="bullets-container">
+									<p className="bullet-item"><IconCircleCheck />30.5 hours of video lectures</p>
+									<p className="bullet-item"><IconCircleCheck />2 certificates, 2 practice exams</p>
+									<p className="bullet-item"><IconCircleCheck />11 practical case studies</p>
+									<p className="bullet-item"><IconCircleCheck />'Pass or we pay' guarantee</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<LazyImage src="/connection-pattern.svg" alt="Connection Pattern" classes="image-pattern connection-pattern"/>
+
+				<LazyImage src="/landing/courses-bottom-pattern.svg" alt="Courses Bottom Pattern" classes="image-pattern bottom-pattern"/>
+			</section>
+
+			<section className="section homepage-testimonials">
+				<div className="main-wrapper">
+					<h1>Words From Satisfied Students</h1>
+				</div>
+			</section>
+
+			<section className="section homepage-certified-banner">
+				<LazyImage src="/landing/banner-top-pattern.svg" alt="Banner Top Pattern" classes="image-pattern top-pattern"/>
+
+				<div className="main-wrapper">
+					<h1>Get Tableau Certified Skyrockets Your Career</h1>
+					{!user && <button className="button primary-dark" onClick={(event) => toggleModal(event, true, "Signup")}>Get Started</button>}
+				</div>
+
+				<LazyImage src="/connection-pattern.svg" alt="Connection Pattern" classes="image-pattern connection-pattern"/>
 			</section>
 		</Fragment>
 	);
