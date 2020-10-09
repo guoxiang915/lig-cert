@@ -8,8 +8,9 @@ import { hasRights, capitalizeText, _union } from "/imports/ui/components/Functi
 import { IconTrophy, IconEdit, IconPlus, IconVideo, IconText, IconQuiz, IconLock, IconCheck } from "/imports/ui/components/Icons";
 import { CoursesCollection } from "/imports/api/courses/courses";
 import { UnitsCollection } from "/imports/api/courses/units";
-import { SEO } from "/imports/ui/components/SEO";
 import { MemberlistsCollection } from "/imports/api/courses/memberlists";
+import { Dropdown } from "/imports/ui/components/Dropdown";
+import { SEO } from "/imports/ui/components/SEO";
 import { VideoPlayer } from "/imports/ui/components/VideoPlayer";
 // import { LazyImage } from "/imports/ui/components/LazyImage";
 import AuthModal from "/imports/ui/authentication/AuthModal";
@@ -105,23 +106,19 @@ export default CourseView = () => {
 						<img src="/logo.svg" alt="TF Certification Logo"/>
 
 						<ul className="actions hidden-xs">
-							<li><a>Features</a></li>
-							<li><a>Instructor</a></li>
-							<li><a>Courses</a></li>
+							<li><a onClick={() => history.push("/")}>Homepage</a></li>
 
 							<div className="buttons">
 								{user ? (
-									<div className="nav-dropdown">
-										<button className="button">Hi {user.profile.name.first}</button>
-
-										<div className="dropdown-content clearfix">
+									<Fragment>
+										<Dropdown title={`Hi ${user.profile.name.first}`}>
 											{/* <a className="dropdown-item" onClick={toggleProfile}>Profile</a> */}
-											{hasRights(["admin"]) && <a href="/admin/users" className="dropdown-item">Administrator</a>}
+											{hasRights(["admin"]) && <a className="dropdown-item" onClick={() => history.push("/admin/users")}>Administrator</a>}
 											<a className="dropdown-item" onClick={() => Meteor.logout()}>Logout</a>
-										</div>
+										</Dropdown>
 
 										{/* {showProfile && <ProfileModal isOpen={showProfile} closeModal={toggleProfile} />} */}
-									</div>
+									</Fragment>
 								) : (
 									<Fragment>
 										<button type="button" className="button" onClick={(event) => toggleAuthModal(event, true, "Login")}>Login</button>

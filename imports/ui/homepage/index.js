@@ -3,6 +3,7 @@ import { Meteor } from "meteor/meteor";
 import { useAccount } from "/imports/ui/components/hooks/useAccount";
 import { hasRights } from "/imports/ui/components/Functions";
 import AuthModal from "/imports/ui/authentication/AuthModal";
+import { Dropdown } from "/imports/ui/components/Dropdown";
 import { VideoPlayer } from "/imports/ui/components/VideoPlayer";
 import { LazyImage } from "/imports/ui/components/LazyImage";
 import { IconPlus, IconMinus, IconAward, IconLinkedin, IconUdemy, IconCircleCheck } from "/imports/ui/components/Icons";
@@ -35,17 +36,15 @@ export default Homepage = () => {
 
 							<div className="buttons">
 								{user ? (
-									<div className="nav-dropdown">
-										<button className="button">Hi {user.profile.name.first}</button>
-
-										<div className="dropdown-content clearfix">
+									<Fragment>
+										<Dropdown title={`Hi ${user.profile.name.first}`}>
 											{/* <a className="dropdown-item" onClick={toggleProfile}>Profile</a> */}
-											{hasRights(["admin"]) && <a href="/admin/users" className="dropdown-item">Administrator</a>}
+											{hasRights(["admin"]) && <a className="dropdown-item" onClick={() => history.push("/admin/users")}>Administrator</a>}
 											<a className="dropdown-item" onClick={() => Meteor.logout()}>Logout</a>
-										</div>
+										</Dropdown>
 
 										{/* {showProfile && <ProfileModal isOpen={showProfile} closeModal={toggleProfile} />} */}
-									</div>
+									</Fragment>
 								) : (
 									<Fragment>
 										<button type="button" className="button" onClick={(event) => toggleAuthModal(event, true, "Login")}>Login</button>
