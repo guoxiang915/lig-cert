@@ -97,6 +97,7 @@ section.course-view-content {
 section.course-view-content .course-view-wrapper {
 	max-width: 1000px;
 	margin: 0 auto;
+	position: relative;
 }
 
 section.course-view-content .course-view-wrapper > h4 {
@@ -133,6 +134,20 @@ section.course-view-content .course-view-wrapper .description-container svg {
 	height: 20px;
 	float: left;
 	margin-right: 8px;
+}
+
+section.course-view-content .course-view-wrapper .left-pattern {
+	top: 150px;
+	height: 300px;
+	position: absolute;
+	left: -300px;
+}
+
+section.course-view-content .course-view-wrapper .right-pattern {
+	bottom: 150px;
+	height: 300px;
+	position: absolute;
+	right: -300px;
 }
 
 /* Course Curriculum */

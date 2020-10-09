@@ -12,7 +12,7 @@ import { MemberlistsCollection } from "/imports/api/courses/memberlists";
 import { Dropdown } from "/imports/ui/components/Dropdown";
 import { SEO } from "/imports/ui/components/SEO";
 import { VideoPlayer } from "/imports/ui/components/VideoPlayer";
-// import { LazyImage } from "/imports/ui/components/LazyImage";
+import { LazyImage } from "/imports/ui/components/LazyImage";
 import AuthModal from "/imports/ui/authentication/AuthModal";
 // const ProfileModal = loadable(() => import("/imports/ui/profile/ProfileModal"));
 const PaymentModal = loadable(() => import("/imports/ui/payment/PaymentModal"));
@@ -22,7 +22,7 @@ const VideoModal = loadable(() => import("/imports/ui/courses/VideoModal"));
 const TextModal = loadable(() => import("/imports/ui/courses/TextModal"));
 const QuizModal = loadable(() => import("/imports/ui/courses/QuizModal"));
 import "/imports/ui/stylesheets/navbar.css";
-// import "/imports/ui/stylesheets/footer.css";
+import "/imports/ui/stylesheets/footer.css";
 import "/imports/ui/courses/styles.css";
 
 export default CourseView = () => {
@@ -194,23 +194,22 @@ export default CourseView = () => {
 					<div className="curriculum-wrapper">
 						{course.modules.map((module) => <CourseModule key={module._id} hasCourseAccess={hasCourseAccess} course={course} memberlist={memberlist} module={module} />)}
 					</div>
+
+					<LazyImage src="/tf-pattern.svg" alt="TF Pattern" classes="left-pattern hidden-xs"/>
+					<LazyImage src="/tf-pattern.svg" alt="TF Pattern" classes="right-pattern hidden-xs"/>
 				</div>
 			</section>
 
-			{/* <section className="section footer course-view">
+			<section className="section footer">
 				<div className="main-wrapper">
-					<div className="content">
-						<p>&copy; Copyright 2020 — All rights reserved — TF Certification</p>
-						<p>
-							<a href="/affiliate-program">Affiliate Program</a>
-							<span className="hidden-xs">&bull;</span>
-							<a href="/privacy-policy">Privacy Policy</a>
-							<span className="hidden-xs">&bull;</span>
-							<a href="/terms-conditions">Terms & Conditions</a>
-						</p>
-					</div>
+					<p>&copy; Copyright 2020 — All rights reserved — TF Certification</p>
+					<p>
+						<a href="/privacy-policy">Privacy Policy</a>
+						<span className="hidden-xs">&bull;</span>
+						<a href="/terms-conditions">Terms & Conditions</a>
+					</p>
 				</div>
-			</section> */}
+			</section>
 		</Fragment>
 	);
 };

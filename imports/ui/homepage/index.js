@@ -8,6 +8,7 @@ import { VideoPlayer } from "/imports/ui/components/VideoPlayer";
 import { LazyImage } from "/imports/ui/components/LazyImage";
 import { IconPlus, IconMinus, IconAward, IconLinkedin, IconUdemy, IconCircleCheck } from "/imports/ui/components/Icons";
 import "/imports/ui/stylesheets/navbar.css";
+import "/imports/ui/stylesheets/footer.css";
 import "/imports/ui/homepage/styles.css";
 
 export default Homepage = () => {
@@ -259,6 +260,17 @@ export default Homepage = () => {
 				</div>
 
 				<LazyImage src="/connection-pattern.svg" alt="Connection Pattern" classes="image-pattern connection-pattern"/>
+			</section>
+
+			<section className="section footer">
+				<div className="main-wrapper">
+					<p>&copy; Copyright 2020 — All rights reserved — TF Certification</p>
+					<p>
+						<a href="/privacy-policy">Privacy Policy</a>
+						<span className="hidden-xs">&bull;</span>
+						<a href="/terms-conditions">Terms & Conditions</a>
+					</p>
+				</div>
 			</section>
 		</Fragment>
 	);

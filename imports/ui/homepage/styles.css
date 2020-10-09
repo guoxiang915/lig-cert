@@ -538,6 +538,7 @@ section.homepage-testimonials {
 section.homepage-certified-banner {
 	background-image: linear-gradient(135deg,#FF9200 0, #FF4477 100%);
 	min-height: 400px;
+	overflow: hidden;
 }
 
 section.homepage-certified-banner .top-pattern {
