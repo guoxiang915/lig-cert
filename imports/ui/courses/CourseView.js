@@ -14,7 +14,7 @@ import { VideoPlayer } from "/imports/ui/components/VideoPlayer";
 // import { LazyImage } from "/imports/ui/components/LazyImage";
 import AuthModal from "/imports/ui/authentication/AuthModal";
 // const ProfileModal = loadable(() => import("/imports/ui/profile/ProfileModal"));
-// const PaymentModal = loadable(() => import("/imports/ui/payment/PaymentModal"));
+const PaymentModal = loadable(() => import("/imports/ui/payment/PaymentModal"));
 const CourseModal = loadable(() => import("/imports/ui/courses/CourseModal"));
 const ModuleModal = loadable(() => import("/imports/ui/courses/ModuleModal"));
 const VideoModal = loadable(() => import("/imports/ui/courses/VideoModal"));
@@ -141,42 +141,40 @@ export default CourseView = () => {
 
 					<button onClick={buttonState.action && buttonState.action} className="button primary-dark">{buttonState.title}</button>
 
-					{/* {modal.payment && (
+					{modal.payment && (
 						<PaymentModal
 							isOpen={modal.payment}
 							onClose={() => toggleModal("payment")}
 							data={{
-								type: "Course",
 								title: course.title,
 								price: course.price,
 								roles: course.accessRoles,
-								productId: course.accessRoles.join(),
 								successActionText: "Start Learning",
 								successAction: () => { history.push(`/courses/${course.permalink}`);}
 							}}
 						/>
-					)} */}
+					)}
 
 					<div className="video-player">
 						<VideoPlayer playerId="promo" mediaId={course.mediaId} />
 					</div>
 
-					{/* {hasCourseAccess && */}
-					<div className="progression">
-						<div className="left-content">
-							<p>{amountCompleted} of {course.unitCount} units completed</p>
-							<div className="bar">
-								<div className="progress" style={{ width: `${(amountCompleted / course.unitCount) * 100}%` }} />
+					{hasCourseAccess &&
+						<div className="progression">
+							<div className="left-content">
+								<p>{amountCompleted} of {course.unitCount} units completed</p>
+								<div className="bar">
+									<div className="progress" style={{ width: `${(amountCompleted / course.unitCount) * 100}%` }} />
+								</div>
+							</div>
+							<div className={`right-content ${courseCompelted ? "completed" : ""}`}>
+								<IconTrophy />
+								<div className="bar">
+									<div className="progress" style={{ width: courseCompelted ? "100%" : "0%" }} />
+								</div>
 							</div>
 						</div>
-						<div className={`right-content ${courseCompelted ? "completed" : ""}`}>
-							<IconTrophy />
-							<div className="bar">
-								<div className="progress" style={{ width: courseCompelted ? "100%" : "0%" }} />
-							</div>
-						</div>
-					</div>
-					{/* } */}
+					}
 				</div>
 
 				<img src="/connection-pattern.svg" alt="Connection Pattern" className="image-pattern connection-pattern"/>
@@ -205,7 +203,7 @@ export default CourseView = () => {
 			{/* <section className="section footer course-view">
 				<div className="main-wrapper">
 					<div className="content">
-						<p>&copy; Copyright 2020 — All rights reserved — Art of Visualization</p>
+						<p>&copy; Copyright 2020 — All rights reserved — TF Certification</p>
 						<p>
 							<a href="/affiliate-program">Affiliate Program</a>
 							<span className="hidden-xs">&bull;</span>

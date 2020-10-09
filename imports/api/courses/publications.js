@@ -40,7 +40,7 @@ Meteor.publish("unit/view", function (coursePermalink) {
 
 	return [
 		UnitsCollection.find({ courseId: course._id }),
-		CoursesCollection.find({ permalink: coursePermalink }, { fields: { title: 1, permalink: 1, "modules._id": 1, "modules.title": 1, unitCount: 1, accessRoles: 1, communityLink: 1 } }),
+		CoursesCollection.find({ permalink: coursePermalink }, { fields: { title: 1, permalink: 1, "modules._id": 1, "modules.title": 1, unitCount: 1, accessRoles: 1 } }),
 		MemberlistsCollection.find({ courseId: course._id, userId: this.userId })
 	];
 });

@@ -3,6 +3,11 @@ import { check } from "meteor/check";
 import { Roles } from "meteor/alanning:roles";
 import { Random } from "meteor/random";
 import { Accounts } from "meteor/accounts-base";
+import { Promise } from "meteor/promise";
+import { sendEmail } from "/imports/startup/server/functions";
+import { templateToHtml } from "/imports/startup/server/emails/templateToHtml";
+
+const stripe = require("stripe")(Meteor.settings.private.stripe.secret_key);
 
 Meteor.methods({
 	"user.update"(userId, userData) {
@@ -33,5 +38,46 @@ Meteor.methods({
 		const newPassword = Random.id();
 		Accounts.setPassword(userId, newPassword);
 		return newPassword;
+	},
+	"payment.intent" (price, description) {
+		check(price, Number);
+		check(description, String);
+		if (!price) { throw new Meteor.Error(404, "undefined-price"); }
+
+		// Create Stripe PaymentIntent
+		const paymentIntent = Promise.await(stripe.paymentIntents.create({
+			amount: price,
+			currency: "usd",
+			description: description
+		}));
+
+		return paymentIntent.client_secret;
+	},
+	"payment.complete" (userId, completionData) {
+		check(userId, String);
+		check(completionData, {
+			roles: Array,
+			userEmail: String,
+			userName: String,
+			productName: String,
+			productPrice: Number
+		});
+
+		// Update user roles (include purchased course/bundle access)
+		Meteor.users.update(userId, { $set: { roles: completionData.roles } });
+
+		// Send payment confirmation email
+		const platformName = Meteor.settings.public.productName;
+
+		sendEmail({
+			email: completionData.userEmail,
+			subject: `[${platformName}] Purchase Order Confirmed`,
+			html: templateToHtml(Assets.getText("email-templates/payment-confirmation.html"), {
+				platformName: platformName,
+				userName: completionData.userName,
+				productName: completionData.productName,
+				productPrice: completionData.productPrice
+			})
+		});
 	}
 });

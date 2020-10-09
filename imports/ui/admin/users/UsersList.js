@@ -35,6 +35,11 @@ export default UsersList = () => {
 				path='admin/users'
 			/>
 
+			<select name="roles" value={filters.roles} onChange={handleChange}>
+				<option value="">All Members</option>
+				<option value="course-1">Paid Members</option>
+			</select>
+
 			<SearchInput
 				field="query"
 				value={filters.query}
@@ -45,6 +50,7 @@ export default UsersList = () => {
 			<div className="table">
 				{dataLoading ? <p>Loading...</p> : users.map(user => <UserItem key={user._id} user={user} />)}
 			</div>
+
 			{users.length > filters.amount_page && <button onClick={() => setfilters({ ...filters, amount_page: filters.amount_page + 25 })}>Load More</button>}
 		</Fragment>
 	);

@@ -8,6 +8,16 @@ export default UserItem = ({ user }) => {
 	const [showModal, setShowModal] = useState(false);
 	const toggleModal = () => setShowModal(!showModal);
 
+	let userState;
+
+	if (hasRights(["admin"], user._id)) {
+		userState = "Administrator";
+	} else if (hasRights(["course-1"], user._id)) {
+		userState = "Purchased Course 1";
+	} else {
+		userState = "Free Member";
+	}
+
 	return (
 		<div className="table-item">
 			<div className="user-col">
@@ -16,7 +26,7 @@ export default UserItem = ({ user }) => {
 			</div>
 
 			<div className="user-access-col">
-				<p>{hasRights(["admin"], user._id) ? "Administrator" : "Free Member"}</p>
+				<p>{userState}</p>
 			</div>
 
 			<div className="date-col">

@@ -20,7 +20,7 @@ static-html                    # Define static page content in .html files
 react-meteor-data              # React higher-order component for reactively tracking Meteor data
 accounts-password
 alanning:roles@1.2.19
-force-ssl
 aldeed:collection2
-edgee:slingshot
 reywood:publish-composite
+force-ssl
+edgee:slingshot

@@ -1,7 +1,7 @@
 :root {
 	--primary: #FF6E41;
 	--primary-dark: #001E4A;
-	/* --gray-dark: #425166; */
+	--danger: #ea5770;
 }
 
 html {
@@ -93,6 +93,32 @@ p {
 .button.primary-dark:hover {
 	background-color: transparent;
 	color: #fff;
+}
+
+.button.primary-dark-hover:hover {
+	color: var(--primary-dark);
+	border-color: var(--primary-dark);
+}
+
+.button:disabled {
+	cursor: default;
+}
+
+.button.primary:disabled,
+.button.primary-dark:disabled {
+	background-color: lightgray;
+	border-color: lightgray;
+	color: #fff;
+}
+
+.error-message {
+	color: var(--danger);
+}
+
+.error-message svg {
+	height: 20px;
+	margin-right: 10px;
+	vertical-align: top;
 }
 
 .visible-xs {

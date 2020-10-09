@@ -7,7 +7,6 @@ Meteor.methods({
 	"file.insert"(fileName, url) {
 		check(fileName, String);
 		check(url, String);
-
 		if (!this.userId || !Roles.userIsInRole(this.userId, "admin")) { throw new Meteor.Error(401, "not-authorized"); }
 
 		FilesCollection.insert({
@@ -20,7 +19,6 @@ Meteor.methods({
 	"file.remove"(fileName, fileId) {
 		check(fileName, String);
 		check(fileId, Match.OneOf( String, false ));
-
 		if (!this.userId || !Roles.userIsInRole(this.userId, "admin")) { throw new Meteor.Error(401, "not-authorized"); }
 
 		const filePath = fileName.replace(/https:\/\/(.*)amazonaws\.com\//g, "");

@@ -1,0 +1,8 @@
+{
+	"name": "TF Certification",
+	"short_name": "TFC",
+	"start_url": "/",
+	"background_color": "#ffffff",
+	"theme_color": "#FF6E41",
+	"display": "standalone"
+}
