@@ -44,18 +44,20 @@ export default Signup = ({ actionModal }) => {
 	};
 
 	return (
-		<form onSubmit={handleSubmit}>
+		<form onSubmit={handleSubmit} className="form-container">
 			<h4>Create Your Account</h4>
 
-			<label className={`${authHasError("first_name", values.errorState) ? "error" : ""}`}>
-				First Name
-				<input type="text" name="first_name" value={values.first_name} onChange={handleChange} placeholder="e.g. John" />
-			</label>
+			<div className="input-two-columns">
+				<label className={`${authHasError("first_name", values.errorState) ? "error" : ""}`}>
+					First Name
+					<input type="text" name="first_name" value={values.first_name} onChange={handleChange} placeholder="e.g. John" />
+				</label>
 
-			<label className={`${authHasError("last_name", values.errorState) ? "error" : ""}`}>
-				Last Name
-				<input type="text" name="last_name" value={values.last_name} onChange={handleChange} placeholder="e.g. Doe" />
-			</label>
+				<label className={`${authHasError("last_name", values.errorState) ? "error" : ""}`}>
+					Last Name
+					<input type="text" name="last_name" value={values.last_name} onChange={handleChange} placeholder="e.g. Doe" />
+				</label>
+			</div>
 
 			<label className={`${authHasError("email", values.errorState) ? "error" : ""}`}>
 				Email Address
@@ -69,7 +71,7 @@ export default Signup = ({ actionModal }) => {
 
 			{values.errorState && <p><IconWarning/>{authErrorMessage(values.errorState)}</p>}
 
-			<button type="submit" className="button primary-dark" disabled={values.loading}>
+			<button type="submit" className="button primary-dark primary-dark-hover" disabled={values.loading}>
 				{values.loading ? "Creating Account" : "Create Account"}
 			</button>
 

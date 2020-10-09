@@ -45,12 +45,12 @@
 }
 
 .input-two-columns label {
-	width: calc(50% - 10px);
+	width: calc(50% - 7.5px);
 	display: inline-block;
 }
 
 .input-two-columns label:first-child {
-	margin-right: 20px;
+	margin-right: 15px;
 }
 
 .form-submitted {

@@ -36,7 +36,7 @@ export default Login = ({ actionModal }) => {
 	};
 
 	return (
-		<form onSubmit={handleSubmit}>
+		<form onSubmit={handleSubmit} className="form-container">
 			<h4>Welcome Back</h4>
 
 			<label className={`${authHasError("email", values.errorState) ? "error" : ""}`}>
@@ -53,7 +53,7 @@ export default Login = ({ actionModal }) => {
 
 			{values.errorState && <p><IconWarning/> {authErrorMessage(values.errorState)}</p>}
 
-			<button type="submit" className="button primary-dark" disabled={values.loading}>
+			<button type="submit" className="button primary-dark primary-dark-hover" disabled={values.loading}>
 				{values.loading ? "Signing in" : "Sign in"}
 			</button>
 

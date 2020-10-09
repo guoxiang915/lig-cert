@@ -1,7 +1,12 @@
 .auth-modal {
-	max-width: 400px;
+	max-width: 450px;
 }
 
 .auth-modal .button {
 	width: 100%;
+	margin: 15px 0;
+}
+
+.auth-modal a {
+	color: var(--primary-dark);
 }

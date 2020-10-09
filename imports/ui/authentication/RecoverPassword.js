@@ -42,7 +42,7 @@ export default ResetPassword = ({ actionModal }) => {
 					<p>Go back to <a onClick={(event) => actionModal(event, true, "Login")} href="">Log in</a></p>
 				</div>
 			) : (
-				<form onSubmit={handleSubmit}>
+				<form onSubmit={handleSubmit} className="form-container">
 					<h4>Reset Password</h4>
 
 					<label className={`${authHasError("email", values.errorState) ? "error" : ""}`}>
@@ -52,7 +52,7 @@ export default ResetPassword = ({ actionModal }) => {
 
 					{values.errorState && <p><IconWarning/>{authErrorMessage(values.errorState)}</p>}
 
-					<button type="submit" className="button primary-dark" disabled={values.loading}>
+					<button type="submit" className="button primary-dark primary-dark-hover" disabled={values.loading}>
 						{values.loading ? "Resetting Password" : "Reset Password"}
 					</button>
 
