@@ -1,0 +1,48 @@
+.slider-container {
+	position: relative;
+	width: calc(100% + 20px);
+	margin-left: -20px;
+}
+
+.slider-buttons {
+	margin: auto;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: -60px;
+	width: calc(100% - 20px);
+	z-index: 999;
+	text-align: center;
+}
+
+.slider-buttons button {
+	background-color: transparent;
+	border: none;
+	height: 40px;
+	outline: none;
+	padding: 7.5px;
+	transition: .2s background-color ease-in-out;
+	width: 40px;
+}
+
+.slider-buttons button svg {
+	color:#DDDDDD;
+	height: 30px;
+	width: 30px;
+	transition: .2s color ease-in-out;
+}
+
+.slider-buttons button:hover svg {
+	color: var(--primary);
+}
+
+@media (max-width: 767px) {
+	.slider-container {
+		width: 100%;
+		margin: 0;
+	}
+
+	.slider-buttons {
+		justify-content: center;
+	}
+}

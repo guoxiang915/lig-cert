@@ -1,12 +1,14 @@
 import React, { useState, Fragment } from "react";
 import { Meteor } from "meteor/meteor";
+import { Slide, ButtonBack, ButtonNext } from "pure-react-carousel";
 import { useAccount } from "/imports/ui/components/hooks/useAccount";
 import { hasRights } from "/imports/ui/components/Functions";
 import AuthModal from "/imports/ui/authentication/AuthModal";
 import { Dropdown } from "/imports/ui/components/Dropdown";
 import { VideoPlayer } from "/imports/ui/components/VideoPlayer";
 import { LazyImage } from "/imports/ui/components/LazyImage";
-import { IconPlus, IconMinus, IconAward, IconLinkedin, IconUdemy, IconCircleCheck } from "/imports/ui/components/Icons";
+import { IconPlus, IconMinus, IconAward, IconLinkedin, IconUdemy, IconCircleCheck, IconLongLeftArrow, IconLongRightArrow, IconBlockquote } from "/imports/ui/components/Icons";
+import { SliderWrapper } from "/imports/ui/components/SliderWrapper";
 import "/imports/ui/stylesheets/navbar.css";
 import "/imports/ui/stylesheets/footer.css";
 import "/imports/ui/homepage/styles.css";
@@ -245,11 +247,7 @@ export default Homepage = () => {
 				<LazyImage src="/landing/courses-bottom-pattern.svg" alt="Courses Bottom Pattern" classes="image-pattern bottom-pattern"/>
 			</section>
 
-			<section className="section homepage-testimonials">
-				<div className="main-wrapper">
-					<h1>Words From Satisfied Students</h1>
-				</div>
-			</section>
+			<HomepageTestimonials />
 
 			<section className="section homepage-certified-banner">
 				<LazyImage src="/landing/banner-top-pattern.svg" alt="Banner Top Pattern" classes="image-pattern top-pattern"/>
@@ -322,6 +320,78 @@ const SkillsContainer = () => {
 							</div>
 						)}
 					</div>
+				</div>
+
+				<LazyImage src="/tf-pattern.svg" alt="TF Pattern" classes="right-pattern hidden-xs"/>
+			</div>
+		</section>
+	);
+};
+
+const HomepageTestimonials = () => {
+	const testimonials = [
+		{
+			author: "Silvia Natalia",
+			position: "Tanahoon founder",
+			message: "Validate your data analysis and visualization skills at a professional level, and gain instant recognition from current and future employers.",
+		}, {
+			author: "Silvia Natalia",
+			position: "Tanahoon founder",
+			message: "Stand out from the crowded data science job market with the stamp of approval that hiring managers from leaders like Cisco, Amazon, Deloitte and more, are searching for."
+		}, {
+			author: "Silvia Natalia",
+			position: "Tanahoon founder",
+			message: "The average salary of a Tableau-certified BI Specialist can reach as high as $152,400—ranking it as one of the highest-paying certification categories in North America, according to Glassdoor data."
+		}, {
+			author: "Silvia Natalia",
+			position: "Tanahoon founder",
+			message: "Gain the professional data storytelling skills to impress in the C-suite, uncover deeper insights and drive results that make a difference to your business’ bottom line. Gain the professional data storytelling skills to impress in the C-suite, uncover deeper insights and drive results that make a difference to your business’ bottom line "
+		}, {
+			author: "Silvia Natalia",
+			position: "Tanahoon founder",
+			message: "Gain the professional data storytelling skills to impress in the C-suite, uncover deeper insights and drive results that make a difference to your business’ bottom line. Gain the professional data storytelling skills to impress in the C-suite, uncover deeper insights and drive results that make a difference to your business’ bottom line."
+		}, {
+			author: "Silvia Natalia",
+			position: "Tanahoon founder",
+			message: "Gain the professional data storytelling skills to impress in the C-suite, uncover deeper insights and drive results that make a difference to your business’ bottom line."
+		}
+	];
+
+	const slides =  testimonials.map((testimonial, index) => (
+		<Slide key={index}>
+			<div className="testimonial-item">
+				<span className="quote"><IconBlockquote /></span>
+				<div className="description">
+					<p>{testimonial.message}</p>
+
+					<div className="author">
+						<p><strong>{testimonial.author}</strong></p>
+						<p>{testimonial.position}</p>
+					</div>
+				</div>
+			</div>
+		</Slide>
+	));
+
+	return (
+		<section className="section homepage-testimonials">
+			<div className="main-wrapper">
+				<h1>Words From Satisfied Students</h1>
+
+				<div className="slider-container testimonials-container">
+					<SliderWrapper
+						slides={slides}
+						autoPlay={false}
+						height={100}
+						width={100}
+						mobileSlides={1}
+						desktopSlides={3}
+					>
+						<div className="slider-buttons">
+							<ButtonBack className="button-left"><IconLongLeftArrow/></ButtonBack>
+							<ButtonNext className="button-right"><IconLongRightArrow/></ButtonNext>
+						</div>
+					</SliderWrapper>
 				</div>
 
 				<LazyImage src="/tf-pattern.svg" alt="TF Pattern" classes="right-pattern hidden-xs"/>

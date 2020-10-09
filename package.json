@@ -20,6 +20,7 @@
 		"dompurify": "^2.1.1",
 		"handlebars": "^4.7.6",
 		"meteor-node-stubs": "^1.0.1",
+		"pure-react-carousel": "^1.27.5",
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
 		"react-helmet": "^6.1.0",
