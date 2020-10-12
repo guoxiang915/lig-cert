@@ -3,9 +3,7 @@ import handlebars from "handlebars";
 export const templateToHtml = (layoutHtml, context) => {
 	if (layoutHtml && context) {
 		const template = handlebars.compile(layoutHtml);
-		const content = template(context);
-
-		return content;
+		return template(context);
 	}
 
 	throw new Error(

@@ -23,11 +23,7 @@ export default ModuleModal = ({ isOpen, onClose, course, module }) => {
 		modules.splice(module.order, 1);
 
 		Meteor.call("module.remove", course._id, modules, module._id, (error) => {
-			if (error) {
-				console.warn(error);
-			} else {
-				onClose();
-			}
+			if (error) { console.warn(error); }
 		});
 	};
 
