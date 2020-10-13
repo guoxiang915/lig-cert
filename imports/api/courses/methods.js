@@ -32,9 +32,10 @@ Meteor.methods({
 		MemberlistsCollection.remove({ courseId: courseId });
 		CoursesCollection.remove({ _id: courseId });
 	},
-	"module.remove"(courseId, modules, moduleId) {
+	"module.remove"(courseId, modules, moduleIds, moduleId) {
 		check(courseId, String);
 		check(modules, Array);
+		check(moduleIds, Array);
 		check(moduleId, String);
 		if (!this.userId || !Roles.userIsInRole(this.userId, "admin")) { throw new Meteor.Error(401, "not-authorized"); }
 
@@ -42,6 +43,7 @@ Meteor.methods({
 
 		CoursesCollection.update({ _id: courseId }, { $set: { "modules": modules }, $inc: { unitCount: -units.length } }); // Update unitCount field from courses
 		UnitsCollection.remove({ courseId: courseId, moduleId: moduleId }); // Delete all the units inside of the deleted module
+		UnitsCollection.update({ courseId: courseId, moduleId: { $in: moduleIds } }, { $inc : { order: -units.length } }, { multi: true }); // Update all units order field after removed module
 		MemberlistsCollection.update({}, { $pull: { unitsCompleted: { $in: _pluck(units, "_id") } } }, { multi: true });  // Remove all units from all memberlists so there is no track of non-existent units
 	},
 	"unit.upsert"(unitId, unitData) {
@@ -55,12 +57,24 @@ Meteor.methods({
 		}
 
 		if (unitId) {
+			const unit = UnitsCollection.findOne({ _id: unitId });
+
+			// If unit order changed, update all units order field
+			if (unit.order !== unitData.order) {
+				const newOrderUnit = UnitsCollection.findOne({ courseId: unitData.courseId, order: unitData.order, _id: { $ne: unitId } });
+
+				if (unitData.moduleId !== newOrderUnit.moduleId) unitData.moduleId = newOrderUnit.moduleId;
+				if (unitData.order < unit.order) UnitsCollection.update({ courseId: unitData.courseId, order: { $gte: unitData.order, $lt: unit.order } }, { $inc: { order: 1 } }, { multi: true });
+				if (unitData.order > unit.order) UnitsCollection.update({ courseId: unitData.courseId, order: { $gt: unit.order, $lte: unitData.order } }, { $inc: { order: -1 } }, { multi: true });
+			}
+
 			UnitsCollection.update({ _id: unitId }, { $set: unitData });
 		} else {
 			CoursesCollection.update({ _id: unitData.courseId }, { $inc: { unitCount: 1 } });
 			const newUnitId = UnitsCollection.insert(unitData);
 
-			UnitsCollection.update({ courseId: unitData.courseId, _id: { $ne: newUnitId }, order: { $gte: unitData.order } }, { $inc: { order: 1 } }, { multi: true }); // Update order of all the units with order bigger that the new unit
+			// Update order of all the units with order bigger that the new unit
+			UnitsCollection.update({ courseId: unitData.courseId, _id: { $ne: newUnitId }, order: { $gte: unitData.order } }, { $inc: { order: 1 } }, { multi: true });
 		}
 	},
 	"unit.remove"(unitId) {
@@ -70,7 +84,7 @@ Meteor.methods({
 		const unit = UnitsCollection.findOne({ _id: unitId });
 
 		UnitsCollection.remove(unitId); // Remove the unit
-		UnitsCollection.update({ courseId: unit.courseId, order: { $gt: unit.order } }, { $inc: { order: -1 } }, { multi: true }); // Update order position of the other units in the same module
+		UnitsCollection.update({ courseId: unit.courseId, order: { $gt: unit.order } }, { $inc: { order: -1 } }, { multi: true }); // Update order position of the other units in the same course
 		CoursesCollection.update({ _id: unit.courseId }, { $inc: { unitCount: -1 } }); // Update unitCount after the unit deletion
 		MemberlistsCollection.update({}, { $pull: { unitsCompleted: { $in: [unit._id] } } }, { multi: true }); // Remove unit from all memberlists so there is no track of non-existent unit
 	},

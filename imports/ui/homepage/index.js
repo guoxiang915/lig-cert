@@ -1,5 +1,6 @@
 import React, { useState, Fragment } from "react";
 import { Meteor } from "meteor/meteor";
+import { useHistory } from "react-router-dom";
 import { Slide, ButtonBack, ButtonNext } from "pure-react-carousel";
 import { useAccount } from "/imports/ui/components/hooks/useAccount";
 import { hasRights } from "/imports/ui/components/Functions";
@@ -18,6 +19,7 @@ export default Homepage = () => {
 	const [authComponent, setAuthComponent] = useState("");
 
 	const { user } = useAccount();
+	const history = useHistory();
 
 	const toggleAuthModal = (event, activeModal, component) => {
 		event.preventDefault();

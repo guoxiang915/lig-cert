@@ -8,6 +8,8 @@ import { IconDelete, IconWarning } from "/imports/ui/components/Icons";
 import { courseHasError, courseErrorMessage } from "/imports/ui/components/Validations";
 
 export default QuizModal = ({ isOpen, actionModal, unit, courseId, moduleId }) => {
+	const amountUnits = UnitsCollection.find({ courseId: courseId }).count();
+
 	// Find order for new unit
 	const findOrder = function(courseId, moduleId) {
 		const course = CoursesCollection.findOne({ _id: courseId });
@@ -51,7 +53,7 @@ export default QuizModal = ({ isOpen, actionModal, unit, courseId, moduleId }) =
 			type: "quiz",
 			courseId: courseId,
 			moduleId: moduleId,
-			order: values.order,
+			order: parseInt(values.order),
 			content: {
 				questions: values.questions
 			}
@@ -103,6 +105,11 @@ export default QuizModal = ({ isOpen, actionModal, unit, courseId, moduleId }) =
 				<label className={`${courseHasError("permalink", values.errorState) ? "error" : ""}`}>
 					Permalink:
 					<input type="text" name="permalink" value={values.permalink} onChange={handleChange} placeholder="e.g. course-quiz" />
+				</label>
+
+				<label>
+					Order:
+					<input type="number" name="order" value={values.order} onChange={handleChange} placeholder="e.g. 23" min="0" max={amountUnits - 1} disabled={!unit} />
 				</label>
 
 				<hr/>

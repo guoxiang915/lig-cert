@@ -20,9 +20,16 @@ export default ModuleModal = ({ isOpen, onClose, course, module }) => {
 	const handleDelete = (event) => {
 		event.preventDefault();
 		const modules = course.modules;
+		const moduleIds = [];
 		modules.splice(module.order, 1);
 
-		Meteor.call("module.remove", course._id, modules, module._id, (error) => {
+		for (let iterator = module.order; iterator < modules.length; iterator++) {
+			const updatedModule = modules[iterator];
+			updatedModule.order = updatedModule.order - 1;
+			moduleIds.push(updatedModule._id);
+		}
+
+		Meteor.call("module.remove", course._id, modules, moduleIds, module._id, (error) => {
 			if (error) { console.warn(error); }
 		});
 	};
@@ -65,7 +72,7 @@ export default ModuleModal = ({ isOpen, onClose, course, module }) => {
 					<input type="text" name="title" value={values.title} onChange={handleChange} placeholder="Module title..." />
 				</label>
 
-				{values.errorState && <p className="error-message"><IconWarning/>{courseErrorMessage(values.errorState)}</p>}
+				{values.errorState && <p className="error-message"><IconWarning />{courseErrorMessage(values.errorState)}</p>}
 
 				{module && <button onClick={handleDelete}>Delete Module</button>}
 
