@@ -179,7 +179,7 @@ export default CourseView = () => {
 			</section>
 
 			<section className="section course-view-content">
-				<div className="course-view-wrapper">
+				<div className="main-wrapper">
 					<h4>Description</h4>
 
 					<div className={`description-container ${showDescription ? "expanded" : ""}`}>
@@ -295,13 +295,14 @@ const CourseUnit = ({ hasCourseAccess, memberlist, courseId, moduleId, unit }) =
 
 	return (
 		<div className={`lecture-container ${hasCourseAccess ? "available" : ""} ${unitCompleted ? "completed" : ""}`}>
-			<div className="left-content">
-				<RenderIcon />
+			<span className="icon"><RenderIcon /></span>
+
+			<div>
 				<a onClick={handleUnitClick}>{unit.title}</a>
 				{hasRights(["admin"]) && <span className="action" onClick={(event) => toggleModal(event, true, componentType)}><IconEdit /></span>}
 			</div>
 
-			<span className="length hidden-xs">{descriptionText(unit)}</span>
+			<span className="highlight hidden-xs">{descriptionText(unit)}</span>
 
 			{showModal && <RenderComponent isOpen={showModal} actionModal={toggleModal} courseId={courseId} moduleId={moduleId} unit={unit} />}
 		</div>

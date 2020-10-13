@@ -55,8 +55,11 @@ const SidebarUnit = ({ course, memberlist, unit }) => {
 
 	return (
 		<div className={`lecture-container ${unitCompleted ? "completed" : ""} ${activeUnit ? "active" : ""}`}>
-			<RenderIcon />
-			<Link to={`/courses/${course.permalink}/${unit.permalink}`}>{unit.title}</Link>
+			<span className="icon"><RenderIcon /></span>
+
+			<div>
+				<Link to={`/courses/${course.permalink}/${unit.permalink}`}>{unit.title}</Link>
+			</div>
 		</div>
 	);
 };

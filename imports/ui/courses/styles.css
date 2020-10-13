@@ -94,33 +94,37 @@ section.course-view-content {
 	padding-bottom: 70px;
 }
 
-section.course-view-content .course-view-wrapper {
+section.course-view-content .main-wrapper {
 	max-width: 1000px;
 	margin: 0 auto;
 	position: relative;
 }
 
-section.course-view-content .course-view-wrapper > h4 {
+section.course-view-content .main-wrapper > h4 {
 	margin: 0;
 	padding: 30px 0;
 }
 
-section.course-view-content .course-view-wrapper .description-container {
+section.course-view-content .description-container {
 	max-height: 450px;
 	overflow: hidden;
 	position: relative;
 	margin-bottom: 15px;
 }
 
-section.course-view-content .course-view-wrapper .description-container.expanded {
+section.course-view-content .description-content {
+	line-height: 1.4;
+}
+
+section.course-view-content .description-container.expanded {
 	max-height: initial;
 }
 
-section.course-view-content .course-view-wrapper .description-container.expanded span {
+section.course-view-content .description-container.expanded span {
 	display: none;
 }
 
-section.course-view-content .course-view-wrapper .description-container span {
+section.course-view-content .description-container span {
 	background: linear-gradient(rgba(239,240,242, 0), rgba(239,240,242, 0.95), rgba(239,240,242,1));
 	bottom: 0;
 	color: var(--primary);
@@ -130,20 +134,20 @@ section.course-view-content .course-view-wrapper .description-container span {
 	width: 100%;
 }
 
-section.course-view-content .course-view-wrapper .description-container svg {
+section.course-view-content .description-container svg {
 	height: 20px;
 	float: left;
 	margin-right: 8px;
 }
 
-section.course-view-content .course-view-wrapper .left-pattern {
+section.course-view-content .left-pattern {
 	top: 150px;
 	height: 300px;
 	position: absolute;
 	left: -300px;
 }
 
-section.course-view-content .course-view-wrapper .right-pattern {
+section.course-view-content .right-pattern {
 	bottom: 150px;
 	height: 300px;
 	position: absolute;
@@ -174,10 +178,6 @@ section.course-view-content .course-view-wrapper .right-pattern {
 	float: right;
 }
 
-.course-view-wrapper .description-content {
-	line-height: 1.4;
-}
-
 .lectures-header {
 	background: #fafafa;
 	color: #2f2f2f;
@@ -191,44 +191,78 @@ section.course-view-content .course-view-wrapper .right-pattern {
 	margin-bottom: 10px;
 }
 
+
+
+
+
+
+
+
+
 .lecture-container {
 	background-color: #fff;
 	border-bottom: 1px solid #e5e7e9;
-	line-height: 45px;
-	padding: 0 16px;
+	/* line-height: 45px; */
+	padding: 12px 16px;
+	display: flex;
 }
 
 .lecture-container:last-child {
 	border-bottom: 0;
 }
 
-.lecture-container .left-content {
-	width: 70%;
-	display: inline-block;
+.lecture-container span.icon {
+	width: 30px;
 }
 
-.lecture-container .left-content svg {
-	margin: 14.5px 10px 0 0;
+.lecture-container span.icon svg {
+	margin: 3px 10px 0 0;
+}
+
+.lecture-container.completed span.icon svg {
+	color: var(--primary);
+}
+
+.lecture-container div {
+	width: calc(100% - 120px);
+	line-height: 1.5;
+}
+
+.lecture-container div a {
 	vertical-align: top;
-}
-
-.lecture-container a {
 	text-decoration: none;
 	color: #2f2f2f;
 }
 
-.lecture-container.available a {
+.lecture-container.available div a {
 	cursor: pointer;
 	transition: .2s color ease-in-out;
 }
 
-.lecture-container.available a:hover {
+.lecture-container.available div a:hover {
 	color: var(--primary);
 }
 
-.lecture-container.completed .left-content > svg {
-	color: var(--primary);
+.lecture-container span.highlight {
+	width: 100px;
+	text-align: right;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Unit View */
@@ -274,28 +308,28 @@ section.course-view-content .course-view-wrapper .right-pattern {
 	padding: 6px 0;
 }
 
-.unit-container .lecture-container {
-	line-height: 30px;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	border: none;
-	padding: 0 15px 0 10px;
-}
-
-.unit-container .lecture-container svg {
+.unit-container .lecture-container span.icon svg {
 	color: #c0cedb;
 	height: 18px;
-	margin-right: 10px;
-	float: left;
-	margin-top: 5px;
 	width: 18px;
 }
 
-.unit-container .lecture-container.active svg,
+.unit-container .lecture-container.active span.icon svg,
 .unit-container .lecture-container.active a,
-.unit-container .lecture-container.completed svg {
+.unit-container .lecture-container.completed span.icon svg {
 	color: var(--primary);
+}
+
+.unit-container .lecture-container {
+	border: none;
+	padding: 4px 15px 4px 10px;
+}
+
+.unit-container .lecture-container div {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: calc(100% - 30px);
 }
 
 /* Unit view content */
