@@ -12,6 +12,8 @@ const UsersList = loadable(() => import("/imports/ui/admin/users/UsersList"));
 const FilesList = loadable(() => import("/imports/ui/admin/files/FilesList"));
 const InvitationsList = loadable(() => import("/imports/ui/admin/invitations/InvitationsList"));
 const CoursesList = loadable(() => import("/imports/ui/admin/courses/CoursesList"));
+const TermsConditions = loadable(() => import("/imports/ui/legal/TermsConditions"));
+const PrivacyPolicy = loadable(() => import("/imports/ui/legal/PrivacyPolicy"));
 
 export const App = () => (
 	<Router>
@@ -25,6 +27,8 @@ export const App = () => (
 			<LoggedRoute path="/admin/files" layout={AdminLayout} component={FilesList} />
 			<LoggedRoute path="/admin/invitations" layout={AdminLayout} component={InvitationsList} />
 			<LoggedRoute path="/admin/courses" layout={AdminLayout} component={CoursesList} />
+			<Route path="/terms-conditions" component={TermsConditions} />
+			<Route path="/privacy-policy" component={PrivacyPolicy} />
 		</Switch>
 	</Router>
 );
