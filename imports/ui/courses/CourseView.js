@@ -14,7 +14,7 @@ import { SEO } from "/imports/ui/components/SEO";
 import { VideoPlayer } from "/imports/ui/components/VideoPlayer";
 import { LazyImage } from "/imports/ui/components/LazyImage";
 import AuthModal from "/imports/ui/authentication/AuthModal";
-// const ProfileModal = loadable(() => import("/imports/ui/profile/ProfileModal"));
+const ProfileModal = loadable(() => import("/imports/ui/profile/ProfileModal"));
 const PaymentModal = loadable(() => import("/imports/ui/payment/PaymentModal"));
 const CourseModal = loadable(() => import("/imports/ui/courses/CourseModal"));
 const ModuleModal = loadable(() => import("/imports/ui/courses/ModuleModal"));
@@ -26,8 +26,8 @@ import "/imports/ui/stylesheets/footer.css";
 import "/imports/ui/courses/styles.css";
 
 export default CourseView = () => {
-	// const [showProfile, setShowProfile] = useState(false);
-	// const toggleProfile = () => setShowProfile(!showProfile);
+	const [showProfileModal, setShowProfileModal] = useState(false);
+	const toggleProfileModal = () => setShowProfileModal(!showProfileModal);
 
 	const [showDescription, setShowDescription] = useState(false);
 	const toggleDescription = () => setShowDescription(!showDescription);
@@ -89,7 +89,7 @@ export default CourseView = () => {
 
 	// Progression bar
 	const amountCompleted = memberlist ? memberlist.unitsCompleted.length : 0;
-	const courseCompelted = memberlist && memberlist.completedAt;
+	const courseCompleted = memberlist && memberlist.completedAt;
 
 	return (
 		<Fragment>
@@ -112,12 +112,12 @@ export default CourseView = () => {
 								{user ? (
 									<Fragment>
 										<Dropdown title={`Hi ${user.profile.name.first}`}>
-											{/* <a className="dropdown-item" onClick={toggleProfile}>Profile</a> */}
+											<a className="dropdown-item" onClick={toggleProfileModal}>Profile</a>
 											{hasRights(["admin"]) && <a className="dropdown-item" onClick={() => history.push("/admin/users")}>Administrator</a>}
 											<a className="dropdown-item" onClick={() => Meteor.logout()}>Logout</a>
 										</Dropdown>
 
-										{/* {showProfile && <ProfileModal isOpen={showProfile} closeModal={toggleProfile} />} */}
+										{showProfileModal && <ProfileModal isOpen={showProfileModal} closeModal={toggleProfileModal} />}
 									</Fragment>
 								) : (
 									<Fragment>
@@ -164,10 +164,10 @@ export default CourseView = () => {
 									<div className="progress" style={{ width: `${(amountCompleted / course.unitCount) * 100}%` }} />
 								</div>
 							</div>
-							<div className={`right-content ${courseCompelted ? "completed" : ""}`}>
+							<div className={`right-content ${courseCompleted ? "completed" : ""}`}>
 								<IconTrophy />
 								<div className="bar">
-									<div className="progress" style={{ width: courseCompelted ? "100%" : "0%" }} />
+									<div className="progress" style={{ width: courseCompleted ? "100%" : "0%" }} />
 								</div>
 							</div>
 						</div>

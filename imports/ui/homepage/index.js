@@ -1,5 +1,6 @@
 import React, { useState, Fragment } from "react";
 import { Meteor } from "meteor/meteor";
+import loadable from "@loadable/component";
 import { useHistory } from "react-router-dom";
 import { Slide, ButtonBack, ButtonNext } from "pure-react-carousel";
 import { useAccount } from "/imports/ui/components/hooks/useAccount";
@@ -10,6 +11,7 @@ import { VideoPlayer } from "/imports/ui/components/VideoPlayer";
 import { LazyImage } from "/imports/ui/components/LazyImage";
 import { IconPlus, IconMinus, IconAward, IconLinkedin, IconUdemy, IconCircleCheck, IconLongLeftArrow, IconLongRightArrow, IconBlockquote } from "/imports/ui/components/Icons";
 import { SliderWrapper } from "/imports/ui/components/SliderWrapper";
+const ProfileModal = loadable(() => import("/imports/ui/profile/ProfileModal"));
 import "/imports/ui/stylesheets/navbar.css";
 import "/imports/ui/stylesheets/footer.css";
 import "/imports/ui/homepage/styles.css";
@@ -17,6 +19,9 @@ import "/imports/ui/homepage/styles.css";
 export default Homepage = () => {
 	const [showAuthModal, setShowAuthModal] = useState(false);
 	const [authComponent, setAuthComponent] = useState("");
+
+	const [showProfileModal, setShowProfileModal] = useState(false);
+	const toggleProfileModal = () => setShowProfileModal(!showProfileModal);
 
 	const { user } = useAccount();
 	const history = useHistory();
@@ -43,12 +48,12 @@ export default Homepage = () => {
 								{user ? (
 									<Fragment>
 										<Dropdown title={`Hi ${user.profile.name.first}`}>
-											{/* <a className="dropdown-item" onClick={toggleProfile}>Profile</a> */}
+											<a className="dropdown-item" onClick={toggleProfileModal}>Profile</a>
 											{hasRights(["admin"]) && <a className="dropdown-item" onClick={() => history.push("/admin/users")}>Administrator</a>}
 											<a className="dropdown-item" onClick={() => Meteor.logout()}>Logout</a>
 										</Dropdown>
 
-										{/* {showProfile && <ProfileModal isOpen={showProfile} closeModal={toggleProfile} />} */}
+										{showProfileModal && <ProfileModal isOpen={showProfileModal} closeModal={toggleProfileModal} />}
 									</Fragment>
 								) : (
 									<Fragment>

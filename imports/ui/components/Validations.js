@@ -14,8 +14,12 @@ export const authErrorMessage = (errorState) => {
 		return "Couldn't find your account";
 	case "missing-pwd":
 		return "Enter a password";
+	case "missing-current-pwd":
+		return "Enter your current password";
 	case "missing-confirmation-pwd":
 		return "Confirm new password";
+	case "missing-new-pwd":
+		return "Enter a new password";
 	case "incorrect-pwd":
 		return "Wrong password. Try again";
 	case "invalid-pwd":
@@ -38,9 +42,11 @@ export const authHasError = (inputField, errorState) => {
 	case "email":
 		return ["missing-email","invalid-email","already-used-email","notfound-user"].includes(errorState);
 	case "password":
-		return ["missing-pwd","invalid-pwd","incorrect-pwd","not-matching-pwd"].includes(errorState);
+		return ["missing-pwd","invalid-pwd","incorrect-pwd","not-matching-pwd","missing-current-pwd"].includes(errorState);
 	case "confirm_password":
 		return ["missing-confirmation-pwd"].includes(errorState);
+	case "new_password":
+		return ["missing-new-pwd","not-matching-pwd","invalid-pwd"].includes(errorState);
 	default:
 		break;
 	}
