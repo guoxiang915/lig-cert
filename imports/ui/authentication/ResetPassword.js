@@ -59,7 +59,7 @@ export default ResetPassword = () => {
 						<input type="password" name="confirm_password" value={values.confirm_password} onChange={handleChange} placeholder='e.g. password123' />
 					</div>
 
-					{values.errorState && <p><IconWarning/>{authErrorMessage(values.errorState)}</p>}
+					{values.errorState && <p className="error-message"><IconWarning/>{authErrorMessage(values.errorState)}</p>}
 
 					<button type="submit" disabled={values.loading}>
 						{values.loading ? "Resetting Password" : "Complete Reset Password"}

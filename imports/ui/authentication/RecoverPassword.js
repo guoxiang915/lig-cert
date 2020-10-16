@@ -50,7 +50,7 @@ export default ResetPassword = ({ actionModal }) => {
 						<input type="text" name="email" value={values.email} onChange={handleChange} placeholder="e.g. john.doe@example.com" />
 					</label>
 
-					{values.errorState && <p><IconWarning/>{authErrorMessage(values.errorState)}</p>}
+					{values.errorState && <p className="error-message"><IconWarning/>{authErrorMessage(values.errorState)}</p>}
 
 					<button type="submit" className="button primary-dark primary-dark-hover" disabled={values.loading}>
 						{values.loading ? "Resetting Password" : "Reset Password"}

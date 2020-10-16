@@ -2,6 +2,10 @@
 	max-width: 450px;
 }
 
+.auth-modal p.error-message {
+	margin-top: 10px;
+}
+
 .auth-modal .button {
 	width: 100%;
 	margin: 15px 0;

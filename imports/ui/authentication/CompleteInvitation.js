@@ -96,7 +96,7 @@ export default CompleteInvitation = () => {
 					<input type="password" name="password" value={values.password} onChange={handleChange} placeholder="e.g. password123" />
 				</label>
 
-				{values.errorState && <p><IconWarning/>{authErrorMessage(values.errorState)}</p>}
+				{values.errorState && <p className="error-message"><IconWarning/>{authErrorMessage(values.errorState)}</p>}
 
 				<button type="submit" disabled={values.loading}>
 					{values.loading ? "Signing Up" : "Complete Invitation Signup"}

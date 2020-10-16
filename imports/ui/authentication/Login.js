@@ -51,7 +51,7 @@ export default Login = ({ actionModal }) => {
 
 			<p><a onClick={(event) => actionModal(event, true, "RecoverPassword")} href="">Forgot password?</a></p>
 
-			{values.errorState && <p><IconWarning/> {authErrorMessage(values.errorState)}</p>}
+			{values.errorState && <p className="error-message"><IconWarning/> {authErrorMessage(values.errorState)}</p>}
 
 			<button type="submit" className="button primary-dark primary-dark-hover" disabled={values.loading}>
 				{values.loading ? "Signing in" : "Sign in"}

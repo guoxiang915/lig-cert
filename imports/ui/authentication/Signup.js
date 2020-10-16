@@ -69,7 +69,7 @@ export default Signup = ({ actionModal }) => {
 				<input name="password" type="password" value={values.password} onChange={handleChange} placeholder="e.g. password123" />
 			</label>
 
-			{values.errorState && <p><IconWarning/>{authErrorMessage(values.errorState)}</p>}
+			{values.errorState && <p className="error-message"><IconWarning/>{authErrorMessage(values.errorState)}</p>}
 
 			<button type="submit" className="button primary-dark primary-dark-hover" disabled={values.loading}>
 				{values.loading ? "Creating Account" : "Create Account"}
