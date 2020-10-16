@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<url>
+		<loc>https://www.tfcertification.com</loc>
+		<lastmod>2020-10-22T00:41:23+00:00</lastmod>
+		<priority>1</priority>
+	</url>
+	<url>
+		<loc>https://www.tfcertification.com/terms-conditions</loc>
+		<lastmod>2020-10-22T00:41:23+00:00</lastmod>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://www.tfcertification.com/privacy-policy</loc>
+		<lastmod>2020-10-22T00:41:23+00:00</lastmod>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://www.tfcertification.com/courses/tensorflow-developer-professional-certificate</loc>
+		<lastmod>2020-10-22T00:41:23+00:00</lastmod>
+		<priority>1</priority>
+	</url>
+</urlset>

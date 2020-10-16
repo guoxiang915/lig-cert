@@ -1,0 +1,7 @@
+Sitemap: https://www.tfcertification.com/sitemap.xml
+User-Agent: *
+Disallow: /invite/
+Disallow: /reset-password/
+Disallow: /admin/
+Allow: /courses/*
+Disallow: /courses/*/*
