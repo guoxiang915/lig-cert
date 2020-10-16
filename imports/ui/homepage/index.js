@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { useState, useRef, Fragment } from "react";
 import { Meteor } from "meteor/meteor";
 import loadable from "@loadable/component";
 import { useHistory } from "react-router-dom";
@@ -32,6 +32,11 @@ export default Homepage = () => {
 		setShowAuthModal(activeModal);
 	};
 
+	// Ref definitions for Navbar Scrolling
+	const advantagesRef = useRef();
+	const instructorRef = useRef();
+	const courseRef = useRef();
+
 	return (
 		<Fragment>
 			<section className="section homepage-header">
@@ -40,9 +45,9 @@ export default Homepage = () => {
 						<img src="/logo.svg" alt="TF Certification Logo"/>
 
 						<ul className="actions hidden-xs">
-							<li><a>Features</a></li>
-							<li><a>Instructor</a></li>
-							<li><a>Courses</a></li>
+							<li onClick={() => advantagesRef.current.scrollIntoView({ behavior: "smooth" })}><a>Features</a></li>
+							<li onClick={() => instructorRef.current.scrollIntoView({ behavior: "smooth" })}><a>Instructor</a></li>
+							<li onClick={() => courseRef.current.scrollIntoView({ behavior: "smooth" })}><a>Course</a></li>
 
 							<div className="buttons">
 								{user ? (
@@ -84,7 +89,7 @@ export default Homepage = () => {
 
 			<SkillsContainer />
 
-			<section className="section homepage-advantages">
+			<section className="section homepage-advantages" ref={advantagesRef}>
 				<LazyImage src="/landing/advantages-top-pattern.svg" alt="Advantages Top Pattern" classes="image-pattern top-pattern"/>
 
 				<div className="main-wrapper">
@@ -130,7 +135,7 @@ export default Homepage = () => {
 				<LazyImage src="/landing/advantages-bottom-pattern.svg" alt="Advantages Bottom Pattern" classes="image-pattern bottom-pattern"/>
 			</section>
 
-			<section className="section homepage-expertise">
+			<section className="section homepage-expertise" ref={instructorRef}>
 				<div className="main-wrapper">
 					<div className="instructor">
 						<h1>Learn from an Industry Leader</h1>
@@ -220,7 +225,7 @@ export default Homepage = () => {
 						</div>
 					</div>
 
-					<div className="courses-container">
+					<div className="courses-container" ref={courseRef}>
 						<h1>Your Certificate Is Waiting</h1>
 						<p className="subtitle">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam</p>
 
@@ -249,7 +254,7 @@ export default Homepage = () => {
 						</div>
 
 						<div className="actions">
-							<a className="button primary-dark" onClick={() => history.push("/courses/tableau-certified-associate")}>Go to Course</a>
+							<a className="button primary-dark" onClick={() => history.push("/courses/tensorflow-developer-professional-certificate")}>Go to Course</a>
 						</div>
 					</div>
 				</div>
