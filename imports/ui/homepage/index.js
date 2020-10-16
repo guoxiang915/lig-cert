@@ -231,20 +231,25 @@ export default Homepage = () => {
 								</div>
 
 								<VideoPlayer playerId="homepage-course-tca" mediaId="0YytwiBG" />
-								<a href="/courses/tableau-certified-associate" className="button white">Go to Course</a>
 							</div>
 							<div className="description-content">
-								<h2>Tableau Certificate Associate</h2>
-								<p>Starting from scratch or building on existing skills? No matter the skill level, this course builds up your Tableau, visualization and BI skills to the level needed to pass the Tableau Certified Associate Exam, deliver professional results at work, and establish the foundation to obtain advanced certifications.</p>
-								<p>Plus, gain hands-on practice as you solve real-world case studies from top companies such as Spotify, Airbnb, Kaggle, NBA, WorldBank, and Glassdoor to help you build world-class instincts at exam time and in business.</p>
+								<div className="shape">
+									<h1>Tableau Certificate Associate</h1>
+									<p>Starting from scratch or building on existing skills? No matter the skill level, this course builds up your Tableau, visualization and BI skills to the level needed to pass the Tableau Certified Associate Exam, deliver professional results at work, and establish the foundation to obtain advanced certifications.</p>
+									<p>Plus, gain hands-on practice as you solve real-world case studies from top companies such as Spotify, Airbnb, Kaggle, NBA, WorldBank, and Glassdoor to help you build world-class instincts at exam time and in business.</p>
 
-								<div className="bullets-container">
-									<p className="bullet-item"><IconCircleCheck />30.5 hours of video lectures</p>
-									<p className="bullet-item"><IconCircleCheck />2 certificates, 2 practice exams</p>
-									<p className="bullet-item"><IconCircleCheck />11 practical case studies</p>
-									<p className="bullet-item"><IconCircleCheck />'Pass or we pay' guarantee</p>
+									<div className="bullets-container">
+										<p className="bullet-item"><IconCircleCheck />30.5 hours of video lectures</p>
+										<p className="bullet-item"><IconCircleCheck />2 certificates, 2 practice exams</p>
+										<p className="bullet-item"><IconCircleCheck />11 practical case studies</p>
+										<p className="bullet-item"><IconCircleCheck />'Pass or we pay' guarantee</p>
+									</div>
 								</div>
 							</div>
+						</div>
+
+						<div className="actions">
+							<a className="button primary-dark" onClick={() => history.push("/courses/tableau-certified-associate")}>Go to Course</a>
 						</div>
 					</div>
 				</div>

@@ -420,92 +420,97 @@ section.homepage-courses .courses-container > p.subtitle {
 	color: #fff;
 }
 
-
-
-
-
-
-
-
-.course-item {
+section.homepage-courses .course-item {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-}
-
-.course-item:first-of-type {
+	margin-bottom: 60px;
 	flex-direction: row-reverse;
-	margin-bottom: 80px;
 }
 
-.course-item .video-content {
-	background-color: #414A68;
+section.homepage-courses .course-item .video-content {
+	background-color: #F0F0F0;
+	border-radius: 10px;
 	box-shadow: 0 20px 60px rgba(0,0,0,.3);
 	color: #fff;
-	height: 500px;
-	padding: 40px;
+	height: 440px;
+	margin-top: 30px;
+	padding: 40px 50px;
 	text-align: center;
-	width: 45%;
+	width: 46%;
 }
 
-.course-item .video-content .price-label {
-	float: left;
-	padding: 25px 15px 15px 15px;
-	background-color: var(--primary);
-	margin: -40px 0 40px 0;
-}
-
-.course-item:first-of-type .video-content .price-label {
+section.homepage-courses .course-item .video-content .price-label {
+	background-color: var(--primary-dark);
+	border-bottom-left-radius : 5px;
+	border-bottom-right-radius : 5px;
 	float: right;
+	margin: -40px 0 30px 0;
+	padding: 20px 15px 20px 15px;
 }
 
-.course-item .video-content .price-label h2 {
+section.homepage-courses .course-item .video-content .price-label h2 {
 	margin: 0;
 }
 
-.course-item .video-content h2 {
+section.homepage-courses .course-item .video-content h2 {
 	margin: 0 0 15px 0;
 	text-align: right;
-	font-size: 32px;
+	font-size: 30px;
 }
 
-.course-item .video-content .button {
+section.homepage-courses .course-item .video-content .button {
 	display: inline-block;
 	margin-top: 40px;
 }
 
-.course-item .description-content {
+section.homepage-courses .course-item .description-content {
+	filter: drop-shadow(1px 10px 40px rgba(0,0,0,.2));
+	width: 54%;
+}
+
+section.homepage-courses .course-item .description-content .shape {
 	background-color: #fff;
-	box-shadow: 0 10px 40px rgba(0,0,0,.1);
-	height: 440px;
-	margin-top: 30px;
-	padding: 30px 40px;
-	width: 55%;
+	border-radius: 10px;
+	clip-path: polygon(0% 0%, 100% 0, 96% 100%, 0% 100%);
+	height: 500px;
+	margin-right: -30px;
+	padding: 60px;
 }
 
-.course-item .description-content h2 {
-	margin: 0 0 10px 0;
+section.homepage-courses .course-item .description-content h1 {
+	color: var(--primary-dark);
+	font-weight: normal;
+	margin: 0 0 20px 0;
 }
 
-.course-item .description-content .bullet-item {
-	width: 50%;
+section.homepage-courses .course-item .description-content .bullets-container {
+	margin-top: 20px;
+}
+
+section.homepage-courses .course-item .description-content .bullet-item {
 	display: inline-block;
-	vertical-align: top;
-	margin: 20px 0 5px 0;
 	line-height: 22px;
+	margin: 20px 0 5px 0;
+	vertical-align: top;
+	width: 50%;
 }
 
-.course-item .description-content .bullet-item svg {
+section.homepage-courses .course-item .description-content .bullet-item svg {
 	height: 22px;
-	color: #002e79;
+	color: var(--primary);
 	margin-right: 8px;
 	vertical-align: top;
 }
 
-.course-item .description-content .bullet-item span svg {
+section.homepage-courses .course-item .description-content .bullet-item span svg {
 	color: #B2BCC3;
 	margin: 0 0 0 5px;
 	height: 20px;
+}
+
+section.homepage-courses .actions {
+	text-align: center;
 }
 
 section.homepage-courses .bottom-pattern {
