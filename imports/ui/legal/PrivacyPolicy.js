@@ -1,4 +1,3 @@
-
 import React, { useEffect, Fragment } from "react";
 import { useHistory } from "react-router-dom";
 import { SEO } from "/imports/ui/components/SEO";

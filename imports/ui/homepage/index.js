@@ -1,8 +1,9 @@
-import React, { useState, useRef, Fragment } from "react";
+import React, { useState, useEffect, useRef, Fragment } from "react";
 import { Meteor } from "meteor/meteor";
 import loadable from "@loadable/component";
 import { useHistory } from "react-router-dom";
 import { Slide, ButtonBack, ButtonNext } from "pure-react-carousel";
+import { SEO } from "/imports/ui/components/SEO";
 import { useAccount } from "/imports/ui/components/hooks/useAccount";
 import { hasRights } from "/imports/ui/components/Functions";
 import AuthModal from "/imports/ui/authentication/AuthModal";
@@ -32,6 +33,8 @@ export default Homepage = () => {
 		setShowAuthModal(activeModal);
 	};
 
+	useEffect(() => { window.prerenderReady = true; }, []);
+
 	// Ref definitions for Navbar Scrolling
 	const advantagesRef = useRef();
 	const instructorRef = useRef();
@@ -39,6 +42,13 @@ export default Homepage = () => {
 
 	return (
 		<Fragment>
+			<SEO
+				title='Welcome'
+				description='TBD'
+				contentType="website"
+				path='/'
+			/>
+
 			<section className="section homepage-header">
 				<div className="main-wrapper">
 					<nav>
