@@ -1,6 +1,6 @@
 /* Header Block */
 section.homepage-header {
-	background-image: linear-gradient(135deg,#FF9200 0, #FF4477 100%);
+	background: linear-gradient(135deg,#FF9200 0, #FF4477 100%);
 	padding-bottom: 220px;
 }
 
@@ -109,6 +109,11 @@ section.homepage-skills .skill-item .description {
 	padding: 20px 20px 20px 55px;
 }
 
+section.homepage-skills .skill-item .description p {
+	color: #425166;
+	opacity: .7;
+}
+
 section.homepage-skills .skill-item.active .header {
 	background-image: linear-gradient(135deg,#FF9200 0, #FF4477 100%);
 	color: #fff;
@@ -148,11 +153,17 @@ section.homepage-advantages .left-content {
 
 section.homepage-advantages .left-content h1 {
 	color: #425166;
-	margin: 50px 0;
+	margin: 50px 0 30px 0;
 }
 
 section.homepage-advantages .left-content p {
-	margin-bottom: 30px;
+	margin-bottom: 15px;
+	color: #425166;
+	font-size: 17px;
+}
+
+section.homepage-advantages .left-content .button {
+	margin-top: 40px;
 }
 
 section.homepage-advantages .right-content {
@@ -178,7 +189,18 @@ section.homepage-advantages .advantage-item {
 	padding: 30px 20px;
 	transition: transform .2s ease-in-out;
 	width: 100%;
-	height: 265px;
+	height: 340px;
+}
+
+section.homepage-advantages .advantage-item.highlight {
+	background: linear-gradient(135deg,#FF9200 0, #FF4477 100%);
+	color: #fff;
+}
+
+section.homepage-advantages .advantage-item.highlight h5,
+section.homepage-advantages .advantage-item.highlight p {
+	color: #fff;
+	opacity: 1;
 }
 
 section.homepage-advantages .advantage-item:hover {
@@ -186,17 +208,18 @@ section.homepage-advantages .advantage-item:hover {
 }
 
 section.homepage-advantages .advantage-item img {
-	height: 60px;
+	height: 80px;
 }
 
 section.homepage-advantages .advantage-item h5 {
 	color: #425166;
-	margin: 20px 0;
+	margin: 15px 0;
+	font-weight: 400;
 }
 
 section.homepage-advantages .advantage-item p {
-	color: #333;
-	font-size: 15px;
+	color: #333333;
+	opacity: .7;
 }
 
 section.homepage-advantages .left-pattern {
@@ -226,14 +249,15 @@ section.homepage-expertise .instructor h1 {
 	text-align: center;
 	color: #425166;
 	margin: 0;
-	padding: 30px 0;
+	padding: 20px 0;
 }
 
 section.homepage-expertise .instructor .subtitle {
-	max-width: 400px;
+	max-width: 600px;
 	font-size: 17px;
 	margin: 0 auto 60px auto;
 	text-align: center;
+	color: #425166;
 }
 
 section.homepage-expertise .instructor-container {
@@ -279,6 +303,11 @@ section.homepage-expertise .instructor-container .right-content {
 	display: inline-block;
 	padding: 0 30px;
 	width: 50%;
+}
+
+section.homepage-expertise .instructor-container .right-content p {
+	color: #425166;
+	margin-bottom: 15px;
 }
 
 section.homepage-expertise .instructor-container .right-content h1 {
@@ -379,16 +408,12 @@ section.homepage-courses .features-container .feature-item {
 	transition: .2s transform ease-in-out, .2s background-color ease-in-out;
 }
 
-section.homepage-courses .features-container .feature-item .image {
-	width: 80px;
-	height: 80px;
-	border-radius: 999px;
-	background-color: #E8E8E8;
-	margin: 0 auto;
+section.homepage-courses .features-container .feature-item img {
+	height: 120px;
 }
 
 section.homepage-courses .features-container .feature-item h5 {
-	margin: 20px 0;
+	margin: 5px 0 20px 0;
 	color: var(--primary-dark);
 }
 

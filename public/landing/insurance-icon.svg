@@ -15,35 +15,35 @@
 <g id="Grupo_466" transform="translate(775)">
 	<g id="Grupo_143" transform="translate(537.949 294)">
 		
-			<linearGradient id="Trazado_207_1_" gradientUnits="userSpaceOnUse" x1="-1146.2056" y1="-112.7144" x2="-1146.2056" y2="-113.7144" gradientTransform="matrix(220.7099 0 0 -229.5215 251880.75 -26146.0625)">
+			<linearGradient id="Trazado_207_1_" gradientUnits="userSpaceOnUse" x1="-3215.7109" y1="523.3571" x2="-3215.7109" y2="524.3572" gradientTransform="matrix(220.7099 0 0 229.5215 708641.125 -120397.3594)">
 			<stop  offset="0" style="stop-color:#FF9200"/>
 			<stop  offset="1" style="stop-color:#FF4477"/>
 		</linearGradient>
 		<path id="Trazado_207" class="st0" d="M-1141.1-265.5c31-10.6,105.3-27,141.1,35.7c35.9,62.7-14.4,148.5-60.9,174.4
 			s-107.9-1.8-138.8-89.2C-1230.7-232.1-1172.1-254.9-1141.1-265.5z"/>
 		
-			<linearGradient id="Trazado_208_1_" gradientUnits="userSpaceOnUse" x1="-1145.7781" y1="-112.5574" x2="-1145.7781" y2="-113.5574" gradientTransform="matrix(222.1524 -113.1955 -117.7335 -231.0585 240114.8906 -155972.0156)">
+			<linearGradient id="Trazado_208_1_" gradientUnits="userSpaceOnUse" x1="-3216.6975" y1="524.1832" x2="-3216.6975" y2="525.1834" gradientTransform="matrix(222.1524 -113.1955 117.7335 231.0585 651712.5 -485500.4375)">
 			<stop  offset="0" style="stop-color:#FF9200"/>
 			<stop  offset="1" style="stop-color:#FF4477"/>
 		</linearGradient>
 		<path id="Trazado_208" class="st1" d="M-1208.7-235.5c25.7-26.6,92.1-81.2,160.4-36.4s61.7,156.9,28.1,206.8
-			s-109.5,53.5-185.5-18.6C-1281.7-155.9-1234.4-208.9-1208.7-235.5z"/>
+			c-33.6,49.9-109.5,53.5-185.5-18.6C-1281.7-155.9-1234.4-208.9-1208.7-235.5z"/>
 		
-			<linearGradient id="Trazado_210_1_" gradientUnits="userSpaceOnUse" x1="-1144.9524" y1="-114.0207" x2="-1144.9524" y2="-115.0207" gradientTransform="matrix(-254.3837 58.7291 61.0781 264.5584 -285367.5 97386.2266)">
+			<linearGradient id="Trazado_210_1_" gradientUnits="userSpaceOnUse" x1="-3220.4128" y1="521.0382" x2="-3220.4128" y2="522.0383" gradientTransform="matrix(-254.3837 58.7291 -61.0781 -264.5584 -788471 326956.0312)">
 			<stop  offset="0" style="stop-color:#FF9200"/>
 			<stop  offset="1" style="stop-color:#FF4477"/>
 		</linearGradient>
-		<path id="Trazado_210" class="st2" d="M-1027.6-44.1c-32.8,20.5-114.1,59.1-172.2-3.6c-58.1-62.7-22.9-175,23.8-217.2
+		<path id="Trazado_210" class="st2" d="M-1027.6-44.1c-32.8,20.5-114.1,59.1-172.2-3.6s-22.9-175,23.8-217.2
 			c46.7-42.2,124.8-26.6,183.8,65.9C-933.3-106.5-994.8-64.6-1027.6-44.1z"/>
 		
-			<linearGradient id="Trazado_211_1_" gradientUnits="userSpaceOnUse" x1="-1145.8964" y1="-112.6568" x2="-1145.8964" y2="-113.6568" gradientTransform="matrix(249.4818 -76.2742 -79.3285 -259.4717 275805.4688 -116897.5781)">
+			<linearGradient id="Trazado_211_1_" gradientUnits="userSpaceOnUse" x1="-3216.4819" y1="523.8047" x2="-3216.4819" y2="524.8048" gradientTransform="matrix(249.4818 -76.2742 79.3285 259.4717 759763.125 -381511.0312)">
 			<stop  offset="0" style="stop-color:#FF9200"/>
 			<stop  offset="1" style="stop-color:#FF4477"/>
 		</linearGradient>
 		<path id="Trazado_211" class="st3" d="M-1183-237.6c31.3-22.7,109.6-66.9,171.9-8.4s35.1,172.9-8.6,218.2
 			c-43.6,45.3-122.5,35.2-187.8-52.9C-1272.6-168.8-1214.3-214.9-1183-237.6z"/>
 		
-			<linearGradient id="Trazado_209_1_" gradientUnits="userSpaceOnUse" x1="-1144.7349" y1="-112.8437" x2="-1144.7349" y2="-113.8437" gradientTransform="matrix(-52.0076 -244.5355 -254.0519 54.0315 -89428.2734 -273956.4063)">
+			<linearGradient id="Trazado_209_1_" gradientUnits="userSpaceOnUse" x1="-3219.7913" y1="524.4034" x2="-3219.7913" y2="525.4033" gradientTransform="matrix(-52.0076 -244.5355 254.0519 -54.0315 -301904.5938 -759144.125)">
 			<stop  offset="0" style="stop-color:#FF9200"/>
 			<stop  offset="1" style="stop-color:#FF4477"/>
 		</linearGradient>
@@ -57,4 +57,7 @@
 </g>
 <path id="Trazado_233" class="st7" d="M229.6,223.7C524.8,184.4,368-32.1,239.1,8.2s-360,196.5-127.3,282.9s231.5-49,231.5-49"/>
 <path id="Trazado_250" class="st7" d="M349.9,237.1c47.5-58,74.8,81.5-80.8,51.4S-48.7-104.2,15.3,171.2"/>
+<path class="st6" d="M260.8,105.3l-41.4-17.2c-2.5-1.1-5.4-1.1-8,0l-41.4,17.2c-3.9,1.6-6.4,5.4-6.4,9.5c0,42.8,24.7,72.4,47.7,82
+	c2.5,1.1,5.4,1.1,8,0c18.5-7.7,47.8-34.3,47.8-82C267.2,110.7,264.7,106.9,260.8,105.3z M215.5,183.5l0-82.1l37.9,15.8
+	C252.7,149.8,235.7,173.4,215.5,183.5L215.5,183.5z"/>
 </svg>

@@ -84,8 +84,8 @@ export default Homepage = () => {
 
 					<div className="information-container">
 						<div className="left-content">
-							<h1>Get TensorFlow <br/> Certified Now</h1>
-							<p>Today, no platform dominates the BI and analytics space like market leader Tableau. Passing the official. Gain the industry-wide recognition.</p>
+							<h1>Become a TensorFlow Certified Professional Developer</h1>
+							<p>Join the best training ground for AI mastery and gain the skills you need to become a TensorFlow Certified Developer.</p>
 						</div>
 						<div className="right-content">
 							<VideoPlayer playerId="presentation" mediaId="QyhlZf0X" />
@@ -104,8 +104,9 @@ export default Homepage = () => {
 
 				<div className="main-wrapper">
 					<div className="left-content">
-						<h1>Open Doors with Tableau Certification</h1>
-						<p>Today, no platform <strong>dominates the BI and analytics</strong> space like market leader Tableau. Becoming Tableau Certified is your chance to get noticed by leaders like Amazon, Cisco, Deloitte and more.</p>
+						<h1>Open Doors with TensorFlow Certification</h1>
+						<p>TensorFlow’s rapid rise in adoption and job growth listings aren't showing signs of slowing down. </p>
+						<p>TensorFlow is here to stay, and certification sets you apart on the job market.  The TensorFlow Developer Professional Certificate course puts you on the fast track to certification.</p>
 						<a className="button primary-dark" onClick={(event) => toggleAuthModal(event, true, "Signup")}>Get Started</a>
 					</div>
 
@@ -113,28 +114,29 @@ export default Homepage = () => {
 						<div className="column">
 							<div className="advantage-item">
 								<LazyImage src="/landing/advantages-icon-1.svg" alt="Advantages Icon 1"/>
-								<h5>The Right Skills</h5>
-								<p>Learn the right skills that will be tested according to the official list of measured skills for each exam</p>
+								<h5>Earn Google’s Stamp of Approval</h5>
+								<p>Set yourself apart by becoming a Google Certified Developer. Get listed not the developer network and put yourself in front of companies searching for qualified AI experts.</p>
 							</div>
 
 							<div className="advantage-item">
 								<LazyImage src="/landing/advantages-icon-2.svg" alt="Advantages Icon 2"/>
-								<h5>Test Yourself</h5>
-								<p>Prepare with two complete practice tests that simulate official certification exam questions</p>
+								<h5>Gain Practical Machine Learning Skills</h5>
+								<p>Develop the skill set needed to develop state-of-the-art ML and DL solutions for some of the most common problems that businesses face today.</p>
 							</div>
 						</div>
 
 						<div className="column">
 							<div className="advantage-item">
 								<LazyImage src="/landing/advantages-icon-3.svg" alt="Advantages Icon 3"/>
-								<h5>Our Guarantee</h5>
-								<p>Gain peace of mind with our ‘Pass or We Pay' for your 2nd exam attempt guarantee* if you don’t pass on your first try</p>
+								<h5>Advance Your Career</h5>
+								<p>Do more and earn more by becoming TensorFlow certified and proving to current and future employers you have the right skills to drive real change.</p>
 							</div>
 
-							<div className="advantage-item">
+							<div className="advantage-item highlight">
 								<LazyImage src="/landing/advantages-icon-4.svg" alt="Advantages Icon 4"/>
-								<h5>Learn from an Expert</h5>
-								<p>Enroll with SuperDataScience CEO and best-selling Udemy instructor, Kirill Eremenko</p>
+								<h5>Our Guarantee</h5>
+								<p>Gain peace of mind with our ‘Pass or We Pay' for your 2nd exam attempt guarantee*</p>
+								<p><i>if you don’t pass on your first try.</i></p>
 							</div>
 						</div>
 					</div>
@@ -148,27 +150,27 @@ export default Homepage = () => {
 			<section className="section homepage-expertise" ref={instructorRef}>
 				<div className="main-wrapper">
 					<div className="instructor">
-						<h1>Learn from an Industry Leader</h1>
-						<p className="subtitle">Kirill Eremenko, a leader in the Udemy learning marketplace, and innovator in the global Data Science community, guides you to Tableau mastery.</p>
+						<h1>Learn from an AI Expert</h1>
+						<p className="subtitle">Hadelin de Ponteves, one of the world’s youngest leading providers of professional online education, top Udemy instructor, innovator in the global Data Science community, academic writer and High-Tech entrepreneur, guides you to the world of TensorFlow adventures.</p>
 
 						<div className="instructor-container">
 							<div className="left-content">
 								<div className="image">
-									<LazyImage src="/landing/kirill-picture.jpg" alt="Kirill Picture"/>
+									<LazyImage src="/landing/hadelin-picture.jpg" alt="Hadelin Picture"/>
 								</div>
 
 								<div className="stats-item">
 									<IconAward />
 									<div className="description">
 										<p><strong>Most Popular</strong></p>
-										<p>Tableau Courses Online</p>
+										<p>Artificial Intelligence Course Online</p>
 									</div>
 								</div>
 
 								<div className="stats-item">
 									<IconAward />
 									<div className="description">
-										<p><strong>1.5M</strong></p>
+										<p><strong>1.2M+</strong></p>
 										<p>Students in All Courses</p>
 									</div>
 								</div>
@@ -183,17 +185,18 @@ export default Homepage = () => {
 							</div>
 
 							<div className="right-content">
-								<h1>Meet Kirill Eremenko</h1>
-								<p>As an ex-Deloitte Data Science consultant with a degree in applied Physics and Mathematics, Kirill has worked across a broad range of industries, including retail, finance, mining and energy.</p>
-								<p>Kirill has taught over 1,000,000+ students online, and contributed to over 80 data science courses and thrives on delivering expert and practical Data Science learning that’s ready to take on the demands of the business world.</p>
+								<h1>Hadelin de Ponteves</h1>
+								<p>Hadelin is an ex-Google Artificial Intelligence expert holding an Engineering Masters degree from École Centrale Paris with a specialization in Machine Learning.</p>
+								<p>He is a Co-Founder and CEO at BlueLife AI, which leverages the power of Artificial Intelligence to empower businesses to make massive profits by innovating, automating processes and maximizing efficiency. He is an online entrepreneur who has created over 70 top-rated educational e-courses, which have made 2M+ sales in 210 countries.</p>
+								<p>Hadelin’s personal philosophy is to help people around the world leverage the available cutting-edge knowledge to create a better world.</p>
 								<div className="links">
-									<a href="https://www.linkedin.com/in/keremenko" target="_blank" rel="noopener"><IconLinkedin /></a>
-									<a href="https://www.udemy.com/user/kirilleremenko" target="_blank" rel="noopener"><IconUdemy /></a>
+									<a href="https://www.linkedin.com/in/hadelin-de-ponteves-1425ba5b" target="_blank" rel="noopener"><IconLinkedin /></a>
+									<a href="https://www.udemy.com/user/hadelin-de-ponteves" target="_blank" rel="noopener"><IconUdemy /></a>
 								</div>
 
 								<div>
 									{!user && <button className="button primary-dark" onClick={(event) => toggleAuthModal(event, true, "Signup")}>Get Started</button>}
-									<a href="mailto: support@superdatascience.com" target="_blank" rel="noopener">Contact us for more details</a>
+									<a href="mailto: support@tfcertification.com" target="_blank" rel="noopener">Contact us for more details</a>
 								</div>
 							</div>
 						</div>
@@ -217,21 +220,21 @@ export default Homepage = () => {
 				<div className="main-wrapper">
 					<div className="features-container">
 						<div className="feature-item">
-							<div className="image"></div>
+							<LazyImage src="/landing/feature-icon-1.svg" alt="Features Icon 1" />
 							<h5>Lifetime Access</h5>
-							<p>Lifetime-access to all video courses and extra supportive learning material. Updates included!</p>
+							<p>Receive lifetime access to all course content and additional learning materials for reference ahead of your exam or after certification.</p>
 						</div>
 
 						<div className="feature-item">
-							<div className="image"></div>
-							<h5>Certified Tutor</h5>
-							<p>Lifetime-access to all video courses and extra supportive learning material. Updates included!</p>
+							<LazyImage src="/landing/feature-icon-2.svg" alt="Features Icon 2" />
+							<h5>Hands-On with A Certified Instructor</h5>
+							<p>Follow along as AI Expert and TensorFlow-certified instructor Hadelin de Ponteves guides you step-by-step in building Deep Learning models in TensorFlow.</p>
 						</div>
 
 						<div className="feature-item">
-							<div className="image"></div>
-							<h5>Best Price</h5>
-							<p>Lifetime-access to all video courses and extra supportive learning material. Updates included!</p>
+							<LazyImage src="/landing/feature-icon-3.svg" alt="Features Icon 3" />
+							<h5>Start from Scratch</h5>
+							<p>Cover Deep Learning theory and understand how artificial neural networks work. Master Computer Vision, Transfer Learning, Natural Language Processing, and more.</p>
 						</div>
 					</div>
 
@@ -249,14 +252,15 @@ export default Homepage = () => {
 							</div>
 							<div className="description-content">
 								<div className="shape">
-									<h1>Tableau Certificate Associate</h1>
-									<p>Starting from scratch or building on existing skills? No matter the skill level, this course builds up your Tableau, visualization and BI skills to the level needed to pass the Tableau Certified Associate Exam, deliver professional results at work, and establish the foundation to obtain advanced certifications.</p>
-									<p>Plus, gain hands-on practice as you solve real-world case studies from top companies such as Spotify, Airbnb, Kaggle, NBA, WorldBank, and Glassdoor to help you build world-class instincts at exam time and in business.</p>
+									<h1>TensorFlow Developer Professional Certificate Course</h1>
+									<p>Dive into TensorFlow 2.0 and master the popular deep learning framework in this hands-on course. Gain the skills and confidence you need to become an official Google TensorFlow Developer and earn your certificate.</p>
+									<p>Whether you’re starting from scratch or building on existing skills, this course provides the foundational and intermediate set of tools and techniques you need to become TensorFlow certified and build practical AI applications.</p>
+									<p>First, cover deep learning theory in-depth and understand how artificial neural networks work at their core. Then learn how to solve more complex challenges related to computer vision, transfer learning, natural language processing, real-world time series, and more.</p>
 
 									<div className="bullets-container">
-										<p className="bullet-item"><IconCircleCheck />30.5 hours of video lectures</p>
-										<p className="bullet-item"><IconCircleCheck />2 certificates, 2 practice exams</p>
-										<p className="bullet-item"><IconCircleCheck />11 practical case studies</p>
+										<p className="bullet-item"><IconCircleCheck />144 Tutorials</p>
+										<p className="bullet-item"><IconCircleCheck />17 Hours of Video Content</p>
+										<p className="bullet-item"><IconCircleCheck />Regularly Updated Sample Exam Questions</p>
 										<p className="bullet-item"><IconCircleCheck />'Pass or we pay' guarantee</p>
 									</div>
 								</div>
@@ -280,7 +284,7 @@ export default Homepage = () => {
 				<LazyImage src="/landing/banner-top-pattern.svg" alt="Banner Top Pattern" classes="image-pattern top-pattern"/>
 
 				<div className="main-wrapper">
-					<h1>Get Tableau Certified Skyrockets Your Career</h1>
+					<h1>Your TensorFlow Developer Certificate is Waiting</h1>
 					{!user && <button className="button primary-dark" onClick={(event) => toggleModal(event, true, "Signup")}>Get Started</button>}
 				</div>
 
@@ -307,27 +311,27 @@ const SkillsContainer = () => {
 	const skills = [
 		{
 			_id: "skill-1",
-			title: "Get Tensor Flow Certified",
-			description: "Validate your data analysis and visualization skills at a professional level, and gain instant recognition from current and future employers."
+			title: "Unlock Business Knowledge",
+			description: "The TensorFlow Developer Professional Certificate Course tests your newfound skills across a range of business niches and develops the business acumen hiring managers demand."
 		}, {
 			_id: "skill-2",
-			title: "Learn How to Communicate Data",
-			description: "Stand out from the crowded data science job market with the stamp of approval that hiring managers from leaders like Cisco, Amazon, Deloitte and more, are searching for."
+			title: "Gain Industry Recognition",
+			description: "Get the skills you need to obtain Google’s official TensorFlow Developer Certificate and prove your expertise in ML and AI in a rapidly growing global job market. This course provides you with the practical machine learning skills you need for the real world, and positions you to demonstrate your expertise to future employers!"
 		}, {
 			_id: "skill-3",
-			title: "Unlock Your Business Potential",
-			description: "The average salary of a Tableau-certified BI Specialist can reach as high as $152,400—ranking it as one of the highest-paying certification categories in North America, according to Glassdoor data."
+			title: "Join Google’s Certificate Network",
+			description: "Prepare to pass the official TensorFlow Certification exam, join Google's TensorFlow Certificate Network and get noticed by the biggest players in AI."
 		}, {
 			_id: "skill-4",
 			title: "Earn More",
-			description: "Gain the professional data storytelling skills to impress in the C-suite, uncover deeper insights and drive results that make a difference to your business’ bottom line."
+			description: "TensorFlow experts earn up to $204,000 USD a year, with the average salary hovering around $148,000 per year. With a Google certificate on your resume and the ever-growing demand for TensorFlow skills, getting certified is a vital step toward becoming a top-paid TensorFlow expert."
 		},
 	];
 
 	return (
 		<section className="section homepage-skills">
 			<div className="main-wrapper">
-				<h1>Grow Your Skills &amp; Advance Your Career</h1>
+				<h1>Set Yourself Apart with TensorFlow Certification</h1>
 
 				<div className="skills-container">
 					<div className="left-content">
@@ -403,7 +407,7 @@ const HomepageTestimonials = () => {
 	return (
 		<section className="section homepage-testimonials">
 			<div className="main-wrapper">
-				<h1>Words From Satisfied Students</h1>
+				<h1>Satisfied, Specialized & Certified</h1>
 
 				<div className="slider-container testimonials-container">
 					<SliderWrapper
