@@ -12,8 +12,8 @@ export default UserItem = ({ user }) => {
 
 	if (hasRights(["admin"], user._id)) {
 		userState = "Administrator";
-	} else if (hasRights(["course-1"], user._id)) {
-		userState = "Purchased Course 1";
+	} else if (hasRights(["course-tcp"], user._id)) {
+		userState = "Tensorflow Certificate Professional";
 	} else {
 		userState = "Free Member";
 	}

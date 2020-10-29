@@ -37,7 +37,7 @@ export default UsersList = () => {
 
 			<select name="roles" value={filters.roles} onChange={handleChange}>
 				<option value="">All Members</option>
-				<option value="course-1">Paid Members</option>
+				<option value="course-tcp">Paid Members</option>
 			</select>
 
 			<SearchInput

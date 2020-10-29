@@ -90,7 +90,7 @@ export default CourseModal = ({ isOpen, onClose, course }) => {
 
 				<label>
 					Access Roles:
-					<ListSelector field="accessRoles" options={["course-1"]} currentValues={values.accessRoles} saveCallback={handleChange} />
+					<ListSelector field="accessRoles" options={["course-tcp"]} currentValues={values.accessRoles} saveCallback={handleChange} />
 				</label>
 
 				{values.errorState && <p className="error-message"><IconWarning/>{courseErrorMessage(values.errorState)}</p>}
