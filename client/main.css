@@ -100,6 +100,12 @@ p {
 	border-color: var(--primary-dark);
 }
 
+.button.border-primary-dark {
+	background-color: transparent;
+	border-color: var(--primary-dark);
+	color: var(--primary-dark);
+}
+
 .button:disabled {
 	cursor: default;
 }

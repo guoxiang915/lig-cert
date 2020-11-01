@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 648.3 536.6" style="enable-background:new 0 0 648.3 536.6;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FF6E41;}
+	.st1{opacity:0.616;fill:url(#Trazado_215_1_);enable-background:new    ;}
+	.st2{opacity:0.616;fill:url(#Trazado_223_1_);enable-background:new    ;}
+	.st3{opacity:0.616;fill:url(#Trazado_224_1_);enable-background:new    ;}
+	.st4{fill:none;stroke:#FF6E41;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+</style>
+<g id="Grupo_535" transform="translate(-999 -1102.012)">
+	<g id="Grupo_425" transform="translate(724 -10.125)">
+		<ellipse id="Elipse_1023" class="st0" cx="604.9" cy="1376.6" rx="202" ry="202.5"/>
+		
+			<linearGradient id="Trazado_215_1_" gradientUnits="userSpaceOnUse" x1="-114.8153" y1="1500.3767" x2="-114.8153" y2="1499.3767" gradientTransform="matrix(468.996 -143.3865 -152.2401 -497.955 282789.8125 731794.6875)">
+			<stop  offset="0" style="stop-color:#FF9200"/>
+			<stop  offset="1" style="stop-color:#FF4477"/>
+		</linearGradient>
+		<path id="Trazado_215" class="st1" d="M441.2,1188.1c58.7-43.7,205.7-128.6,322.5-16.2s65.8,332.3-16.1,419.4
+			c-81.9,87.1-229.9,67.7-352.3-101.6S382.5,1231.8,441.2,1188.1z"/>
+		
+			<linearGradient id="Trazado_223_1_" gradientUnits="userSpaceOnUse" x1="-114.758" y1="1501.8549" x2="-114.758" y2="1500.855" gradientTransform="matrix(409.3744 255.859 268.7422 -429.9876 -355878.5 676329.1875)">
+			<stop  offset="0" style="stop-color:#FF9200"/>
+			<stop  offset="1" style="stop-color:#FF4477"/>
+		</linearGradient>
+		<path id="Trazado_223" class="st2" d="M661.7,1155.3c69.2,16.4,224.8,73.2,218.8,233.9c-6.1,160.7-197.4,263.3-312.7,257.3
+			c-115.3-6.1-196.5-130.7-152.9-332.2S592.4,1138.8,661.7,1155.3z"/>
+		
+			<linearGradient id="Trazado_224_1_" gradientUnits="userSpaceOnUse" x1="-115.0584" y1="1502.3223" x2="-115.0584" y2="1501.3221" gradientTransform="matrix(317.5733 365.3263 378.0634 -328.6455 -530657.8125 536980.1875)">
+			<stop  offset="0" style="stop-color:#FF9200"/>
+			<stop  offset="1" style="stop-color:#FF4477"/>
+		</linearGradient>
+		<path id="Trazado_224" class="st3" d="M696.9,1155.4c61.2,36.3,193,136.9,141.7,288.2s-262.3,192-370.3,151.8
+			s-149.8-183.1-51.3-362.1S635.7,1119.1,696.9,1155.4z"/>
+	</g>
+	<g id="Grupo_534">
+		<circle id="Elipse_1066" class="st0" cx="1023.4" cy="1392.5" r="19.5"/>
+		<circle id="Elipse_1067" class="st0" cx="1614.4" cy="1212.5" r="19.5"/>
+		<ellipse id="Elipse_1068" class="st0" cx="1556.4" cy="1504" rx="19.5" ry="19"/>
+		<path id="Trazado_283" class="st4" d="M1372,1479c477.9-63.7,224-414.1,15.4-348.9s-582.8,318.2-206.1,457.9
+			s374.7-79.4,374.7-79.4"/>
+		<path id="Trazado_284" class="st4" d="M1566.7,1500.6c77-93.9,121.1,131.9-130.8,83.3s-514.5-635.7-410.8-190"/>
+	</g>
+</g>
+</svg>
