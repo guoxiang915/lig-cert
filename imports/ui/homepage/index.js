@@ -52,7 +52,9 @@ export default Homepage = () => {
 			<section className="section homepage-header">
 				<div className="main-wrapper">
 					<nav>
-						<img src="/logo.svg" alt="TF Certification Logo"/>
+						<div className="logo-label">
+							<img src="/logo.svg" alt="TF Certification Logo"/>
+						</div>
 
 						<ul className="actions hidden-xs">
 							<li onClick={() => advantagesRef.current.scrollIntoView({ behavior: "smooth" })}><a>Features</a></li>
@@ -194,7 +196,7 @@ export default Homepage = () => {
 									<a href="https://www.udemy.com/user/hadelin-de-ponteves" target="_blank" rel="noopener"><IconUdemy /></a>
 								</div>
 
-								<div>
+								<div className="hidden-xs">
 									{!user && <button className="button primary-dark" onClick={(event) => toggleAuthModal(event, true, "Signup")}>Get Started</button>}
 									<a href="mailto: support@tfcertification.com" target="_blank" rel="noopener">Contact us for more details</a>
 								</div>
@@ -244,166 +246,22 @@ export default Homepage = () => {
 					<div className="courses-container" ref={courseRef}>
 						<h1>Your Certificate Is Waiting</h1>
 						<p className="subtitle">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam</p>
-
-						<div className="course-block">
-							<div className="information-container">
-								<div className="content">
-									<h1>TensorFlow Developer Professional Certificate Course</h1>
-									<p>Dive into TensorFlow 2.0 and master the popular deep learning framework in this hands-on course. Gain the skills and confidence you need to become an official Google TensorFlow Developer and earn your certificate.</p>
-									<p>Whether you’re starting from scratch or building on existing skills, this course provides the foundational and intermediate set of tools and techniques you need to become TensorFlow certified and build practical AI applications.</p>
-									<p>First, cover deep learning theory in-depth and understand how artificial neural networks work at their core. Then learn how to solve more complex challenges related to computer vision, transfer learning, natural language processing, real-world time series, and more. </p>
-
-									<div className="bullets-container">
-										<div className="bullet-item">
-											<IconCircleCheck />
-											<p>144 Tutorials</p>
-										</div>
-
-										<div className="bullet-item">
-											<IconCircleCheck />
-											<p>17 Hours of Video Content</p>
-										</div>
-
-										<div className="bullet-item">
-											<IconCircleCheck />
-											<p>10 Practical Case Studies</p>
-										</div>
-
-										<div className="bullet-item">
-											<IconCircleCheck />
-											<p>Pass or We Pay Guarantee*</p>
-										</div>
-
-										<div className="bullet-item">
-											<IconCircleCheck />
-											<p>Regularly Updated Sample Exam Questions</p>
-										</div>
-									</div>
-
-									<div className="actions">
-										<a className="button primary-dark primary-dark-hover" onClick={() => history.push("/courses/tensorflow-developer-professional-certificate")}>Go to Course</a>
-										<a className="button border-primary-dark primary-dark-hover" onClick={() => history.push("/courses/tensorflow-developer-professional-certificate")}>Download Curriculum</a>
-									</div>
-								</div>
-
-								<div className="video">
-									<div className="price-label">
-										<h2>$199</h2>
-									</div>
-
-									<VideoPlayer playerId="homepage-course-tca" mediaId="0YytwiBG" />
-								</div>
-							</div>
-
-							<div className="requirements-container">
-								<div className="content">
-									<h4>Who this course is for:</h4>
-									<p>The course is targeted towards AI practitioners, aspiring data scientists, Tech enthusiasts, and consultants wanting to pass the TensorFlow Developer Certification. Here’s a list of who is this course for:</p>
-									<ul>
-										<li>Data Scientists who simply want to learn how to use TensorFlow at an advanced level.</li>
-										<li>Data Scientists who want to pass the TensorFlow Developer Certification.</li>
-										<li>AI Practitioners who want to build more powerful AI models using TensorFlow.</li>
-										<li>Tech enthusiasts who are passionate about AI and want to gain real-world practical experience with TensorFlow.</li>
-									</ul>
-
-									<h4>Course Prerequisites:</h4>
-									<p>Basic knowledge of programming is recommended. Some experience in Machine Learning is also preferable. However, these topics will be extensively covered during early course lectures; therefore, the course has no prerequisites, and is open to anyone with basic programming knowledge. Students who enrol in this course will master data science fundamentals and directly apply these skills to solve real world challenging business problems.</p>
-
-									<div className="highlight-block">
-										<p>Gmail account needed to the access course notebook through Google Colab. You can create your free <a href="https://drive.google.com/drive/folders/1Plf1Szl8kybr8W3n__64xZOkeUrlxRHS" target="_blank" rel="noopener">Google account here</a>.</p>
-									</div>
-								</div>
-
-								<div className="preparation"></div>
-							</div>
-						</div>
-
-
-						{/* <div className="course-item">
-							<div className="video-content">
-								<div className="price-label">
-									<h2>$199</h2>
-								</div>
-
-								<VideoPlayer playerId="homepage-course-tca" mediaId="0YytwiBG" />
-							</div>
-							<div className="description-content">
-								<div className="description-header">
-									<h1>Tableau Certificate Associate</h1>
-									<p>Whether you're starting from scratch or building on existing skills, this course provides the foundational and intermediate set of tools and techniques you need to become TensorFlow certified and build practical AI applications.</p>
-									<br />
-									<p>First, cover deep learning theory in depth and understand how artificial neural networks work at their core. Then learn how to solve more complex challenges related to computer vision, transfer learning, natural language processing, real world time series, and more.</p>
-
-									<div className="bullets-container">
-										<p className="bullet-item"><IconCircleCheck />30.5 hours of video lectures</p>
-										<p className="bullet-item"><IconCircleCheck />2 certificates, 2 practice exams</p>
-										<p className="bullet-item"><IconCircleCheck />11 practical case studies</p>
-										<p className="bullet-item"><IconCircleCheck />'Pass or we pay' guarantee</p>
-									</div>
-									<div className="actions">
-										{!user && <button className="button primary-dark" onClick={(event) => toggleModal(event, true, "Signup")}>Get Started</button>}
-										<button type="button" className="button white">Download curriculum</button>
-									</div>
-								</div>
-								<div className="description-body">
-									<div className="body-header">
-										<div className="overflow-square">
-											<h2>Need to prepare</h2>
-											<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus porro deleniti modi beatae minima, minus aliquid ducimus quaerat libero nulla quod incidunt aperiam ut totam est repudiandae neque odit ipsum?</p>
-										</div>
-										<p className="body-title">Who is this course for</p>
-									</div>
-									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem error ut provident laboriosam veritatis rerum excepturi fugit ipsam repellendus? Ullam veritatis error cumque ex assumenda repudiandae doloribus voluptatibus ipsam mollitia?</p>
-									<ul className="reasons">
-										<li>Data Scientists</li>
-										<li>Data Scientists</li>
-										<li>AI Practitioners</li>
-										<li>Tech entusiasts</li>
-									</ul>
-									<p className="body-title">Course Prerequisites</p>
-									<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae non quam minus repellat et aut ducimus esse, delectus molestias fugiat aliquid quidem saepe, ab eaque, sit est! Eius, harum dolore.</p>
-									<div className="overview-header">
-										<div className="overflow-square">
-											<h2>99% Success Rate</h2>
-											<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus porro deleniti modi beatae minima, minus aliquid ducimus quaerat libero nulla quod incidunt aperiam ut totam est repudiandae neque odit ipsum?</p>
-										</div>
-										<h3>Academic Program Overview</h3>
-										<a href="#">Find detailed version here</a>
-									</div>
-									<div className="overview-container">
-										{overviews.map((overview) =>
-											<div key={overview._id} className={`overview-item ${overview._id == active ? "active" : ""}`} onClick={() => setActive(overview._id)}>
-												<div className="header">
-													{active === overview._id ? <IconMinus /> : <IconPlus />}
-													<p><strong>{overview.title}</strong></p>
-													<div className="bullet hidden-xs"></div>
-												</div>
-
-												{active === overview._id && <div className="description">
-													<p>{overview.description}</p>
-												</div>}
-											</div>
-										)}
-									</div>
-								</div>
-							</div>
-						</div> */}
-
-
-
-
+						<CourseBlock history={history} />
 					</div>
 				</div>
 
-				<LazyImage src="/connection-pattern.svg" alt="Connection Pattern" classes="image-pattern connection-pattern"/>
+				<div className="background-color-container">
+					<LazyImage src="/connection-pattern.svg" alt="Connection Pattern" classes="image-pattern connection-pattern"/>
+					<LazyImage src="/landing/courses-bottom-pattern.svg" alt="Courses Bottom Pattern" classes="image-pattern bottom-pattern"/>
+				</div>
 
-				<LazyImage src="/landing/courses-bottom-pattern.svg" alt="Courses Bottom Pattern" classes="image-pattern bottom-pattern"/>
+				<LazyImage src="/landing/advantages-bottom-pattern.svg" alt="Advantages Bottom Pattern" classes="image-pattern bottom-pattern"/>
 			</section>
 
 			<HomepageTestimonials />
 
 			<section className="section homepage-certified-banner">
-				<LazyImage src="/landing/banner-top-pattern.svg" alt="Banner Top Pattern" classes="image-pattern top-pattern"/>
+				<img src="/landing/banner-top-pattern.svg" alt="Banner Top Pattern" className="image-pattern top-pattern"/>
 
 				<div className="main-wrapper">
 					<h1>Your TensorFlow Developer Certificate is Waiting</h1>
@@ -487,6 +345,153 @@ const SkillsContainer = () => {
 				<LazyImage src="/tf-pattern.svg" alt="TF Pattern" classes="right-pattern hidden-xs"/>
 			</div>
 		</section>
+	);
+};
+
+const CourseBlock = ({ history }) => {
+	const [active, setActive] = useState("overview-1");
+
+	const overviews = [
+		{
+			_id: "overview-1",
+			title: "Parts 1 to 3: Deep Learning",
+			description: "We will start by studying Deep Learning in depth so that you can understand how artificial neural networks work and learn. And while covering the Deep Learning theory we will also build together three different Deep Learning models in TensorFlow and Keras, from scratch, step by step, and coding every single line of code together."
+		}, {
+			_id: "overview-2",
+			title: "Parts 4 to 10: Computer Vision",
+			description: "We will start by studying Deep Learning in depth so that you can understand how artificial neural networks work and learn. And while covering the Deep Learning theory we will also build together three different Deep Learning models in TensorFlow and Keras, from scratch, step by step, and coding every single line of code together"
+		}, {
+			_id: "overview-3",
+			title: "Parts 11 to 13: JavaScript",
+			description: "We will start by studying Deep Learning in depth so that you can understand how artificial neural networks work and learn. And while covering the Deep Learning theory we will also build together three different Deep Learning models in TensorFlow and Keras, from scratch, step by step, and coding every single line of code together"
+		}, {
+			_id: "overview-4",
+			title: "Parts 14 to 17: Natural Language Processing",
+			description: "We will start by studying Deep Learning in depth so that you can understand how artificial neural networks work and learn. And while covering the Deep Learning theory we will also build together three different Deep Learning models in TensorFlow and Keras, from scratch, step by step, and coding every single line of code together"
+		}, {
+			_id: "overview-5",
+			title: "Parts 18 to 21: Time Series Analysis",
+			description: "We will start by studying Deep Learning in depth so that you can understand how artificial neural networks work and learn. And while covering the Deep Learning theory we will also build together three different Deep Learning models in TensorFlow and Keras, from scratch, step by step, and coding every single line of code together"
+		}, {
+			_id: "overview-6",
+			title: "Parts 22 to 25: TensorFlow Lite",
+			description: "We will start by studying Deep Learning in depth so that you can understand how artificial neural networks work and learn. And while covering the Deep Learning theory we will also build together three different Deep Learning models in TensorFlow and Keras, from scratch, step by step, and coding every single line of code together"
+		}
+	];
+
+	return (
+		<div className="course-block">
+			<div className="presentation-container">
+				<div className="left-content">
+					<h1>TensorFlow Developer Professional Certificate Course</h1>
+					<p>Dive into TensorFlow 2.0 and master the popular deep learning framework in this hands-on course. Gain the skills and confidence you need to become an official Google TensorFlow Developer and earn your certificate.</p>
+					<p>Whether you’re starting from scratch or building on existing skills, this course provides the foundational and intermediate set of tools and techniques you need to become TensorFlow certified and build practical AI applications.</p>
+					<p>First, cover deep learning theory in-depth and understand how artificial neural networks work at their core. Then learn how to solve more complex challenges related to computer vision, transfer learning, natural language processing, real-world time series, and more. </p>
+
+					<div className="bullets-container">
+						<div className="bullet-item">
+							<IconCircleCheck />
+							<p>144 Tutorials</p>
+						</div>
+
+						<div className="bullet-item">
+							<IconCircleCheck />
+							<p>17 Hours of Video Content</p>
+						</div>
+
+						<div className="bullet-item">
+							<IconCircleCheck />
+							<p>10 Practical Case Studies</p>
+						</div>
+
+						<div className="bullet-item">
+							<IconCircleCheck />
+							<p>Pass or We Pay Guarantee*</p>
+						</div>
+
+						<div className="bullet-item">
+							<IconCircleCheck />
+							<p>Regularly Updated Sample Exam Questions</p>
+						</div>
+					</div>
+
+					<div className="actions">
+						<a className="button primary-dark primary-dark-hover" onClick={() => history.push("/courses/tensorflow-developer-professional-certificate")}>Go to Course</a>
+						<a className="button border-primary-dark primary-dark-hover" onClick={() => history.push("/courses/tensorflow-developer-professional-certificate")}>Download Curriculum</a>
+					</div>
+				</div>
+
+				<div className="right-content">
+					<div className="sidebar-container">
+						<div className="price-label">
+							<h2>$199</h2>
+						</div>
+
+						<VideoPlayer playerId="homepage-course-tca" mediaId="0YytwiBG" />
+					</div>
+				</div>
+			</div>
+
+			<div className="information-container">
+				<div className="left-content">
+					<h4>Who this course is for:</h4>
+					<p>The course is targeted towards AI practitioners, aspiring data scientists, Tech enthusiasts, and consultants wanting to pass the TensorFlow Developer Certification. Here’s a list of who is this course for:</p>
+					<ul>
+						<li>Data Scientists who simply want to learn how to use TensorFlow at an advanced level.</li>
+						<li>Data Scientists who want to pass the TensorFlow Developer Certification.</li>
+						<li>AI Practitioners who want to build more powerful AI models using TensorFlow.</li>
+						<li>Tech enthusiasts who are passionate about AI and want to gain real-world practical experience with TensorFlow.</li>
+					</ul>
+
+					<h4>Course Prerequisites:</h4>
+					<p>Basic knowledge of programming is recommended. Some experience in Machine Learning is also preferable. However, these topics will be extensively covered during early course lectures; therefore, the course has no prerequisites, and is open to anyone with basic programming knowledge. Students who enrol in this course will master data science fundamentals and directly apply these skills to solve real world challenging business problems.</p>
+
+					<div className="highlight-block">
+						<p>Gmail account needed to the access course notebook through Google Colab. You can create your free <a href="https://drive.google.com/drive/folders/1Plf1Szl8kybr8W3n__64xZOkeUrlxRHS" target="_blank" rel="noopener">Google account here</a>.</p>
+					</div>
+
+					<div className="academic-program-header">
+						<h2>Academic Program Overview</h2>
+						<a href="">Find detailed version here</a>
+					</div>
+
+					<div className="overview-container">
+						{overviews.map((overview) =>
+							<div key={overview._id} className={`overview-item ${overview._id == active ? "active" : ""}`} onClick={() => setActive(overview._id)}>
+								<div className="header">
+									{active === overview._id ? <IconMinus /> : <IconPlus />}
+									<p><strong>{overview.title}</strong></p>
+									<div className="connection-dot hidden-xs"></div>
+								</div>
+
+								{active === overview._id && (
+									<div className="description">
+										<p>{overview.description}</p>
+									</div>
+								)}
+
+								<div className="connection-line hidden-xs"></div>
+							</div>
+						)}
+					</div>
+
+				</div>
+
+				<div className="right-content">
+					<div className="sidebar-container preparation">
+						<div className="outline"></div>
+						<h3>Neet To Prepare?</h3>
+						<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor consetetur.</p>
+					</div>
+
+					<div className="sidebar-container instructors">
+						<div className="outline"></div>
+						<h3>Neet To Prepare?</h3>
+						<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor consetetur.</p>
+					</div>
+				</div>
+			</div>
+		</div>
 	);
 };
 

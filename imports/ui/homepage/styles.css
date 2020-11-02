@@ -382,20 +382,48 @@ section.homepage-expertise .bottom-pattern {
 }
 
 /* Courses Block */
-section.homepage-courses {
+
+section.homepage-courses .background-color-container {
 	background-image: linear-gradient(135deg,#FF9200 0, #FF4477 100%);
 	padding: 130px 0;
+	width: 100%;
+	height: 55%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+section.homepage-courses .background-color-container .connection-pattern {
+	top: 400px;
+	width: 1400px;
+}
+
+section.homepage-courses .background-color-container .bottom-pattern {
+	bottom: -2px;
+	min-width: 4000px;
+	width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+section.homepage-courses {
+	/* background-image: linear-gradient(135deg,#FF9200 0, #FF4477 100%); */
+	padding: 130px 0;
+	background-color: #f0f0f0;
 }
 
 section.homepage-courses .top-pattern {
 	top: -2px;
 	min-width: 2000px;
 	width: 100%;
-}
-
-section.homepage-courses .connection-pattern {
-	top: 50px;
-	width: 1400px;
+	z-index: 1;
 }
 
 section.homepage-courses .main-wrapper {
@@ -456,7 +484,6 @@ section.homepage-courses .features-container .feature-item:hover h5 {
 	color: #fff;
 }
 
-/* Course Block */
 section.homepage-courses .courses-container {
 	padding-top: 70px;
 }
@@ -474,13 +501,6 @@ section.homepage-courses .courses-container > p.subtitle {
 	color: #fff;
 }
 
-
-
-
-
-
-
-
 section.homepage-courses .course-block {
 	background-color: #fff;
 	border-radius: 10px;
@@ -488,66 +508,69 @@ section.homepage-courses .course-block {
 	box-shadow: 0 10px 20px rgba(0,0,0,.2);
 }
 
-section.homepage-courses .course-block .information-container {
+section.homepage-courses .course-block .sidebar-container {
+	box-shadow: 0 10px 20px rgba(0,0,0,.2);
+	border-radius: 10px;
+	background-color: #fff;
+	padding: 30px;
+	overflow: hidden;
+}
+
+section.homepage-courses .course-block .presentation-container {
 	display: flex;
 	align-items: flex-start;
 	padding: 40px;
 }
 
-section.homepage-courses .course-block .information-container .content {
+section.homepage-courses .course-block .presentation-container .left-content {
 	padding-right: 50px;
 	width: calc(100% - 250px);
 }
 
-section.homepage-courses .course-block .information-container .content h1 {
+section.homepage-courses .course-block .presentation-container .left-content h1 {
 	color: var(--primary-dark);
 	margin-top: 0;
 }
 
-section.homepage-courses .course-block .information-container .content > p {
+section.homepage-courses .course-block .presentation-container .left-content > p {
 	margin-bottom: 15px;
-	color: #333;
-	opacity: .7;
+	color: #798893;
 }
 
-section.homepage-courses .course-block .information-container .bullets-container {
+section.homepage-courses .course-block .presentation-container .bullets-container {
 	margin: 40px 0;
 	display: flex;
 	flex-wrap: wrap;
 }
 
-section.homepage-courses .course-block .information-container .bullet-item {
+section.homepage-courses .course-block .presentation-container .bullet-item {
 	display: flex;
 	width: 50%;
 	margin-bottom: 15px;
 }
 
-section.homepage-courses .course-block .information-container .bullet-item svg {
+section.homepage-courses .course-block .presentation-container .bullet-item svg {
 	height: 22px;
 	color: var(--primary);
 	margin-right: 8px;
 	vertical-align: top;
 }
 
-section.homepage-courses .course-block .information-container .content .button {
+section.homepage-courses .course-block .presentation-container .left-content .button {
 	width: calc(50% - 10px);
 	text-align: center;
 }
 
-section.homepage-courses .course-block .information-container .content .button:first-child {
+section.homepage-courses .course-block .presentation-container .left-content .button:first-child {
 	margin-right: 20px;
 }
 
-section.homepage-courses .course-block .information-container .video {
-	margin: 40px -250px 0 0;
-	box-shadow: 0 10px 20px rgba(0,0,0,.2);
-	border-radius: 10px;
+section.homepage-courses .course-block .presentation-container .right-content {
 	width: 500px;
-	background-color: #fff;
-	padding: 30px;
+	margin: 40px -250px 0 0;
 }
 
-section.homepage-courses .course-block .information-container .video .price-label {
+section.homepage-courses .course-block .presentation-container .sidebar-container .price-label {
 	background-color: var(--primary-dark);
 	border-bottom-left-radius : 5px;
 	border-bottom-right-radius : 5px;
@@ -556,46 +579,48 @@ section.homepage-courses .course-block .information-container .video .price-labe
 	padding: 12px 20px 12px 20px;
 }
 
-section.homepage-courses .course-block .information-container .video .price-label h2 {
+section.homepage-courses .course-block .presentation-container .sidebar-container .price-label h2 {
 	margin: 0;
 	color: #fff;
 }
 
-section.homepage-courses .course-block .requirements-container {
+section.homepage-courses .course-block .information-container {
 	border-top: 1px solid rgba(51,51,51,.2);
 	padding: 10px 40px 40px 40px;
+	display: flex;
+	align-items: flex-start;
 }
 
-section.homepage-courses .course-block .requirements-container .content {
+section.homepage-courses .course-block .information-container .left-content {
 	color: #333;
 	padding-right: 50px;
 	width: calc(100% - 150px);
 }
 
-section.homepage-courses .course-block .requirements-container .content h4 {
+section.homepage-courses .course-block .information-container .left-content h4 {
 	margin: 30px 0 5px 0;
 	color: var(--primary-dark);
 }
 
-section.homepage-courses .course-block .requirements-container .content ul {
+section.homepage-courses .course-block .information-container .left-content ul {
 	padding-left: 0;
 	list-style: none;
 }
 
-section.homepage-courses .course-block .requirements-container .content li {
+section.homepage-courses .course-block .information-container .left-content li {
 	position: relative;
 	padding-left: 18px;
 	text-indent: -18px;
 }
 
-section.homepage-courses .course-block .requirements-container .content li::before {
+section.homepage-courses .course-block .information-container .left-content li::before {
 	content: "\2022";
 	color: var(--primary);
 	font-size: 20px;
 	margin-right: 10px;
 }
 
-section.homepage-courses .course-block .requirements-container .content .highlight-block {
+section.homepage-courses .course-block .information-container .left-content .highlight-block {
 	border: 1px dashed #425166;
 	margin: 20px 0;
 	max-width: 570px;
@@ -603,27 +628,132 @@ section.homepage-courses .course-block .requirements-container .content .highlig
 	border-radius: 10px;
 }
 
-section.homepage-courses .course-block .requirements-container .content .highlight-block a {
+section.homepage-courses .course-block .information-container .left-content .highlight-block a {
 	color: var(--primary);
 }
 
+section.homepage-courses .course-block .information-container .left-content .academic-program-header {
+	margin: 40px 0 20px 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+section.homepage-courses .course-block .information-container .left-content .academic-program-header h2 {
+	color: var(--primary-dark);
+	margin: 0;
+}
+
+section.homepage-courses .course-block .information-container .left-content .academic-program-header a {
+	text-align: right;
+	color: var(--primary-dark);
+	font-weight: 500;
+}
+
+section.homepage-courses .course-block .overview-container {
+	padding: 0px 0 0 40px;
+}
+
+section.homepage-courses .course-block .overview-item {
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 1px 5px rgba(95, 110, 130, .3);
+	cursor: pointer;
+	margin-bottom: 20px;
+	position: relative;
+}
+
+section.homepage-courses .course-block .overview-item .header {
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	color: var(--primary-dark);
+	padding: 15px 20px;
+	position: relative;
+}
+
+section.homepage-courses .course-block .overview-item .header svg {
+	color: var(--primary);
+	float: left;
+	height: 20px;
+	margin-right: 20px;
+}
+
+section.homepage-courses .course-block .overview-item .header .connection-dot {
+	border: 2px solid var(--primary);
+	border-radius: 10px;
+	background-color: #fff;
+	bottom: 0;
+	height: 10px;
+	left: -32px;
+	margin: auto;
+	position: absolute;
+	top: 0;
+	width: 10px;
+	z-index: 2;
+}
+
+section.homepage-courses .course-block .overview-item.active .header {
+	border-bottom: 1px solid #DDDDDD;
+}
+
+section.homepage-courses .course-block .overview-item .description {
+	padding: 20px 20px 20px 55px;
+}
+
+section.homepage-courses .course-block .overview-item .description p {
+	color: #425166;
+	opacity: .7;
+}
+
+section.homepage-courses .course-block .overview-item .connection-line {
+	height: calc(100% + 20px);
+	position: absolute;
+	left: -28px;
+	top: 0;
+	width: 2px;
+	background-color: #707070;
+	z-index: 1;
+}
+
+section.homepage-courses .course-block .overview-item:first-child .connection-line {
+	height: calc(100% - 5px);
+	top: 25px;
+}
+
+section.homepage-courses .course-block .overview-item:last-child .connection-line {
+	height: 25px;
+}
+
+section.homepage-courses .course-block .information-container .right-content {
+	width: 400px;
+	margin: 40px -250px 0 0;
+}
+
+section.homepage-courses .course-block .information-container .right-content .sidebar-container .outline {
+	width: calc(100% + 60px);
+	height: 10px;
+	margin: -30px -30px 30px -30px;
+}
+
+section.homepage-courses .course-block .information-container .right-content .sidebar-container h3 {
+	margin: 0 0 15px 0;
+	font-weight: 500;
+}
+
+section.homepage-courses .course-block .information-container .right-content .sidebar-container.preparation {
+	margin-bottom: 40px;
+}
+
+section.homepage-courses .course-block .information-container .right-content .sidebar-container.preparation .outline {
+	background-color: var(--primary-dark);
+}
+
+section.homepage-courses .course-block .information-container .right-content .sidebar-container.instructors .outline {
+	background-color: var(--primary);
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-section.homepage-courses .bottom-pattern {
+section.homepage-courses > .bottom-pattern {
 	bottom: -2px;
 	min-width: 2000px;
 	width: 100%;
@@ -631,7 +761,6 @@ section.homepage-courses .bottom-pattern {
 
 /* Testimonials Block */
 section.homepage-testimonials {
-	background-color: #F0F0F0;
 	padding: 70px 0 20px 0;
 }
 
@@ -818,9 +947,13 @@ section.homepage-certified-banner .main-wrapper h1 {
 		margin: 30px 0 0 0;
 	}
 
-	/* Features Block */
+	section.homepage-expertise .instructor-container .right-content .links {
+		margin-top: 20px;
+	}
+
+	/* Course Block */
 	section.homepage-courses {
-		padding: 70px 0;
+		padding: 70px 0 100px 0;
 	}
 
 	section.homepage-courses .features-container {
@@ -832,10 +965,66 @@ section.homepage-certified-banner .main-wrapper h1 {
 		margin: 0 0 20px 0;
 	}
 
-	/* Course Block */
 	section.homepage-courses .courses-container {
 		padding-top: 30px;
 	}
+
+	section.homepage-courses .course-block {
+		width: 100%;
+	}
+
+	section.homepage-courses .course-block .presentation-container {
+		flex-direction: column;
+		padding: 30px;
+	}
+
+	section.homepage-courses .course-block .presentation-container .left-content {
+		padding-right: 0;
+		width: 100%;
+	}
+
+	section.homepage-courses .course-block .presentation-container .left-content .button {
+		width: 100%;
+		margin: 0 0 10px 0;
+	}
+
+	section.homepage-courses .course-block .presentation-container .bullets-container {
+		flex-direction: column;
+	}
+
+	section.homepage-courses .course-block .presentation-container .bullet-item {
+		width: 100%;
+	}
+
+	section.homepage-courses .course-block .presentation-container .right-content {
+		width: calc(100% + 30px);
+		margin: 40px -15px 10px -15px;
+	}
+
+	section.homepage-courses .course-block .information-container {
+		flex-direction: column;
+		padding: 10px 30px 30px 30px;
+	}
+
+	section.homepage-courses .course-block .information-container .left-content {
+		width: 100%;
+		padding-right: 0;
+	}
+
+	section.homepage-courses .course-block .overview-container {
+		padding-left: 0;
+	}
+
+	section.homepage-courses .course-block .information-container .right-content {
+		width: calc(100% + 30px);
+		margin: 40px -15px 10px -15px;
+	}
+
+	/* Testimonials Block */
+	section.homepage-testimonials {
+		padding: 0;
+	}
+
 
 	/* Certified Banner Block */
 	section.homepage-certified-banner {

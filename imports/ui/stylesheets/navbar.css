@@ -6,8 +6,17 @@ nav {
 	padding: 20px 0 40px 0;
 }
 
+nav .logo-label {
+	background-color: #fff;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	float: right;
+	margin: -30px 0 0 0;
+	padding: 40px 20px 12px 20px;
+}
+
 nav img {
-	height: 30px;
+	height: 35px;
 }
 
 nav ul {
@@ -99,6 +108,12 @@ nav .nav-dropdown .dropdown-item:hover {
 	nav {
 		display: block;
 		text-align: center;
+		padding-bottom: 20px;
+	}
+
+	nav .logo-label {
+		float: none;
+		display: inline-block;
 	}
 
 	nav h4 {

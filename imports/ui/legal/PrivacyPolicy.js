@@ -22,7 +22,9 @@ export default PrivacyPolicy = () => {
 			<section className="section legal-header">
 				<div className="main-wrapper">
 					<nav>
-						<img src="/logo.svg" alt="TF Certification Logo"/>
+						<div className="logo-label">
+							<img src="/logo.svg" alt="TF Certification Logo"/>
+						</div>
 
 						<ul className="actions hidden-xs">
 							<li><a onClick={() => history.push("/")}>Back to Homepage</a></li>

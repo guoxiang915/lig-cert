@@ -103,7 +103,9 @@ export default CourseView = () => {
 			<section className="section course-view-header">
 				<div className="main-wrapper">
 					<nav>
-						<img src="/logo.svg" alt="TF Certification Logo"/>
+						<div className="logo-label">
+							<img src="/logo.svg" alt="TF Certification Logo"/>
+						</div>
 
 						<ul className="actions hidden-xs">
 							<li><a onClick={() => history.push("/")}>Homepage</a></li>
