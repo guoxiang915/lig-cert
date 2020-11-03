@@ -1,5 +1,5 @@
-import React, { useState, Fragment } from "react";
-import { useParams, useHistory, Link } from "react-router-dom";
+import React, { useState, useEffect, Fragment } from "react";
+import { useParams, Link } from "react-router-dom";
 import { useTracker } from "meteor/react-meteor-data";
 import { CoursesCollection } from "/imports/api/courses/courses";
 import { UnitsCollection } from "/imports/api/courses/units";
@@ -10,6 +10,7 @@ import { UnitSidebar } from "/imports/ui/courses/UnitSidebar";
 import { UnitVideo } from "/imports/ui/courses/UnitVideo";
 import { UnitText } from "/imports/ui/courses/UnitText";
 import { UnitQuiz } from "/imports/ui/courses/UnitQuiz";
+import { UnitPopup } from "/imports/ui/courses/UnitPopup";
 import "/imports/ui/courses/styles.css";
 
 export default UnitView = () => {
@@ -51,8 +52,9 @@ export default UnitView = () => {
 };
 
 const UnitContent = ({ showSidebar, toggleSidebar, course }) => {
+	const [showPopup, setShowPopup] = useState(false);
+
 	const { coursePermalink, unitPermalink } = useParams();
-	const history = useHistory();
 	const unit = UnitsCollection.findOne({ permalink: unitPermalink });
 
 	// Generate unit component
@@ -61,10 +63,10 @@ const UnitContent = ({ showSidebar, toggleSidebar, course }) => {
 
 	// Generation Next Step Functionality
 	const nextUnit = UnitsCollection.findOne({ order: unit.order + 1 });
-	const lastUnit = course.unitCount === unit.order + 1;
+	const isLastUnit = course.unitCount === unit.order + 1;
 
 	const nextState = {
-		title: lastUnit ? "Finish Course" : "Next Unit",
+		title: isLastUnit ? "Finish Course" : "Next Unit",
 		action: () => {
 			const memberlist = MemberlistsCollection.findOne({ userId: Meteor.userId(), courseId: course?._id });
 			// Store users progress in memberlist
@@ -78,12 +80,16 @@ const UnitContent = ({ showSidebar, toggleSidebar, course }) => {
 			if (!memberlistData.completedAt && course.unitCount == memberlistData.unitsCompleted.length) memberlistData.completedAt = new Date(); // Add completedAt if field doesnt exist and user completed all the course units
 
 			Meteor.call("memberlist.upsert", memberlistData._id, memberlistData, (error) => {
-				if (error) { console.warn(error); }
+				if (error) {
+					console.warn(error);
+				} else {
+					setShowPopup(true);
+				}
 			});
-
-			return lastUnit ? history.push(`/courses/${coursePermalink}`) : history.push(`/courses/${coursePermalink}/${nextUnit.permalink}`);
 		}
 	};
+
+	useEffect(() => { setShowPopup(false); }, [unit._id]); // CLose UnitPopup if unit is changed (e.g. through UnitSidebar)
 
 	return (
 		<Fragment>
@@ -95,6 +101,7 @@ const UnitContent = ({ showSidebar, toggleSidebar, course }) => {
 			/>
 			<div className={`unit-content ${showSidebar ? "visible-sidebar" : ""}`}>
 				<RenderComponent course={course} unit={unit} nextState={nextState} toggleSidebar={toggleSidebar} />
+				{showPopup && <UnitPopup nextUnit={nextUnit} isLastUnit={isLastUnit} coursePermalink={coursePermalink} setShowPopup={setShowPopup} />}
 			</div>
 		</Fragment>
 	);

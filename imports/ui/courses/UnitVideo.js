@@ -27,6 +27,8 @@ export const UnitVideo = ({ course, unit, nextState, toggleSidebar }) => {
 			}, 250);
 		});
 
+		videoPlayer.on("complete", () => { nextState.action(); });
+
 		videoPlayer.on("remove", () => { clearInterval(hideInterval); }); // Interval has to be clean within this function, otherwise its reference will exist
 	};
 

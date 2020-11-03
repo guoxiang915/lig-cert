@@ -427,6 +427,46 @@ section.course-view-content .right-pattern {
 	margin: 10px 0 20px 0;
 }
 
+/* Unit Popup */
+.unit-popup {
+	align-items: center;
+	animation: animation-fade-in .3s;
+	background-color: rgba(40,48,58,.9);
+	color: #fff;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 2;
+	display: flex;
+}
+
+.unit-popup .main-wrapper {
+	text-align: center;
+}
+
+.unit-popup h5 {
+	margin: 10px auto;
+	max-width: 470px;
+}
+
+.unit-popup span {
+	color: rgba(255, 255, 255, 0.7);
+}
+
+.unit-popup .actions {
+	margin-top: 20px;
+}
+
+.unit-popup .actions .button {
+	margin: 0 5px;
+}
+
+@keyframes animation-fade-in {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
 /* Course Modals */
 .unit-modal label {
 	margin: 10px 0;
