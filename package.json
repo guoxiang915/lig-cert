@@ -19,6 +19,7 @@
 		"dayjs": "^1.9.4",
 		"dompurify": "^2.2.0",
 		"handlebars": "^4.7.6",
+		"md5": "^2.3.0",
 		"meteor-node-stubs": "^1.0.1",
 		"pure-react-carousel": "^1.27.6",
 		"react": "^16.14.0",

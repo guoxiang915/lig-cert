@@ -4,6 +4,8 @@ import { Roles } from "meteor/alanning:roles";
 import { Random } from "meteor/random";
 import { Accounts } from "meteor/accounts-base";
 import { Promise } from "meteor/promise";
+import { HTTP } from "meteor/http";
+import md5 from "md5";
 import { sendEmail } from "/imports/startup/server/functions";
 import { templateToHtml } from "/imports/startup/server/emails/templateToHtml";
 
@@ -65,6 +67,23 @@ Meteor.methods({
 
 		// Update user roles (include purchased course/bundle access)
 		Meteor.users.update(userId, { $set: { roles: completionData.roles } });
+
+		// Segment user in Mailchimp by purchase role
+		const mailchimp = Meteor.settings.private.mailchimp;
+		const subscriberHash = md5(completionData.userEmail.toLowerCase());
+		const tags = [];
+
+		completionData.roles.forEach(role => tags.push({ name: role, status: "active" }));
+
+		const headerData = {
+			data: { tags: tags },
+			auth: `apikey:${mailchimp.apiKey}-${mailchimp.server}`,
+			headers: { "content-type": "application/json" }
+		};
+
+		HTTP.call("POST", `https://${mailchimp.server}.api.mailchimp.com/3.0/lists/${mailchimp.audienceId}/members/${subscriberHash}/tags`, headerData, function(error) {
+			if (error) console.warn(error);
+		});
 
 		// Send payment confirmation email
 		const platformName = Meteor.settings.public.productName;
