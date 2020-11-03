@@ -10,7 +10,7 @@ import AuthModal from "/imports/ui/authentication/AuthModal";
 import { Dropdown } from "/imports/ui/components/Dropdown";
 import { VideoPlayer } from "/imports/ui/components/VideoPlayer";
 import { LazyImage } from "/imports/ui/components/LazyImage";
-import { IconPlus, IconMinus, IconAward, IconLinkedin, IconUdemy, IconCircleCheck, IconLongLeftArrow, IconLongRightArrow, IconBlockquote } from "/imports/ui/components/Icons";
+import { IconPlus, IconMinus, IconAward, IconLinkedin, IconFacebook, IconTwitter, IconInstagram, IconYoutube, IconUdemy, IconWebsite, IconCircleCheck, IconLongLeftArrow, IconLongRightArrow, IconBlockquote } from "/imports/ui/components/Icons";
 import { SliderWrapper } from "/imports/ui/components/SliderWrapper";
 const ProfileModal = loadable(() => import("/imports/ui/profile/ProfileModal"));
 import "/imports/ui/stylesheets/navbar.css";
@@ -193,7 +193,12 @@ export default Homepage = () => {
 								<p>Hadelin’s personal philosophy is to help people around the world leverage the available cutting-edge knowledge to create a better world.</p>
 								<div className="links">
 									<a href="https://www.linkedin.com/in/hadelin-de-ponteves-1425ba5b" target="_blank" rel="noopener"><IconLinkedin /></a>
+									<a href="https://www.facebook.com/hadelin.ponteves" target="_blank" rel="noopener"><IconFacebook /></a>
+									<a href="https://twitter.com/hadelin2p" target="_blank" rel="noopener"><IconTwitter /></a>
+									<a href="https://www.instagram.com/hadelin2p/" target="_blank" rel="noopener"><IconInstagram /></a>
+									<a href="https://www.youtube.com/channel/UCfatmRnNl-n6IwFkMhbBEVA" target="_blank" rel="noopener"><IconYoutube /></a>
 									<a href="https://www.udemy.com/user/hadelin-de-ponteves" target="_blank" rel="noopener"><IconUdemy /></a>
+									<a href="https://www.hadelindeponteves.com/" target="_blank" rel="noopener"><IconWebsite /></a>
 								</div>
 
 								<div className="hidden-xs">
@@ -498,29 +503,49 @@ const CourseBlock = ({ history }) => {
 const HomepageTestimonials = () => {
 	const testimonials = [
 		{
-			author: "Silvia Natalia",
-			position: "Tanahoon founder",
-			message: "Validate your data analysis and visualization skills at a professional level, and gain instant recognition from current and future employers.",
+			author: "Priya Khanna",
+			position: "AI Product Manager at Amazon Alexa, Boston",
+			message: "Thank you for making amazing videos on Machine Learning and NLP that have helped me boost my career. I wanted you to know that your videos helped me crack my interviews at Amazon Alexa Machine Learning team where I just started to work as AI Product Manager.",
 		}, {
-			author: "Silvia Natalia",
-			position: "Tanahoon founder",
-			message: "Stand out from the crowded data science job market with the stamp of approval that hiring managers from leaders like Cisco, Amazon, Deloitte and more, are searching for."
+			author: "Ali Abdel Aal ",
+			position: "Artificial Intelligence Engineer at Toptal",
+			message: "Thanks a lot Hadelin, I landed a job at Toptal as an Artificial Intelligence Engineer and your course was a big step to getting me into this."
 		}, {
-			author: "Silvia Natalia",
-			position: "Tanahoon founder",
-			message: "The average salary of a Tableau-certified BI Specialist can reach as high as $152,400—ranking it as one of the highest-paying certification categories in North America, according to Glassdoor data."
+			author: "Calin Timbus",
+			position: "Machine Learning Engineer at Porsche Engineering",
+			message: "Thank you, the courses you provide are excellent. I wanted to tell you I got a job in AI/ML at Porsche Engineering. The springboard for ML and AI was your courses."
 		}, {
-			author: "Silvia Natalia",
-			position: "Tanahoon founder",
-			message: "Gain the professional data storytelling skills to impress in the C-suite, uncover deeper insights and drive results that make a difference to your business’ bottom line. Gain the professional data storytelling skills to impress in the C-suite, uncover deeper insights and drive results that make a difference to your business’ bottom line "
+			author: "Alok Kumar",
+			position: "Data Analyst",
+			message: "A big THANK YOU for everything I learnt from your online courses. I kinda owe my current job to you. Thank you for being there. God bless you."
 		}, {
-			author: "Silvia Natalia",
-			position: "Tanahoon founder",
-			message: "Gain the professional data storytelling skills to impress in the C-suite, uncover deeper insights and drive results that make a difference to your business’ bottom line. Gain the professional data storytelling skills to impress in the C-suite, uncover deeper insights and drive results that make a difference to your business’ bottom line."
+			author: "Diego Cue",
+			position: "Data Scientist",
+			message: "The teaching method is amazing. First it starts by explaining the concepts so that you intuitively understand what you’re about to do. I started his course because I needed it for my work, I ended learning far more. The skills transmitted in the courses help me perform tasks that I never imagined."
 		}, {
-			author: "Silvia Natalia",
-			position: "Tanahoon founder",
-			message: "Gain the professional data storytelling skills to impress in the C-suite, uncover deeper insights and drive results that make a difference to your business’ bottom line."
+			author: "Sai Siddartha Maram",
+			position: "Computer Science Major",
+			message: "After taking your ML, Computer Vision and Blockchain course I have come up with a product to prevent Rape which is a worldwide issue and we have stood the countrywide first place in a Hackathon."
+		}, {
+			author: "Filipe Diniz",
+			position: "Tech Enthusiast",
+			message: "The Blockchain course really opened my eyes to a new world of possibilities! I cannot wait to apply this technology to my real world problems in data-centric engineering. I recommend it to anyone who needs a comprehensive introduction to the power of Blockchain."
+		}, {
+			author: "Piyush Tamaskar",
+			position: "Senior Developper at HSBC",
+			message: "The course was designed so effectively that a person like me with no prior experience or background in Data science can now understand the concepts in no time. I have upgraded my skills in Machine Learning and that has boosted my career."
+		}, {
+			author: "Shashi Kant Prasad",
+			position: "Senior Analyst",
+			message: "The way the content is organized is really awesome. It covers everything we need to build a successful career in ML. I couldn’t stop myself to sit several hours to watch the tutorials and implement at my end. Thanks a ton to the instructors for creating such wonderful interactive sessions."
+		}, {
+			author: "Sagar Pande",
+			position: "Graduate Researcher in Machine Learning",
+			message: "Machine Learning A-Z is an amazing course. It covers most of the basics and provides a good start in the field of Machine Learning. Thank you for developing such an incredible course."
+		}, {
+			author: "Hasik Shetty",
+			position: "Mechanical Engineer",
+			message: "Hadelin’s courses helped me change my career from core mechanical to AI. His courses focus more on the intuition and hence make learning Machine Learning an easy job. His knowledge in this field is huge and I highly recommend his courses to anyone shifting their career into AI. Hats off to his content."
 		}
 	];
 
