@@ -44,7 +44,7 @@ export default Homepage = () => {
 		<Fragment>
 			<SEO
 				title='Welcome'
-				description='TBD'
+				description='Join the best training ground for AI mastery and gain the skills you need to become a TensorFlow Certified Developer.'
 				contentType="website"
 				path='/'
 			/>
