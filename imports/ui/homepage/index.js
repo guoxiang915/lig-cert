@@ -360,27 +360,27 @@ const CourseBlock = ({ history }) => {
 		{
 			_id: "overview-1",
 			title: "Parts 1 to 3: Deep Learning",
-			description: "We will start by studying Deep Learning in depth so that you can understand how artificial neural networks work and learn. And while covering the Deep Learning theory we will also build together three different Deep Learning models in TensorFlow and Keras, from scratch, step by step, and coding every single line of code together."
+			description: "We will start by studying Deep Learning in-depth so that you can understand how different types of neural networks work and learn. And while covering the Deep Learning theory, we will also build together three neural networks: Artificial Neural Network, Convolutional Neural Network and Recurrent Neural Network from scratch, step by step, and code every single line of code together."
 		}, {
 			_id: "overview-2",
 			title: "Parts 4 to 10: Computer Vision",
-			description: "We will start by studying Deep Learning in depth so that you can understand how artificial neural networks work and learn. And while covering the Deep Learning theory we will also build together three different Deep Learning models in TensorFlow and Keras, from scratch, step by step, and coding every single line of code together"
+			description: "Now you will be more independent with the course materials and dive deeper into them yourself having highly detailed written explanations. In this section, you will be introduced to Computer Vision and together we will code the first Computer Vision Neural Network. We will also dive deeper into convolutions, understand how to handle more complex and real-world images, get a solid understanding of image augmentation and the concept of transfer learning, as well as move from binary to multi-class classification."
 		}, {
 			_id: "overview-3",
 			title: "Parts 11 to 13: JavaScript",
-			description: "We will start by studying Deep Learning in depth so that you can understand how artificial neural networks work and learn. And while covering the Deep Learning theory we will also build together three different Deep Learning models in TensorFlow and Keras, from scratch, step by step, and coding every single line of code together"
+			description: "In this section, you will dig even deeper and learn and explore the diverse tools to become a global master in TensorFlow. You will be introduced to Computer Vision and Transfer Learning in JavaScript. We will learn how to reuse and convert the existing modes to JavaScript, as well as understand and dive deep into the performance of the new models."
 		}, {
 			_id: "overview-4",
 			title: "Parts 14 to 17: Natural Language Processing",
-			description: "We will start by studying Deep Learning in depth so that you can understand how artificial neural networks work and learn. And while covering the Deep Learning theory we will also build together three different Deep Learning models in TensorFlow and Keras, from scratch, step by step, and coding every single line of code together"
+			description: "We will start by giving an introduction to NLP and then we will learn tokenization and sequences in detail. Further, we will be introduced to embeddings and explore recurrent models. We will understand how LSTMs are applied to NLP and then implement several LSTMs together. While learning NLP, we will also dive into text generation with RNNs and train RNNs by using inference."
 		}, {
 			_id: "overview-5",
 			title: "Parts 18 to 21: Time Series Analysis",
-			description: "We will start by studying Deep Learning in depth so that you can understand how artificial neural networks work and learn. And while covering the Deep Learning theory we will also build together three different Deep Learning models in TensorFlow and Keras, from scratch, step by step, and coding every single line of code together"
+			description: "This section is concentrated on theory and all the codes will be presented on the slides. You will be introduced to the Time Series and learn the specifics of sequences and prediction. We will dive deep into examples, common patterns and metrics for evaluating the performance of Time Series, cover the concepts of moving average and differencing, as well as understand how forecasting works. Furthermore, we will learn how Machine Learning is applied to Time Series and make predictions. We will have a conceptual overview of how RNNs are used with sequences and how to use convolutions for real-world Time Series."
 		}, {
 			_id: "overview-6",
 			title: "Parts 22 to 25: TensorFlow Lite",
-			description: "We will start by studying Deep Learning in depth so that you can understand how artificial neural networks work and learn. And while covering the Deep Learning theory we will also build together three different Deep Learning models in TensorFlow and Keras, from scratch, step by step, and coding every single line of code together"
+			description: "In this extra section, you will be introduced to TensorFlow Lite, specifically to its different features and components, including its architecture and performance. Then we will cover some optimization techniques in TensorFlow Lite and see the very important concept of quantization. Further, we will learn how to convert a model to TensorFlow Lite and understand how to do Transfer Learning with TensorFlow Lite. We will also dig deeper and learn how TensorFlow Lite works with Android, iOS and MicroSystems."
 		}
 	];
 
@@ -488,7 +488,7 @@ const CourseBlock = ({ history }) => {
 							<LazyImage src="/landing/hadelin-picture.jpg" alt="Hadelin de Ponteves Picture"/>
 							<div className="information">
 								<p><strong>Hadelin de Ponteves</strong></p>
-								<p>Host and Main Instructor</p>
+								<p>Host & Main Instructor</p>
 							</div>
 						</div>
 
