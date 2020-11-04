@@ -634,20 +634,11 @@ section.homepage-courses .course-block .information-container .left-content .hig
 
 section.homepage-courses .course-block .information-container .left-content .academic-program-header {
 	margin: 40px 0 20px 0;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
 }
 
 section.homepage-courses .course-block .information-container .left-content .academic-program-header h2 {
 	color: var(--primary-dark);
 	margin: 0;
-}
-
-section.homepage-courses .course-block .information-container .left-content .academic-program-header a {
-	text-align: right;
-	color: var(--primary-dark);
-	font-weight: 500;
 }
 
 section.homepage-courses .course-block .overview-container {

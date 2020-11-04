@@ -457,7 +457,6 @@ const CourseBlock = ({ history }) => {
 
 					<div className="academic-program-header">
 						<h2>Academic Program Overview</h2>
-						<a href="">Find detailed version here</a>
 					</div>
 
 					<div className="overview-container">
