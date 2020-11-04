@@ -478,20 +478,41 @@ const CourseBlock = ({ history }) => {
 							</div>
 						)}
 					</div>
-
 				</div>
 
 				<div className="right-content">
-					<div className="sidebar-container preparation">
-						<div className="outline"></div>
-						<h3>Neet To Prepare?</h3>
-						<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor consetetur.</p>
-					</div>
-
 					<div className="sidebar-container instructors">
 						<div className="outline"></div>
-						<h3>Neet To Prepare?</h3>
-						<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor consetetur.</p>
+
+						<div className="instructor-item">
+							<LazyImage src="/landing/hadelin-picture.jpg" alt="Hadelin de Ponteves Picture"/>
+							<div className="information">
+								<p><strong>Hadelin de Ponteves</strong></p>
+								<p>Host and Main Instructor</p>
+							</div>
+						</div>
+
+						<div className="separation-container">
+							<div className="text">
+								<p>with the support of</p>
+							</div>
+							<div className="line"></div>
+						</div>
+
+						<div className="instructor-item">
+							<LazyImage src="/landing/kirill-picture.jpg" alt="Kirill Eremenko Picture"/>
+							<div className="information">
+								<p><strong>Kirill Eremenko</strong></p>
+								<p>Data Scientist</p>
+							</div>
+						</div>
+						<div className="instructor-item">
+							<LazyImage src="/landing/luka-picture.jpg" alt="Luka Anicin Picture"/>
+							<div className="information">
+								<p><strong>Luka Anicin</strong></p>
+								<p>AI Expert</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

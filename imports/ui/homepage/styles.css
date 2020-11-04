@@ -731,18 +731,59 @@ section.homepage-courses .course-block .information-container .right-content .si
 	font-weight: 500;
 }
 
-section.homepage-courses .course-block .information-container .right-content .sidebar-container.preparation {
-	margin-bottom: 40px;
-}
-
-section.homepage-courses .course-block .information-container .right-content .sidebar-container.preparation .outline {
-	background-color: var(--primary-dark);
-}
-
 section.homepage-courses .course-block .information-container .right-content .sidebar-container.instructors .outline {
 	background-color: var(--primary);
 }
 
+section.homepage-courses .course-block .information-container .right-content .sidebar-container.instructors .instructor-item {
+	display: flex;
+	align-items: center;
+	margin-top: 20px;
+}
+
+section.homepage-courses .course-block .information-container .right-content .sidebar-container.instructors .instructor-item img {
+	width: 70px;
+	object-fit: cover;
+	height: 70px;
+	border-radius: 999px;
+}
+
+section.homepage-courses .course-block .information-container .right-content .sidebar-container.instructors .instructor-item .information {
+	margin-left: 20px;
+}
+
+section.homepage-courses .course-block .information-container .right-content .sidebar-container.instructors .instructor-item .information p {
+	font-size: 19px;
+}
+
+section.homepage-courses .course-block .information-container .right-content .sidebar-container.instructors .separation-container {
+	position: relative;
+	margin-top: 20px;
+	text-align: center;
+}
+
+section.homepage-courses .course-block .information-container .right-content .sidebar-container.instructors .separation-container .text {
+	display: inline-block;
+	background-color: #fff;
+	padding: 0 10px;
+	z-index: 1;
+	position: relative;
+}
+
+section.homepage-courses .course-block .information-container .right-content .sidebar-container.instructors .separation-container p {
+	color: #A3A3A3;
+	line-height: 20px;
+	background-color: #fff;
+}
+
+section.homepage-courses .course-block .information-container .right-content .sidebar-container.instructors .separation-container div.line {
+	position: absolute;
+	top: 9px;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background-color: #DDDDDD;
+}
 
 section.homepage-courses > .bottom-pattern {
 	bottom: -2px;
