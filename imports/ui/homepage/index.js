@@ -90,7 +90,7 @@ export default Homepage = () => {
 							<p>Join the best training ground for AI mastery and gain the skills you need to become a TensorFlow Certified Developer.</p>
 						</div>
 						<div className="right-content">
-							<VideoPlayer playerId="presentation" mediaId="QyhlZf0X" />
+							<VideoPlayer playerId="presentation" mediaId="npKzoDrm" />
 						</div>
 					</div>
 				</div>
@@ -432,7 +432,7 @@ const CourseBlock = ({ history }) => {
 							<h2>$199</h2>
 						</div>
 
-						<VideoPlayer playerId="homepage-course-tca" mediaId="0YytwiBG" />
+						<VideoPlayer playerId="homepage-course-tca" mediaId="AsuWhuwg" />
 					</div>
 				</div>
 			</div>
