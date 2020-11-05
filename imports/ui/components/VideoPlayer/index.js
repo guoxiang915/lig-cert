@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useScript } from "/imports/ui/components/hooks/useScript.js";
-import "/imports/ui/components/VideoPlayer/styles.css";
 
 export const VideoPlayer = ({ playerId, mediaId, custom }) => {
 	const videoContainer = `${playerId}-video-player`;
