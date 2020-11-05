@@ -380,7 +380,7 @@ const CourseBlock = ({ history }) => {
 		}, {
 			_id: "overview-6",
 			title: "Parts 22 to 25: TensorFlow Lite",
-			description: "In this extra section, you will be introduced to TensorFlow Lite, specifically to its different features and components, including its architecture and performance. Then we will cover some optimization techniques in TensorFlow Lite and see the very important concept of quantization. Further, we will learn how to convert a model to TensorFlow Lite and understand how to do Transfer Learning with TensorFlow Lite. We will also dig deeper and learn how TensorFlow Lite works with Android, iOS and MicroSystems."
+			description: "In this extra section, you will be introduced to TensorFlow Lite, specifically to its different features and components, including its architecture and performance. Then we will cover some optimization techniques in TensorFlow Lite and see the very important concept of quantization. Further, we will learn how to convert a model to TensorFlow Lite and understand how to do Transfer Learning with TensorFlow Lite. We will also dig deeper and learn how to implement TensorFlow Lite in Android and iOS, as well embedded systems like Raspberry Pi."
 		}
 	];
 
