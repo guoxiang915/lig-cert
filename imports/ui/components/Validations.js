@@ -119,3 +119,43 @@ export const courseErrorMessage = (errorState) => {
 		return;
 	}
 };
+
+export const blogErrorMessage = (errorState) => {
+	switch (errorState) {
+	case "missing-title":
+		return "Title is required";
+	case "missing-permalink":
+		return "Permalink is required";
+	case "already-used-permalink":
+		return "Permalink has already been used";
+	case "missing-image":
+		return "Image is required";
+	case "missing-content":
+		return "Content is required";
+	case "missing-seo-title":
+		return "SEO title is required";
+	case "missing-seo-description":
+		return "SEO description is required";
+	default:
+		return;
+	}
+};
+
+export const blogHasError = (inputField, errorState) => {
+	switch (inputField) {
+	case "title":
+		return ["missing-title"].includes(errorState);
+	case "permalink":
+		return ["missing-permalink","already-used-permalink"].includes(errorState);
+	case "image":
+		return ["missing-image"].includes(errorState);
+	case "content":
+		return ["missing-content"].includes(errorState);
+	case "seoTitle":
+		return ["missing-seo-title"].includes(errorState);
+	case "seoDescription":
+		return ["missing-seo-description"].includes(errorState);
+	default:
+		break;
+	}
+};

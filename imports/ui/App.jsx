@@ -12,6 +12,9 @@ const UsersList = loadable(() => import("/imports/ui/admin/users/UsersList"));
 const FilesList = loadable(() => import("/imports/ui/admin/files/FilesList"));
 const InvitationsList = loadable(() => import("/imports/ui/admin/invitations/InvitationsList"));
 const CoursesList = loadable(() => import("/imports/ui/admin/courses/CoursesList"));
+const AdminBlogsList = loadable(() => import("/imports/ui/admin/blogs/BlogsList"));
+const BlogsList = loadable(() => import("/imports/ui/blogs/BlogsList"));
+const BlogView = loadable(() => import("/imports/ui/blogs/BlogView"));
 const TermsConditions = loadable(() => import("/imports/ui/legal/TermsConditions"));
 const PrivacyPolicy = loadable(() => import("/imports/ui/legal/PrivacyPolicy"));
 
@@ -27,6 +30,9 @@ export const App = () => (
 			<LoggedRoute path="/admin/files" layout={AdminLayout} component={FilesList} />
 			<LoggedRoute path="/admin/invitations" layout={AdminLayout} component={InvitationsList} />
 			<LoggedRoute path="/admin/courses" layout={AdminLayout} component={CoursesList} />
+			<LoggedRoute path="/admin/blogs" layout={AdminLayout} component={AdminBlogsList} />
+			<Route path="/blog" exact component={BlogsList} />
+			<Route path="/blog/:permalink" exact component={BlogView} />
 			<Route path="/terms-conditions" component={TermsConditions} />
 			<Route path="/privacy-policy" component={PrivacyPolicy} />
 		</Switch>
