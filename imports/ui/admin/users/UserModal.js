@@ -91,7 +91,7 @@ export default UserModal = ({ isOpen, onClose, user }) => {
 
 				<label>
 					User Roles:
-					<ListSelector field="roles" options={["admin"]} currentValues={values.roles} saveCallback={handleChange} />
+					<ListSelector field="roles" options={["admin","course-tcp"]} currentValues={values.roles} saveCallback={handleChange} />
 				</label>
 
 				<hr/>
