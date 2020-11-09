@@ -113,15 +113,17 @@ export default BlogView = () => {
 				<LazyImage src="/landing/advantages-bottom-pattern.svg" alt="Advantages Bottom Pattern" classes="image-pattern bottom-pattern"/>
 			</section>
 
-			<section className="section blog-view-recommendations">
-				<div className="main-wrapper">
-					<h2>Recommendations</h2>
+			{recommendations.length > 0 && (
+				<section className="section blog-view-recommendations">
+					<div className="main-wrapper">
+						<h2>Recommendations</h2>
 
-					<div className="blogs-container">
-						{recommendations.map(blog => <BlogItem key={blog._id} blog={blog} />)}
+						<div className="blogs-container">
+							{recommendations.map(blog => <BlogItem key={blog._id} blog={blog} />)}
+						</div>
 					</div>
-				</div>
-			</section>
+				</section>
+			)}
 
 			<section className="section footer">
 				<div className="main-wrapper">

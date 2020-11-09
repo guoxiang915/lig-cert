@@ -2,6 +2,7 @@
 section.blog-header {
 	position: relative;
 	background-color: #F0F0F0;
+	min-height: calc(100vh - 80px);
 }
 
 section.blog-header .main-wrapper {
@@ -21,6 +22,7 @@ section.blog-header .background-color-container {
 	background: linear-gradient(135deg,#FF9200 0, #FF4477 100%);
 	padding-bottom: 220px;
 	z-index: 0;
+	overflow: hidden;
 }
 
 section.blog-header .background-color-container .connection-pattern {
@@ -92,14 +94,13 @@ section.blog-header .background-color-container .color-bottom-pattern {
 }
 
 /* Blog View */
+section.blog-header.blog-view {
+	padding-bottom: 60px;
+}
 section.blog-header.blog-view .bottom-pattern {
 	bottom: -2px;
 	min-width: 3000px;
 	width: 100%;
-}
-
-section.blog-view-recommendations {
-	padding-top: 50px;
 }
 
 /* Mobile View */
