@@ -57,6 +57,7 @@ export default Homepage = () => {
 						</div>
 
 						<ul className="actions hidden-xs">
+							<li onClick={() => history.push("/blog")}><a>Blog</a></li>
 							<li onClick={() => advantagesRef.current.scrollIntoView({ behavior: "smooth" })}><a>Features</a></li>
 							<li onClick={() => instructorRef.current.scrollIntoView({ behavior: "smooth" })}><a>Instructor</a></li>
 							<li onClick={() => courseRef.current.scrollIntoView({ behavior: "smooth" })}><a>Course</a></li>

@@ -27,7 +27,8 @@ export default PrivacyPolicy = () => {
 						</div>
 
 						<ul className="actions hidden-xs">
-							<li><a onClick={() => history.push("/")}>Back to Homepage</a></li>
+							<li onClick={() => history.push("/")}><a>Home</a></li>
+							<li onClick={() => history.push("/blog")}><a>Blog</a></li>
 						</ul>
 					</nav>
 

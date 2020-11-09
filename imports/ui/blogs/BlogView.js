@@ -66,7 +66,7 @@ export default BlogView = () => {
 
 						<ul className="actions hidden-xs">
 							<li onClick={() => history.push("/")}><a>Home</a></li>
-							<li onClick={() => history.push("/blog")}><a>Blogs</a></li>
+							<li onClick={() => history.push("/blog")}><a>Blog</a></li>
 
 							<div className="buttons">
 								{user ? (
