@@ -142,6 +142,8 @@ export default PaymentForm = ({ onClose, data }) => {
 						</label>
 					</div>
 
+					<Coupon data={data} status={status} setStatus={setStatus} />
+
 					{status.errorMessage && <p className="error-message"><IconWarning /> {status.errorMessage}</p>}
 
 					<button type="submit" className="button primary primary-dark primary-dark-hover" disabled={status.loading}>
@@ -150,5 +152,58 @@ export default PaymentForm = ({ onClose, data }) => {
 				</form>
 			)}
 		</Fragment>
+	);
+};
+
+const Coupon = ({ data, status, setStatus }) => {
+	const [coupon, setCoupon] = useState ({ display: false, code: "", validated: false });
+
+	const handleChange = (event) => {
+		const { name, value } = event.target;
+		setStatus({ ...status, errorMessage: "" });
+		setCoupon({ ...coupon, [name]: value });
+	};
+
+	const toggleDisplay = () => {
+		if (coupon.validated) return;
+		setCoupon({ ...coupon, code: "", display: !coupon.display });
+		setStatus({ ...status, errorMessage: "" });
+	};
+
+	const handleCoupon = () => {
+		if (!coupon.code) return setStatus({ ...status, errorMessage: "Coupon code is required" });
+
+		const coupons = [
+			{ code: "TFC_2020", discount: 40, productId: "course-tcp" }
+		];
+
+		const inputCoupon = _findWhere(coupons, coupon.code, "code");
+
+		// Coupon doesnt exist
+		if (!inputCoupon) return setStatus({ ...status, errorMessage: "Coupon code is invalid" });
+
+		// Invalid coupon. Used a coupon not available for the selected purchase
+		if (data.productId !== inputCoupon.productId) return setStatus({ ...status, errorMessage: "Coupon invalid for this purchase." });
+
+		// Coupon valid. Activate in final price
+		setCoupon({ ...coupon, code: "", display: false, validated: true });
+		setStatus({ ...status, discount: inputCoupon.discount, errorMessage: "" });
+	};
+
+	return (
+		<div className="coupon-block">
+			<div className="actions">
+				<p className={`${coupon.validated ? "disabled" : ""}`} onClick={toggleDisplay}>Have a coupon code?</p>
+				{coupon.validated && <span>Discount code successfully applied.</span>}
+			</div>
+
+			{coupon.display && <label>
+				Coupon Code:
+				<div>
+					<input type="text" name="code" value={coupon.code} onChange={handleChange} placeholder="e.g. Coupon123" />
+					<a onClick={handleCoupon}>Apply Coupon</a>
+				</div>
+			</label>}
+		</div>
 	);
 };

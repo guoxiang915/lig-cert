@@ -149,6 +149,7 @@ export default CourseView = () => {
 								title: course.title,
 								price: course.price,
 								roles: course.accessRoles,
+								productId: course.accessRoles.join(),
 								successActionText: "Start Learning",
 								successAction: () => { history.push(`/courses/${course.permalink}`);}
 							}}

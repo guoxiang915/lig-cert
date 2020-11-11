@@ -44,3 +44,39 @@
 .payment-modal .button {
 	margin-top: 10px;
 }
+
+.payment-modal .coupon-block {
+	margin-bottom: 20px;
+}
+
+.payment-modal .coupon-block .actions {
+	margin: 5px 0 10px 0;
+}
+
+.payment-modal .coupon-block .actions p {
+	color: var(--primary);
+	cursor: pointer;
+	margin: 0;
+	display: inline-block;
+}
+
+.payment-modal .coupon-block .actions p.disabled {
+	cursor: not-allowed;
+	color: lightgray;
+}
+
+.payment-modal .coupon-block .actions span {
+	float: right;
+	color: var(--success);
+}
+
+.payment-modal .coupon-block label input {
+	display: inline-block;
+	width: calc(100% - 120px);
+}
+
+.payment-modal .coupon-block label a {
+	width: 100px;
+	margin-left: 20px;
+	cursor: pointer;
+}
