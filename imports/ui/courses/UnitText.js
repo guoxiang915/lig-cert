@@ -9,7 +9,7 @@ export const UnitText = ({ unit, nextState, toggleSidebar }) => {
 			<div className="text-content">
 				<div dangerouslySetInnerHTML={{ __html: unit.content.text }} />
 				<br/>
-				<button type="button" className="button primary dark-hover" onClick={() => nextState.action()}>{nextState.title}</button>
+				<button type="button" className="button primary-dark primary-dark-hover" onClick={() => nextState.action()}>{nextState.title}</button>
 			</div>
 		</Fragment>
 	);
