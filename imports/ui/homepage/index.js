@@ -110,7 +110,7 @@ export default Homepage = () => {
 						<h1>Open Doors with TensorFlow Certification</h1>
 						<p>TensorFlow’s rapid rise in adoption and job growth listings aren't showing signs of slowing down. </p>
 						<p>TensorFlow is here to stay, and certification sets you apart on the job market.  The TensorFlow Developer Professional Certificate course puts you on the fast track to certification.</p>
-						<a className="button primary-dark" onClick={(event) => toggleAuthModal(event, true, "Signup")}>Get Started</a>
+						{!user && <button className="button primary-dark" onClick={(event) => toggleAuthModal(event, true, "Signup")}>Get Started</button>}
 					</div>
 
 					<div className="right-content">
@@ -271,7 +271,7 @@ export default Homepage = () => {
 
 				<div className="main-wrapper">
 					<h1>Your TensorFlow Developer Certificate is Waiting</h1>
-					{!user && <button className="button primary-dark" onClick={(event) => toggleModal(event, true, "Signup")}>Get Started</button>}
+					{!user && <button className="button primary-dark" onClick={(event) => toggleAuthModal(event, true, "Signup")}>Get Started</button>}
 				</div>
 
 				<LazyImage src="/connection-pattern.svg" alt="Connection Pattern" classes="image-pattern connection-pattern"/>
