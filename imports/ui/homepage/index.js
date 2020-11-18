@@ -251,7 +251,6 @@ export default Homepage = () => {
 
 					<div className="courses-container" ref={courseRef}>
 						<h1>Your Certificate Is Waiting</h1>
-						<p className="subtitle">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam</p>
 						<CourseBlock history={history} />
 					</div>
 				</div>
