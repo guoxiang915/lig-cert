@@ -55,6 +55,7 @@ export default BlogView = () => {
 				description={blog.seo.description}
 				contentType="website"
 				path={`blog/${permalink}`}
+				image={blog.image}
 			/>
 
 			<section className="section blog-header blog-view">
