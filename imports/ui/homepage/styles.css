@@ -548,6 +548,16 @@ section.homepage-courses .course-block .presentation-container .bullet-item svg 
 	vertical-align: top;
 }
 
+section.homepage-courses .course-block .presentation-container .bullet-item.action {
+	cursor: pointer;
+}
+
+section.homepage-courses .course-block .presentation-container .bullet-item.action span svg {
+	color: #b2bcc3;
+	margin: 0 0 0 5px;
+	height: 20px;
+}
+
 section.homepage-courses .course-block .presentation-container .left-content .button {
 	width: calc(50% - 10px);
 	text-align: center;
@@ -781,6 +791,15 @@ section.homepage-courses > .bottom-pattern {
 	bottom: -2px;
 	min-width: 2000px;
 	width: 100%;
+}
+
+/* Terms Modal */
+.terms-modal h4 {
+	margin-top: 0;
+}
+
+.terms-modal p {
+	margin-top: 10px;
 }
 
 /* Testimonials Block */

@@ -10,7 +10,8 @@ import AuthModal from "/imports/ui/authentication/AuthModal";
 import { Dropdown } from "/imports/ui/components/Dropdown";
 import { VideoPlayer } from "/imports/ui/components/VideoPlayer";
 import { LazyImage } from "/imports/ui/components/LazyImage";
-import { IconPlus, IconMinus, IconAward, IconLinkedin, IconFacebook, IconTwitter, IconInstagram, IconYoutube, IconUdemy, IconWebsite, IconCircleCheck, IconLongLeftArrow, IconLongRightArrow, IconBlockquote } from "/imports/ui/components/Icons";
+import { Modal } from "/imports/ui/components/Modal";
+import { IconPlus, IconMinus, IconAward, IconLinkedin, IconFacebook, IconTwitter, IconInstagram, IconYoutube, IconUdemy, IconWebsite, IconCircleCheck, IconInformation , IconLongLeftArrow, IconLongRightArrow, IconBlockquote } from "/imports/ui/components/Icons";
 import { SliderWrapper } from "/imports/ui/components/SliderWrapper";
 const ProfileModal = loadable(() => import("/imports/ui/profile/ProfileModal"));
 import "/imports/ui/stylesheets/navbar.css";
@@ -355,6 +356,8 @@ const SkillsContainer = () => {
 
 const CourseBlock = ({ history }) => {
 	const [active, setActive] = useState("overview-1");
+	const [showTermsModal, setShowTermsModal] = useState(false);
+	const toggleTermsModal = () => setShowTermsModal(!showTermsModal);
 
 	const overviews = [
 		{
@@ -409,9 +412,10 @@ const CourseBlock = ({ history }) => {
 							<p>10 Practical Case Studies</p>
 						</div>
 
-						<div className="bullet-item">
+						<div className="bullet-item action">
 							<IconCircleCheck />
-							<p>Pass or We Pay Guarantee*</p>
+							<p onClick={toggleTermsModal}>Pass or We Pay Guarantee <span><IconInformation /></span></p>
+							{showTermsModal && <TermsModal isOpen={showTermsModal} onClose={toggleTermsModal} />}
 						</div>
 
 						<div className="bullet-item">
@@ -517,6 +521,17 @@ const CourseBlock = ({ history }) => {
 				</div>
 			</div>
 		</div>
+	);
+};
+
+const TermsModal = ({ isOpen, onClose }) => {
+	return (
+		<Modal classes="terms-modal" isOpen={isOpen} onClose={onClose}>
+			<h4>Terms & Conditions of Exam Guarantee</h4>
+			<p>Ligcert Ventures Pty Ltd, U.K provides the following guarantee for the TensorFlow Developer Professional Certificate Course:</p>
+			<p>If you take your TensorFlow Developer Certificate exam within 30 days of enrolling and completing this course 100% and you sit the exam and receive a score above zero, but below the minimum score required to pass the exam, then Ligcert Ventures Pty Ltd, U.K will pay for your second exam attempt provided the following conditions are met: you paid at least $1 for this course and it was not refunded, AND before sitting the exam, you diligently watched and followed along with all of the tutorials in the course (completed all case studies and have all codes under your Google Colab account), AND you completed all practical activities including but not limited to challenges within the sections, quizzes, homework exercises and all provided practice exams.</p>
+			<p>Ligcert Ventures Pty Ltd may request evidence of fulfilling the above conditions, thereby it's important that you save your work when taking the course and doing the practical assignments.</p>
+		</Modal>
 	);
 };
 
