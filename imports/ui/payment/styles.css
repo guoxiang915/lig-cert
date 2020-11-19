@@ -80,3 +80,7 @@
 	margin-left: 20px;
 	cursor: pointer;
 }
+
+.payment-modal p.agreement {
+	margin-bottom: 15px;
+}

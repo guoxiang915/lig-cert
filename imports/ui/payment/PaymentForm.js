@@ -144,6 +144,8 @@ export default PaymentForm = ({ onClose, data }) => {
 
 					<Coupon data={data} status={status} setStatus={setStatus} />
 
+					<p className="agreement">By clicking 'Submit Payment' you agree that TFC provides you immediate access to digital content as soon as you complete your purchase, without waiting the 14-day withdrawal period, and with the ability for a refund based on the Pass or We Pay Guarantee. Therefore, you expressly waive your rights to withdraw from this purchase.</p>
+
 					{status.errorMessage && <p className="error-message"><IconWarning /> {status.errorMessage}</p>}
 
 					<button type="submit" className="button primary primary-dark primary-dark-hover" disabled={status.loading}>
