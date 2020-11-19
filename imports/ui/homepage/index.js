@@ -104,7 +104,7 @@ export default Homepage = () => {
 			<SkillsContainer />
 
 			<section className="section homepage-advantages" ref={advantagesRef}>
-				<LazyImage src="/landing/advantages-top-pattern.svg" alt="Advantages Top Pattern" classes="image-pattern top-pattern"/>
+				<img src="/landing/advantages-top-pattern.svg" alt="Advantages Top Pattern" className="image-pattern top-pattern"/>
 
 				<div className="main-wrapper">
 					<div className="left-content">
@@ -148,7 +148,7 @@ export default Homepage = () => {
 					<LazyImage src="/tf-pattern.svg" alt="TF Pattern" classes="left-pattern hidden-xs"/>
 				</div>
 
-				<LazyImage src="/landing/advantages-bottom-pattern.svg" alt="Advantages Bottom Pattern" classes="image-pattern bottom-pattern"/>
+				<img src="/landing/advantages-bottom-pattern.svg" alt="Advantages Bottom Pattern" className="image-pattern bottom-pattern"/>
 			</section>
 
 			<section className="section homepage-expertise" ref={instructorRef}>
@@ -224,7 +224,7 @@ export default Homepage = () => {
 			</section>
 
 			<section className="section homepage-courses">
-				<LazyImage src="/landing/courses-top-pattern.svg" alt="Courses Top Pattern" classes="image-pattern top-pattern"/>
+				<img src="/landing/courses-top-pattern.svg" alt="Courses Top Pattern" className="image-pattern top-pattern"/>
 
 				<div className="main-wrapper">
 					<div className="features-container">
