@@ -384,6 +384,10 @@ const CourseBlock = ({ history }) => {
 			_id: "overview-6",
 			title: "Parts 22 to 25: TensorFlow Lite",
 			description: "In this extra section, you will be introduced to TensorFlow Lite, specifically to its different features and components, including its architecture and performance. Then we will cover some optimization techniques in TensorFlow Lite and see the very important concept of quantization. Further, we will learn how to convert a model to TensorFlow Lite and understand how to do Transfer Learning with TensorFlow Lite. We will also dig deeper and learn how to implement TensorFlow Lite in Android and iOS, as well embedded systems like Raspberry Pi."
+		}, {
+			_id: "overview-7",
+			title: "Exam 1 - 3: Real TensorFlow Certification Exam Solutions and Explanations",
+			description: "In this section, you will be presented with a detailed overview of the real TensorFlow Developer Certificate exams to prepare you to pass the certification assessment. The detailed explanations will help you understand the certification exam expectations, as well as demonstrate the required practical Machine Learning skills through the building and training of models using TensorFlow. The content of this section will be updated in line with the formation of the new assessment exam questions developed by the TensorFlow team."
 		}
 	];
 
