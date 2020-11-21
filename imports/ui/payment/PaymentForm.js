@@ -175,9 +175,7 @@ const Coupon = ({ data, status, setStatus }) => {
 	const handleCoupon = () => {
 		if (!coupon.code) return setStatus({ ...status, errorMessage: "Coupon code is required" });
 
-		const coupons = [
-			{ code: "TFC_2020", discount: 40, productId: "course-tcp" }
-		];
+		const coupons = [];
 
 		const inputCoupon = _findWhere(coupons, coupon.code, "code");
 
