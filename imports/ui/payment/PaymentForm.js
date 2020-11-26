@@ -41,7 +41,7 @@ export default PaymentForm = ({ onClose, data }) => {
 				userEmail: userEmail,
 				userName: userName,
 				productName: data.title,
-				productPrice: data.price
+				productPrice: data.price - status.discount
 			};
 
 			Meteor.call("payment.complete", user._id, completionData, (error) => {
