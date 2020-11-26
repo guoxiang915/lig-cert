@@ -54,7 +54,7 @@ export default Homepage = () => {
 				<div className="main-wrapper">
 					<nav>
 						<div className="logo-label">
-							<img src="/logo.svg" alt="TF Certification Logo"/>
+							<img src="/logo.svg" alt="TF Certification Logo" onClick={() => history.push("/")} />
 						</div>
 
 						<ul className="actions hidden-xs">

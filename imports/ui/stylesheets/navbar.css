@@ -16,6 +16,7 @@ nav .logo-label {
 }
 
 nav img {
+	cursor: pointer;
 	height: 30px;
 }
 
