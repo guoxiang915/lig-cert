@@ -371,7 +371,7 @@ const CourseBlock = ({ history }) => {
 		}, {
 			_id: "overview-3",
 			title: "Parts 11 to 13: JavaScript",
-			description: "In this section, you will dig even deeper and learn and explore the diverse tools to become a global master in TensorFlow. You will be introduced to Computer Vision and Transfer Learning in JavaScript. We will learn how to reuse and convert the existing modes to JavaScript, as well as understand and dive deep into the performance of the new models."
+			description: "In this section, you will dig even deeper and learn and explore the diverse tools to become a global master in TensorFlow. You will be introduced to Computer Vision and Transfer Learning in JavaScript. We will learn how to reuse and convert the existing models to JavaScript, as well as understand and dive deep into the performance of the new models."
 		}, {
 			_id: "overview-4",
 			title: "Parts 14 to 17: Natural Language Processing",
