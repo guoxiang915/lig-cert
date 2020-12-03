@@ -430,7 +430,7 @@ const CourseBlock = ({ history }) => {
 
 					<div className="actions">
 						<a className="button primary-dark primary-dark-hover" onClick={() => history.push("/courses/tensorflow-developer-professional-certificate")}>Go to Course</a>
-						<a className="button border-primary-dark primary-dark-hover" onClick={() => history.push("/courses/tensorflow-developer-professional-certificate")}>Download Curriculum</a>
+						<a className="button border-primary-dark primary-dark-hover" href="/landing/course-curriculum.pdf" target="_blank" rel="noopener">Download Curriculum</a>
 					</div>
 				</div>
 
