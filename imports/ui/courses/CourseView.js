@@ -94,8 +94,8 @@ export default CourseView = () => {
 	return (
 		<Fragment>
 			<SEO
-				title={course.title}
-				description={`Welcome to the TF Certification ${course.title} course.`}
+				title={course.seo.title}
+				description={course.seo.description}
 				contentType="website"
 				path={`courses/${coursePermalink}`}
 			/>

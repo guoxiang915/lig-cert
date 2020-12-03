@@ -14,6 +14,8 @@ export default CourseModal = ({ isOpen, onClose, course }) => {
 		description: course ? course.description : "",
 		price: course ? course.price : "",
 		accessRoles: course ? course.accessRoles : [],
+		seoTitle: course ? course.seo.title : "",
+		seoDescription: course ? course.seo.description : "",
 		errorState: "",
 		loading: false
 	});
@@ -30,6 +32,8 @@ export default CourseModal = ({ isOpen, onClose, course }) => {
 		if (!values.permalink) return setValues({ ...values, errorState: "missing-permalink" });
 		if (!values.mediaId) return setValues({ ...values, errorState: "missing-media-id" });
 		if (!values.description) return setValues({ ...values, errorState: "missing-description" });
+		if (!values.seoTitle) return setValues({ ...values, errorState: "missing-seo-title" });
+		if (!values.seoDescription) return setValues({ ...values, errorState: "missing-seo-description" });
 
 		const courseData = {
 			title: values.title,
@@ -38,7 +42,8 @@ export default CourseModal = ({ isOpen, onClose, course }) => {
 			description: values.description,
 			price: parseInt(values.price),
 			modules: course ? course.modules : [],
-			accessRoles: values.accessRoles
+			accessRoles: values.accessRoles,
+			seo: { title: values.seoTitle, description: values.seoDescription }
 		};
 
 		const courseId = course ? course._id : null;
@@ -86,6 +91,16 @@ export default CourseModal = ({ isOpen, onClose, course }) => {
 				<label className={`${courseHasError("mediaLength", values.errorState) ? "error" : ""}`}>
 					Price (in USD):
 					<input type="number" name="price" value={values.price} onChange={handleChange} placeholder="e.g. 399" />
+				</label>
+
+				<label className={`${courseHasError("seoTitle", values.errorState) ? "error" : ""}`}>
+					Seo Title:
+					<input type="text" name="seoTitle" value={values.seoTitle} onChange={handleChange} placeholder="e.g. Tensorflow Certification" />
+				</label>
+
+				<label className={`${courseHasError("seoDescription", values.errorState) ? "error" : ""}`}>
+					Seo Description:
+					<input type="text" name="seoDescription" value={values.seoDescription} onChange={handleChange} placeholder="e.g. Tensorflow Ceritifcation will teach you to..." />
 				</label>
 
 				<label>

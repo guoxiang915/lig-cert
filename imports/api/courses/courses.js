@@ -14,7 +14,10 @@ const CourseSchema = new SimpleSchema({
 	"modules.$": { type: Object, blackbox: true },
 	accessRoles: { type: Array },
 	"accessRoles.$": { type: String },
-	unitCount: { type: Number }
+	unitCount: { type: Number },
+	seo: { type: Object },
+	"seo.title": { type: String },
+	"seo.description": { type: String }
 });
 
 CoursesCollection.attachSchema(CourseSchema);

@@ -88,6 +88,10 @@ export const courseHasError = (inputField, errorState) => {
 		return ["missing-media-length"].includes(errorState);
 	case "description":
 		return ["missing-description"].includes(errorState);
+	case "seoTitle":
+		return ["missing-seo-title"].includes(errorState);
+	case "seoDescription":
+		return ["missing-seo-description"].includes(errorState);
 	case "text":
 		return ["missing-text"].includes(errorState);
 	case "questions":
@@ -111,6 +115,10 @@ export const courseErrorMessage = (errorState) => {
 		return "Video length is required";
 	case "missing-description":
 		return "Description is required";
+	case "missing-seo-title":
+		return "SEO title is required";
+	case "missing-seo-description":
+		return "SEO description is required";
 	case "missing-text":
 		return "Content text is required";
 	case "missing-questions":
