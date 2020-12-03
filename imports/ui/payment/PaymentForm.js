@@ -1,7 +1,7 @@
 import React, { useState, Fragment } from "react";
 import { useStripe, useElements, CardNumberElement, CardCvcElement, CardExpiryElement } from "@stripe/react-stripe-js";
 import { useAccount } from "/imports/ui/components/hooks/useAccount";
-import { _union, _findWhere } from "/imports/ui/components/Functions";
+import { _union } from "/imports/ui/components/Functions";
 import { IconCheck, IconWarning } from "/imports/ui/components/Icons";
 import "/imports/ui/stylesheets/form.css";
 
@@ -177,7 +177,8 @@ const Coupon = ({ data, status, setStatus }) => {
 
 		const coupons = [];
 
-		const inputCoupon = _findWhere(coupons, coupon.code, "code");
+		// const inputCoupon = _findWhere(coupons, coupon.code, "code");
+		const inputCoupon = coupons.find(item => (item.code == coupon.code && item.productId == data.productId));
 
 		// Coupon doesnt exist
 		if (!inputCoupon) return setStatus({ ...status, errorMessage: "Coupon code is invalid" });
