@@ -58,7 +58,7 @@ export default InvitationModal = ({ isOpen, onClose }) => {
 
 				<label>
 					User Rights:
-					<ListSelector field="roles" options={["admin"]} currentValues={values.roles} saveCallback={handleChange} />
+					<ListSelector field="roles" options={["admin","course-tcp"]} currentValues={values.roles} saveCallback={handleChange} />
 				</label>
 
 				{values.errorState && <p><IconWarning />{invitationErrorMessage(values.errorState)}</p>}
