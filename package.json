@@ -13,11 +13,11 @@
 		"@loadable/component": "^5.14.1",
 		"@stripe/react-stripe-js": "^1.1.2",
 		"@stripe/stripe-js": "^1.11.0",
-		"aws-sdk": "^2.799.0",
+		"aws-sdk": "^2.804.0",
 		"bcrypt": "^5.0.0",
 		"copy-text-to-clipboard": "^2.2.0",
-		"dayjs": "^1.9.6",
-		"dompurify": "^2.2.2",
+		"dayjs": "^1.9.7",
+		"dompurify": "^2.2.3",
 		"handlebars": "^4.7.6",
 		"md5": "^2.3.0",
 		"meteor-node-stubs": "^1.0.1",
@@ -28,7 +28,7 @@
 		"react-modal": "^3.12.1",
 		"react-router-dom": "^5.2.0",
 		"simpl-schema": "^1.10.2",
-		"stripe": "^7.63.1",
+		"stripe": "^8.127.0",
 		"vanilla-lazyload": "^17.3.0"
 	},
 	"meteor": {
@@ -39,10 +39,10 @@
 		"testModule": "tests/main.js"
 	},
 	"devDependencies": {
-		"eslint": "^7.14.0",
+		"eslint": "^7.15.0",
 		"eslint-config-standard": "^16.0.2",
 		"eslint-plugin-import": "^2.22.1",
 		"eslint-plugin-promise": "^4.2.1",
-		"eslint-plugin-standard": "^4.1.0"
+		"eslint-plugin-standard": "^5.0.0"
 	}
 }
