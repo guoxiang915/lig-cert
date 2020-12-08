@@ -16,23 +16,14 @@
 }
 
 .modal-close {
-	background-color: #fff;
-	border: none;
-	border-radius: 999px;
-	box-shadow: 0 1px 5px rgba(95,110,130,.3);
-	color: #333;
 	cursor: pointer;
-	outline: none;
-	padding: 0;
 	position: absolute;
-	right: -13px;
-	top: -13px;
+	right: 10px;
+	top: 10px;
 }
 
 .modal-close svg {
 	color: #c4ced3;
-	cursor: pointer;
-	float: left;
 	margin: 3px 7.5px;
 	width: 15px;
 }

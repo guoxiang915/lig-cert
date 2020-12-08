@@ -2,7 +2,7 @@ import React, { useState, Fragment } from "react";
 import { useStripe, useElements, CardNumberElement, CardCvcElement, CardExpiryElement } from "@stripe/react-stripe-js";
 import { useAccount } from "/imports/ui/components/hooks/useAccount";
 import { _union } from "/imports/ui/components/Functions";
-import { IconCheck, IconWarning } from "/imports/ui/components/Icons";
+import { IconPayment, IconCheck, IconWarning } from "/imports/ui/components/Icons";
 import "/imports/ui/stylesheets/form.css";
 
 export default PaymentForm = ({ onClose, data }) => {
@@ -17,7 +17,7 @@ export default PaymentForm = ({ onClose, data }) => {
 
 	const elementOptions = {
 		style: {
-			base: { fontSize: "13.5px", lineHeight: "39px", fontWeight: "400" },
+			base: { fontSize: "14px", lineHeight: "37px", fontWeight: "400" },
 			invalid: { color: "#ea5770" }
 		}
 	};
@@ -103,7 +103,10 @@ export default PaymentForm = ({ onClose, data }) => {
 				</div>
 			) : (
 				<form onSubmit={handleSubmit} className="form-container">
-					<h4>Purchase Course</h4>
+					<div className="header">
+						<IconPayment />
+						<p>Checkout</p>
+					</div>
 
 					<div className="summary">
 						<p>Course: <span>{data.title}</span></p>
@@ -113,31 +116,31 @@ export default PaymentForm = ({ onClose, data }) => {
 						<p>Total: <span>${data.price - status.discount}</span></p>
 					</div>
 
-					<p className="disclaimer">If you want to update your personal information, please do so in your profile settings.</p>
+					<p>If you want to update your personal information, please do so in your profile settings.</p>
 
 					<label>
-						Name:
+						<span>Name</span>
 						<input type="text" value={userName} disabled />
 					</label>
 
 					<label>
-						Email:
+						<span>Email Address</span>
 						<input type="email" value={userEmail} disabled />
 					</label>
 
 					<label>
-						Card Number:
+						<span>Card Number</span>
 						<CardNumberElement options={elementOptions} onChange={handleKeyChange} />
 					</label>
 
-					<div className="input-two-columns">
+					<div className="two-col">
 						<label>
-							CVC:
+							<span>CVC</span>
 							<CardCvcElement options={elementOptions} onChange={handleKeyChange} />
 						</label>
 
 						<label>
-							Expiration Date:
+							<span>Expiration Date</span>
 							<CardExpiryElement options={elementOptions} onChange={handleKeyChange} />
 						</label>
 					</div>
@@ -148,9 +151,11 @@ export default PaymentForm = ({ onClose, data }) => {
 
 					{status.errorMessage && <p className="error-message"><IconWarning /> {status.errorMessage}</p>}
 
-					<button type="submit" className="button primary primary-dark primary-dark-hover" disabled={status.loading}>
-						{status.loading ? "Processing Payment..." : "Submit Payment"}
-					</button>
+					<div className="actions">
+						<button type="submit" className="button primary primary-dark primary-dark-hover" disabled={status.loading}>
+							{status.loading ? "Processing Payment..." : "Submit Payment"}
+						</button>
+					</div>
 				</form>
 			)}
 		</Fragment>
@@ -198,13 +203,15 @@ const Coupon = ({ data, status, setStatus }) => {
 				{coupon.validated && <span>Discount code successfully applied.</span>}
 			</div>
 
-			{coupon.display && <label>
-				Coupon Code:
-				<div>
-					<input type="text" name="code" value={coupon.code} onChange={handleChange} placeholder="e.g. Coupon123" />
-					<a onClick={handleCoupon}>Apply Coupon</a>
-				</div>
-			</label>}
+			{coupon.display && (
+				<label>
+					<span>Coupon Code</span>
+					<div>
+						<input type="text" name="code" value={coupon.code} onChange={handleChange} placeholder="e.g. Coupon123" />
+						<a onClick={handleCoupon}>Apply Coupon</a>
+					</div>
+				</label>
+			)}
 		</div>
 	);
 };

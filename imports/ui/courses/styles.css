@@ -430,7 +430,7 @@ section.course-view-content .right-pattern {
 /* Unit Popup */
 .unit-popup {
 	align-items: center;
-	animation: animation-fade-in .3s;
+	animation: fade-in .3s;
 	background-color: rgba(40,48,58,.9);
 	color: #fff;
 	height: 100%;
@@ -460,11 +460,6 @@ section.course-view-content .right-pattern {
 
 .unit-popup .actions .button {
 	margin: 0 5px;
-}
-
-@keyframes animation-fade-in {
-	0% { opacity: 0; }
-	100% { opacity: 1; }
 }
 
 /* Course Modals */

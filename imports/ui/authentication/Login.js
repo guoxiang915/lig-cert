@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import { Meteor } from "meteor/meteor";
 import { isEmail } from "/imports/ui/components/Functions";
-import { IconWarning } from "/imports/ui/components/Icons";
+import { IconProfile, IconWarning } from "/imports/ui/components/Icons";
 import { authHasError, authErrorMessage } from "/imports/ui/components/Validations";
-import "/imports/ui/authentication/styles.css";
 
 export default Login = ({ actionModal }) => {
-	const [values, setValues] = useState({ email: "", password: "", errorState: "", loading: false });
+	const [values, setValues] = useState({
+		email: "",
+		password: "",
+		errorState: "",
+		loading: false
+	});
 
 	const handleChange = (event) => {
 		const { name, value } = event.target;
@@ -36,28 +40,31 @@ export default Login = ({ actionModal }) => {
 	};
 
 	return (
-		<form onSubmit={handleSubmit} className="form-container">
-			<h4>Welcome Back</h4>
+		<form onSubmit={handleSubmit} className="form-container login">
+			<div className="header">
+				<IconProfile />
+				<p>Log in</p>
+			</div>
 
 			<label className={`${authHasError("email", values.errorState) ? "error" : ""}`}>
-				Email Address
+				<span>Email Address</span>
 				<input type="text" name="email" value={values.email} onChange={handleChange} placeholder="e.g. john.doe@example.com" />
 			</label>
 
 			<label className={`${authHasError("password", values.errorState) ? "error" : ""}`}>
-				Password
+				<span>Password</span>
 				<input name="password" type="password" value={values.password} onChange={handleChange} placeholder="e.g. password123" />
 			</label>
 
-			<p><a onClick={(event) => actionModal(event, true, "RecoverPassword")} href="">Forgot password?</a></p>
+			{values.errorState && <p className="error-message"><IconWarning/>{authErrorMessage(values.errorState)}</p>}
 
-			{values.errorState && <p className="error-message"><IconWarning/> {authErrorMessage(values.errorState)}</p>}
-
-			<button type="submit" className="button primary-dark primary-dark-hover" disabled={values.loading}>
-				{values.loading ? "Signing in" : "Sign in"}
+			<button type="submit" className="button primary" disabled={values.loading}>
+				{values.loading ? "Logging in" : "Log in"}
 			</button>
 
-			<p>Don't have an account? <a onClick={(event) => actionModal(event, true, "Signup")} href="">Sign up</a></p>
+			<p className="forgot-action">or <a onClick={(event) => actionModal(event, true, "RecoverPassword")} href="">Forgot password?</a></p>
+
+			<p className="action">Don't have an account? <a onClick={(event) => actionModal(event, true, "Signup")} href="">Sign up</a></p>
 		</form>
 	);
 };

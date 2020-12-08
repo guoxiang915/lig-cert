@@ -87,6 +87,16 @@ p {
 	color: var(--primary);
 }
 
+.button.primary {
+	background-color: var(--primary);
+	border-color: var(--primary);
+}
+
+.button.primary:hover {
+	background-color: transparent;
+	color: var(--primary);
+}
+
 .button.primary-dark {
 	background-color: var(--primary-dark);
 	border-color: var(--primary-dark);
@@ -131,6 +141,23 @@ p {
 
 .visible-xs {
 	display: none;
+}
+
+/* Animations */
+@keyframes fade-in {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+@keyframes fade-up {
+	0% {
+		opacity: 0;
+		transform: translatey(20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translatey(0);
+	}
 }
 
 /* Mobile View */

@@ -1,10 +1,10 @@
 import React, { useState, Fragment } from "react";
 import { Accounts } from "meteor/accounts-base";
 import { isEmail } from "/imports/ui/components/Functions";
-import { IconWarning } from "/imports/ui/components/Icons";
+import { IconProfile, IconWarning } from "/imports/ui/components/Icons";
 import { authHasError, authErrorMessage } from "/imports/ui/components/Validations";
 
-export default ResetPassword = ({ actionModal }) => {
+export default RecoverPassword = ({ actionModal }) => {
 	const [values, setValues] = useState({ email: "", submitted: false, errorState: "", loading: false });
 
 	const handleChange = (event) => {
@@ -43,20 +43,23 @@ export default ResetPassword = ({ actionModal }) => {
 				</div>
 			) : (
 				<form onSubmit={handleSubmit} className="form-container">
-					<h4>Reset Password</h4>
+					<div className="header">
+						<IconProfile />
+						<p>Reset Password</p>
+					</div>
 
 					<label className={`${authHasError("email", values.errorState) ? "error" : ""}`}>
-						Email Address
+						<span>Email Address</span>
 						<input type="text" name="email" value={values.email} onChange={handleChange} placeholder="e.g. john.doe@example.com" />
 					</label>
 
 					{values.errorState && <p className="error-message"><IconWarning/>{authErrorMessage(values.errorState)}</p>}
 
-					<button type="submit" className="button primary-dark primary-dark-hover" disabled={values.loading}>
+					<button type="submit" className="button primary" disabled={values.loading}>
 						{values.loading ? "Resetting Password" : "Reset Password"}
 					</button>
 
-					<p>Remember your password? <a onClick={(event) => actionModal(event, true, "Login")} href="">Sign in!</a></p>
+					<p className="action">Remember your password? <a onClick={(event) => actionModal(event, true, "Login")} href="">Log in</a></p>
 				</form>
 			)}
 		</Fragment>

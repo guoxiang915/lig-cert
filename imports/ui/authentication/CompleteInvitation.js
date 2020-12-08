@@ -6,11 +6,20 @@ import { Meteor } from "meteor/meteor";
 import { InvitationsCollection } from "/imports/api/invitations/invitations";
 import { isValidPassword } from "/imports/ui/components/Functions";
 import { SEO } from "/imports/ui/components/SEO";
-import { IconWarning } from "/imports/ui/components/Icons";
+import { IconProfile, IconWarning } from "/imports/ui/components/Icons";
 import { authHasError, authErrorMessage } from "/imports/ui/components/Validations";
+import "/imports/ui/authentication/styles.css";
+import "/imports/ui/stylesheets/form.css";
 
 export default CompleteInvitation = () => {
-	const [values, setValues] = useState({ first_name: "", last_name: "", password: "", errorState: "", loading: false });
+	const [values, setValues] = useState({
+		first_name: "",
+		last_name: "",
+		password: "",
+		errorState: "",
+		loading: false
+	});
+
 	const { token } = useParams();
 	const history = useHistory();
 
@@ -76,32 +85,41 @@ export default CompleteInvitation = () => {
 				path={`invite/${token}`}
 			/>
 
-			<form onSubmit={handleSubmit}>
-				<h4>Complete Invitation Signup</h4>
+			<div className="authentication-view-wrapper">
+				<img src="/logo.svg" alt="TF Certification Logo" onClick={() => history.push("/")} />
 
-				<p>Hello {invitation.email}, complete your invitation here:</p>
+				<form onSubmit={handleSubmit} className="form-container">
+					<div className="header">
+						<IconProfile />
+						<p>Complete Invitation Signup</p>
+					</div>
 
-				<label className={`${authHasError("first_name", values.errorState) ? "error" : ""}`}>
-					First Name
-					<input type="text" name="first_name" value={values.first_name} onChange={handleChange} placeholder="e.g. John" />
-				</label>
+					<p>Hello {invitation.email}, complete your invitation here:</p>
 
-				<label className={`${authHasError("last_name", values.errorState) ? "error" : ""}`}>
-					Last Name
-					<input type="text" name="last_name" value={values.last_name} onChange={handleChange} placeholder="e.g. Doe" />
-				</label>
+					<label className={`${authHasError("first_name", values.errorState) ? "error" : ""}`}>
+						<span>First Name</span>
+						<input type="text" name="first_name" value={values.first_name} onChange={handleChange} placeholder="e.g. John" />
+					</label>
 
-				<label className={`${authHasError("password", values.errorState) ? "error" : ""}`}>
-					Password
-					<input type="password" name="password" value={values.password} onChange={handleChange} placeholder="e.g. password123" />
-				</label>
+					<label className={`${authHasError("last_name", values.errorState) ? "error" : ""}`}>
+						<span>Last Name</span>
+						<input type="text" name="last_name" value={values.last_name} onChange={handleChange} placeholder="e.g. Doe" />
+					</label>
 
-				{values.errorState && <p className="error-message"><IconWarning/>{authErrorMessage(values.errorState)}</p>}
+					<label className={`${authHasError("password", values.errorState) ? "error" : ""}`}>
+						<span>Password</span>
+						<input type="password" name="password" value={values.password} onChange={handleChange} placeholder="e.g. password123" />
+					</label>
 
-				<button type="submit" disabled={values.loading}>
-					{values.loading ? "Signing Up" : "Complete Invitation Signup"}
-				</button>
-			</form>
+					{values.errorState && <p className="error-message"><IconWarning/>{authErrorMessage(values.errorState)}</p>}
+
+					<button type="submit" className="button primary" disabled={values.loading}>
+						{values.loading ? "Signing Up" : "Complete Invitation Signup"}
+					</button>
+
+					<p className="action">Already have an account? <a onClick={() => history.push("/")} href="">Log in</a></p>
+				</form>
+			</div>
 		</Fragment>
 	);
 };

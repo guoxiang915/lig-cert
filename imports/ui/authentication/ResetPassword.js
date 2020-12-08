@@ -2,11 +2,21 @@ import React, { useState, useEffect, Fragment } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { Accounts } from "meteor/accounts-base";
 import { isValidPassword } from "/imports/ui/components/Functions";
-import { IconWarning } from "/imports/ui/components/Icons";
+import { SEO } from "/imports/ui/components/SEO";
+import { IconProfile, IconWarning } from "/imports/ui/components/Icons";
 import { authHasError, authErrorMessage } from "/imports/ui/components/Validations";
+import "/imports/ui/authentication/styles.css";
+import "/imports/ui/stylesheets/form.css";
 
 export default ResetPassword = () => {
-	const [values, setValues] = useState({ password: "", confirm_password: "", submitted: false, errorState: "", loading: false });
+	const [values, setValues] = useState({
+		password: "",
+		confirm_password: "",
+		submitted: false,
+		errorState: "",
+		loading: false
+	});
+
 	const history = useHistory();
 	const { token } = useParams();
 
@@ -40,34 +50,48 @@ export default ResetPassword = () => {
 
 	return (
 		<Fragment>
-			{values.submitted ? (
-				<div>
-					<h4>Password Reseted!</h4>
-					<p>Your password was succesfully reseted. You can access the platform by <a onClick={() => history.push("/")} href="">Clicking Here</a></p>
-				</div>
-			) : (
-				<form onSubmit={handleSubmit}>
-					<h4>Reset Password</h4>
+			<SEO
+				title="Reset Password"
+				description="Welcome to the TF Certification reset password page."
+				contentType="website"
+				path={`reset-password/${token}`}
+			/>
 
-					<div className={`${authHasError("password", values.errorState) ? "error" : ""}`}>
-						New Password
-						<input type="password" name="password" value={values.password} onChange={handleChange} placeholder='e.g. password123' />
+			<div className="authentication-view-wrapper">
+				<img src="/logo.svg" alt="TF Certification Logo" onClick={() => history.push("/")} />
+
+				{values.submitted ? (
+					<div>
+						<h4>Password Reseted!</h4>
+						<p>Your password was succesfully reseted. You can access the platform by <a onClick={() => history.push("/")} href="">Clicking Here</a></p>
 					</div>
+				) : (
+					<form onSubmit={handleSubmit} className="form-container">
+						<div className="header">
+							<IconProfile />
+							<p>Reset Password</p>
+						</div>
 
-					<div className={`${authHasError("confirm_password", values.errorState) ? "error" : ""}`}>
-						Confirm New Password
-						<input type="password" name="confirm_password" value={values.confirm_password} onChange={handleChange} placeholder='e.g. password123' />
-					</div>
+						<label className={`${authHasError("password", values.errorState) ? "error" : ""}`}>
+							<span>New Password</span>
+							<input type="password" name="password" value={values.password} onChange={handleChange} placeholder='e.g. password123' />
+						</label>
 
-					{values.errorState && <p className="error-message"><IconWarning/>{authErrorMessage(values.errorState)}</p>}
+						<label className={`${authHasError("confirm_password", values.errorState) ? "error" : ""}`}>
+							<span>Confirm New Password</span>
+							<input type="password" name="confirm_password" value={values.confirm_password} onChange={handleChange} placeholder='e.g. password123' />
+						</label>
 
-					<button type="submit" disabled={values.loading}>
-						{values.loading ? "Resetting Password" : "Complete Reset Password"}
-					</button>
+						{values.errorState && <p className="error-message"><IconWarning/>{authErrorMessage(values.errorState)}</p>}
 
-					<p>Remember your password? <a onClick={() => history.push("/")} href="">Sign in!</a></p>
-				</form>
-			)}
+						<button type="submit" className="button primary" disabled={values.loading}>
+							{values.loading ? "Resetting Password" : "Complete Reset Password"}
+						</button>
+
+						<p className="action">Remember your password? <a onClick={() => history.push("/")} href="">Log in</a></p>
+					</form>
+				)}
+			</div>
 		</Fragment>
 	);
 };

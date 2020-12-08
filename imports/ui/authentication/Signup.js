@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 import { Accounts } from "meteor/accounts-base";
-import { IconWarning } from "/imports/ui/components/Icons";
+import { IconProfile, IconWarning } from "/imports/ui/components/Icons";
 import { isEmail, isValidPassword } from "/imports/ui/components/Functions";
 import { authHasError, authErrorMessage } from "/imports/ui/components/Validations";
-import "/imports/ui/authentication/styles.css";
 
 export default Signup = ({ actionModal }) => {
-	const [values, setValues] = useState({ first_name: "", last_name: "", email: "", password: "", errorState: "", loading: false });
+	const [values, setValues] = useState({
+		first_name: "",
+		last_name: "",
+		email: "",
+		password: "",
+		errorState: "",
+		loading: false
+	});
 
 	const handleChange = (event) => {
 		const { name, value } = event.target;
@@ -45,37 +51,40 @@ export default Signup = ({ actionModal }) => {
 
 	return (
 		<form onSubmit={handleSubmit} className="form-container">
-			<h4>Create Your Account</h4>
+			<div className="header">
+				<IconProfile />
+				<p>Create Your Account</p>
+			</div>
 
-			<div className="input-two-columns">
+			<div className="two-col">
 				<label className={`${authHasError("first_name", values.errorState) ? "error" : ""}`}>
-					First Name
+					<span>First Name</span>
 					<input type="text" name="first_name" value={values.first_name} onChange={handleChange} placeholder="e.g. John" />
 				</label>
 
 				<label className={`${authHasError("last_name", values.errorState) ? "error" : ""}`}>
-					Last Name
+					<span>Last Name</span>
 					<input type="text" name="last_name" value={values.last_name} onChange={handleChange} placeholder="e.g. Doe" />
 				</label>
 			</div>
 
 			<label className={`${authHasError("email", values.errorState) ? "error" : ""}`}>
-				Email Address
+				<span>Email Address</span>
 				<input type="text" name="email" value={values.email} onChange={handleChange} placeholder="e.g. john.doe@example.com" />
 			</label>
 
 			<label className={`${authHasError("password", values.errorState) ? "error" : ""}`}>
-				Password
+				<span>Password</span>
 				<input name="password" type="password" value={values.password} onChange={handleChange} placeholder="e.g. password123" />
 			</label>
 
 			{values.errorState && <p className="error-message"><IconWarning/>{authErrorMessage(values.errorState)}</p>}
 
-			<button type="submit" className="button primary-dark primary-dark-hover" disabled={values.loading}>
+			<button type="submit" className="button primary" disabled={values.loading}>
 				{values.loading ? "Creating Account" : "Create Account"}
 			</button>
 
-			<p>Already have an account? <a onClick={(event) => actionModal(event, true, "Login")} href="">Sign in</a></p>
+			<p className="action">Already have an account? <a onClick={(event) => actionModal(event, true, "Login")} href="">Log in</a></p>
 		</form>
 	);
 };
