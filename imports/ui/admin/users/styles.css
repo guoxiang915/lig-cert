@@ -8,3 +8,34 @@
 	text-align: right;
 	padding-right: 30px;
 }
+
+/* User Modal */
+.modal-card.user-modal {
+	max-width: 500px;
+}
+
+.user-modal label .actions {
+	align-items: center;
+	bottom: 0;
+	display: flex;
+	height: 41px;
+	position: absolute;
+	right: 15px;
+}
+
+.user-modal label .actions span {
+	color: #333;
+	height: 15px;
+	margin-left: 12px;
+	transition: .2s transform ease-in-out;
+}
+
+.user-modal label .actions span:hover {
+	color: var(--primary);
+	transform:scale(1.1);
+}
+
+.user-modal label .actions svg {
+	cursor: pointer;
+	height: 15px;
+}
