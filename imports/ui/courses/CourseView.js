@@ -51,7 +51,12 @@ export default CourseView = () => {
 	const { user } = useAccount();
 	const history = useHistory();
 
-	useEffect(() => { window.prerenderReady = true; }, []);
+	useEffect(() => {
+		window.prerenderReady = true;
+		Intercom("boot", { app_id: "ort0cycf" });
+
+		return () => Intercom("shutdown");
+	}, []);
 
 	const { dataLoading, course, memberlist } = useTracker(() => {
 		const subs = Meteor.subscribe("course/view", coursePermalink);

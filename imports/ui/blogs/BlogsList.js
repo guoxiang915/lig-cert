@@ -40,7 +40,12 @@ export default BlogsList = () => {
 
 	const toggleProfileModal = () => setShowProfileModal(!showProfileModal);
 
-	useEffect(() => { window.prerenderReady = true; }, []);
+	useEffect(() => {
+		window.prerenderReady = true;
+		Intercom("boot", { app_id: "ort0cycf" });
+
+		return () => Intercom("shutdown");
+	}, []);
 
 	if (dataLoading) return <p>Loading...</p>;
 
