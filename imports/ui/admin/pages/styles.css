@@ -1,0 +1,4 @@
+.table-item div.page-col {
+	padding-right: 30px;
+	width: calc(100% - 350px);
+}

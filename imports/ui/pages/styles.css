@@ -1,0 +1,51 @@
+/* Page Header Block */
+section.page-header {
+	position: relative;
+	background-color: #F0F0F0;
+	min-height: calc(100vh - 80px);
+}
+
+section.page-header .main-wrapper {
+	z-index: 1;
+}
+
+section.page-header .main-wrapper > h2 {
+	color: #fff;
+}
+
+section.page-header .background-color-container {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 80%;
+	background: linear-gradient(135deg,#FF9200 0, #FF4477 100%);
+	padding-bottom: 220px;
+	z-index: 0;
+	overflow: hidden;
+}
+
+section.page-header .background-color-container .connection-pattern {
+	top: 50px;
+	width: 1400px;
+}
+
+section.page-header .background-color-container .color-bottom-pattern {
+	bottom: -2px;
+	min-width: 4100px;
+	width: 100%;
+}
+
+section.page-header.page-view {
+	padding-bottom: 60px;
+}
+
+section.page-view .content-container .page-information {
+	margin-bottom: 80px;
+}
+
+section.page-header.page-view .bottom-pattern {
+	bottom: -2px;
+	min-width: 3000px;
+	width: 100%;
+}

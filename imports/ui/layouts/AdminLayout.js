@@ -17,6 +17,7 @@ export default AdminLayout = ({ children }) => {
 					<li><Link to="/admin/invitations">Invitations Administration</Link></li>
 					<li><Link to="/admin/courses">Courses Administration</Link></li>
 					<li><Link to="/admin/blogs">Blogs Administration</Link></li>
+					<li><Link to="/admin/pages">Pages Administration</Link></li>
 				</ul>
 				{hasRights(["admin"], userId) ? children : <p>You dont have access to this page</p>}
 			</div>

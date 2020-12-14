@@ -13,8 +13,10 @@ const FilesList = loadable(() => import("/imports/ui/admin/files/FilesList"));
 const InvitationsList = loadable(() => import("/imports/ui/admin/invitations/InvitationsList"));
 const CoursesList = loadable(() => import("/imports/ui/admin/courses/CoursesList"));
 const AdminBlogsList = loadable(() => import("/imports/ui/admin/blogs/BlogsList"));
+const PagesList = loadable(() => import("/imports/ui/admin/pages/PagesList"));
 const BlogsList = loadable(() => import("/imports/ui/blogs/BlogsList"));
 const BlogView = loadable(() => import("/imports/ui/blogs/BlogView"));
+const PageView = loadable(() => import("/imports/ui/pages/PageView"));
 const TermsConditions = loadable(() => import("/imports/ui/legal/TermsConditions"));
 const PrivacyPolicy = loadable(() => import("/imports/ui/legal/PrivacyPolicy"));
 
@@ -31,8 +33,10 @@ export const App = () => (
 			<LoggedRoute path="/admin/invitations" layout={AdminLayout} component={InvitationsList} />
 			<LoggedRoute path="/admin/courses" layout={AdminLayout} component={CoursesList} />
 			<LoggedRoute path="/admin/blogs" layout={AdminLayout} component={AdminBlogsList} />
+			<LoggedRoute path="/admin/pages" layout={AdminLayout} component={PagesList} />
 			<Route path="/blog" exact component={BlogsList} />
 			<Route path="/blog/:permalink" exact component={BlogView} />
+			<Route path="/pages/:permalink" exact component={PageView} />
 			<Route path="/terms-conditions" component={TermsConditions} />
 			<Route path="/privacy-policy" component={PrivacyPolicy} />
 		</Switch>

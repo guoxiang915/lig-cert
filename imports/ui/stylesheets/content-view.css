@@ -29,6 +29,10 @@
 	line-height: 1.8;
 }
 
+.content-container .html-content p {
+	margin: 15px 0;
+}
+
 .content-container .html-content img {
 	display: block;
 	margin: 0 auto;
@@ -50,11 +54,16 @@
 }
 
 .content-container .html-content h3 {
-	margin: 10px 0;
+	margin: 20px 0 10px 0;
+	font-size: 25px;
 }
 
 .content-container .html-content a:not(.button) {
 	color: var(--primary);
+}
+
+.content-view .content-container .html-content a:not(.button):hover {
+	text-decoration: underline;
 }
 
 .content-container .html-content strong,
@@ -75,6 +84,14 @@
 	border-left: 3px solid var(--primary);
 	margin-left: 20px;
 	padding-left: 15px;
+}
+
+.content-container .html-content hr {
+	border: 0;
+	border-top: 1px solid #ccc;
+	display: block;
+	height: 1px;
+	margin: 20px 0;
 }
 
 .content-container .html-content .no-margin-bottom {

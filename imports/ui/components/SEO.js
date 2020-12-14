@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { Meteor } from "meteor/meteor";
 
-export const SEO = ({ title, description, contentType, path, image, facebookAppId }) => (
+export const SEO = ({ title, description, contentType, path, image, scripts, facebookAppId }) => (
 	<Helmet>
 		<title>{title} | TF Certification</title>
 		<link rel="canonical" href={Meteor.absoluteUrl(path)} />
@@ -11,6 +11,8 @@ export const SEO = ({ title, description, contentType, path, image, facebookAppI
 		<meta name="twitter:title" content={`${title} | TF Certification`} />
 		<meta name="twitter:description" content={description} />
 		{image && <meta name="twitter:image:src" content={image} />}
+
+		{scripts && scripts.map((script, index) => <script key={index} src={script} async />)}
 
 		<meta property="og:title" content={`${title} | TF Certification`} />
 		<meta property="og:type" content={contentType} />
