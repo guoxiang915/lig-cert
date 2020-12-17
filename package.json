@@ -13,11 +13,11 @@
 		"@loadable/component": "^5.14.1",
 		"@stripe/react-stripe-js": "^1.1.2",
 		"@stripe/stripe-js": "^1.11.0",
-		"aws-sdk": "^2.804.0",
+		"aws-sdk": "^2.812.0",
 		"bcrypt": "^5.0.0",
 		"copy-text-to-clipboard": "^2.2.0",
 		"dayjs": "^1.9.7",
-		"dompurify": "^2.2.3",
+		"dompurify": "^2.2.4",
 		"handlebars": "^4.7.6",
 		"md5": "^2.3.0",
 		"meteor-node-stubs": "^1.0.1",
@@ -28,7 +28,7 @@
 		"react-modal": "^3.12.1",
 		"react-router-dom": "^5.2.0",
 		"simpl-schema": "^1.10.2",
-		"stripe": "^8.127.0",
+		"stripe": "^8.129.0",
 		"vanilla-lazyload": "^17.3.0"
 	},
 	"meteor": {
