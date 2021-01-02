@@ -13,11 +13,11 @@
 		"@loadable/component": "^5.14.1",
 		"@stripe/react-stripe-js": "^1.1.2",
 		"@stripe/stripe-js": "^1.11.0",
-		"aws-sdk": "^2.812.0",
+		"aws-sdk": "^2.820.0",
 		"bcrypt": "^5.0.0",
 		"copy-text-to-clipboard": "^2.2.0",
-		"dayjs": "^1.9.7",
-		"dompurify": "^2.2.4",
+		"dayjs": "^1.9.8",
+		"dompurify": "^2.2.6",
 		"handlebars": "^4.7.6",
 		"md5": "^2.3.0",
 		"meteor-node-stubs": "^1.0.1",
@@ -39,7 +39,7 @@
 		"testModule": "tests/main.js"
 	},
 	"devDependencies": {
-		"eslint": "^7.15.0",
+		"eslint": "^7.17.0",
 		"eslint-config-standard": "^16.0.2",
 		"eslint-plugin-import": "^2.22.1",
 		"eslint-plugin-promise": "^4.2.1",
