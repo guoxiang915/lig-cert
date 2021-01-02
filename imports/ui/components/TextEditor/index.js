@@ -8,6 +8,8 @@ export const TextEditor = ({ field, html, disabled, enableEditor, sanitize, plac
 	const editorInput = useRef();
 
 	const handleSave = (event) => {
+		event.preventDefault();
+		event.stopPropagation();
 		const initialHtml = html;
 		const el = editorInput.current;
 		const newHtml = el ? el.innerHTML : event.target.value; // gets html depending of the input type (contenteditable or textarea)
