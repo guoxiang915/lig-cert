@@ -209,7 +209,7 @@ export default PrivacyPolicy = () => {
 
 			<section className="section footer">
 				<div className="main-wrapper">
-					<p>&copy; Copyright 2020 — All rights reserved — TF Certification</p>
+					<p>&copy; Copyright 2021 — All rights reserved — TF Certification</p>
 					<p>
 						<a href="/privacy-policy">Privacy Policy</a>
 						<span className="hidden-xs">&bull;</span>
