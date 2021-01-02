@@ -112,11 +112,11 @@ export default BlogView = () => {
 				</div>
 
 				<div className="background-color-container">
-					<img src="/connection-pattern.svg" alt="Connection Pattern" className="image-pattern connection-pattern"/>
-					<img src="/landing/courses-bottom-pattern.svg" alt="Header Bottom Pattern" className="image-pattern color-bottom-pattern"/>
+					<img src="/connection-pattern.svg" className="image-pattern connection-pattern"/>
+					<img src="/landing/courses-bottom-pattern.svg" className="image-pattern color-bottom-pattern"/>
 				</div>
 
-				<LazyImage src="/landing/advantages-bottom-pattern.svg" alt="Advantages Bottom Pattern" classes="image-pattern bottom-pattern"/>
+				<LazyImage src="/landing/advantages-bottom-pattern.svg" classes="image-pattern bottom-pattern"/>
 			</section>
 
 			{recommendations.length > 0 && (

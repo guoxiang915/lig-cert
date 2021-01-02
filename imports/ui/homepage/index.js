@@ -102,14 +102,14 @@ export default Homepage = () => {
 					</div>
 				</div>
 
-				<img src="/connection-pattern.svg" alt="Connection Pattern" className="image-pattern connection-pattern"/>
-				<img src="/landing/header-bottom-pattern.svg" alt="Header Bottom Pattern" className="image-pattern bottom-pattern"/>
+				<img src="/connection-pattern.svg" className="image-pattern connection-pattern"/>
+				<img src="/landing/header-bottom-pattern.svg" className="image-pattern bottom-pattern"/>
 			</section>
 
 			<SkillsContainer />
 
 			<section className="section homepage-advantages" ref={advantagesRef}>
-				<img src="/landing/advantages-top-pattern.svg" alt="Advantages Top Pattern" className="image-pattern top-pattern"/>
+				<img src="/landing/advantages-top-pattern.svg" className="image-pattern top-pattern"/>
 
 				<div className="main-wrapper">
 					<div className="left-content">
@@ -153,7 +153,7 @@ export default Homepage = () => {
 					<LazyImage src="/tf-pattern.svg" alt="TF Pattern" classes="left-pattern hidden-xs"/>
 				</div>
 
-				<img src="/landing/advantages-bottom-pattern.svg" alt="Advantages Bottom Pattern" className="image-pattern bottom-pattern"/>
+				<img src="/landing/advantages-bottom-pattern.svg" className="image-pattern bottom-pattern"/>
 			</section>
 
 			<section className="section homepage-expertise" ref={instructorRef}>
@@ -223,13 +223,13 @@ export default Homepage = () => {
 						<h1>With Success Insurance</h1>
 						<h2>Pass or we pay or your second exam attempt</h2>
 
-						<LazyImage src="/landing/insurance-pattern.svg" alt="Insurance Pattern" classes="image-pattern bottom-pattern"/>
+						<LazyImage src="/landing/insurance-pattern.svg" classes="image-pattern bottom-pattern"/>
 					</div>
 				</div>
 			</section>
 
 			<section className="section homepage-courses">
-				<img src="/landing/courses-top-pattern.svg" alt="Courses Top Pattern" className="image-pattern top-pattern"/>
+				<img src="/landing/courses-top-pattern.svg" className="image-pattern top-pattern"/>
 
 				<div className="main-wrapper">
 					<div className="features-container">
@@ -262,24 +262,24 @@ export default Homepage = () => {
 				</div>
 
 				<div className="background-color-container">
-					<LazyImage src="/connection-pattern.svg" alt="Connection Pattern" classes="image-pattern connection-pattern"/>
-					<LazyImage src="/landing/courses-bottom-pattern.svg" alt="Courses Bottom Pattern" classes="image-pattern bottom-pattern"/>
+					<LazyImage src="/connection-pattern.svg" classes="image-pattern connection-pattern"/>
+					<LazyImage src="/landing/courses-bottom-pattern.svg" classes="image-pattern bottom-pattern"/>
 				</div>
 
-				<LazyImage src="/landing/advantages-bottom-pattern.svg" alt="Advantages Bottom Pattern" classes="image-pattern bottom-pattern"/>
+				<LazyImage src="/landing/advantages-bottom-pattern.svg" classes="image-pattern bottom-pattern"/>
 			</section>
 
 			<HomepageTestimonials />
 
 			<section className="section homepage-certified-banner">
-				<img src="/landing/banner-top-pattern.svg" alt="Banner Top Pattern" className="image-pattern top-pattern"/>
+				<img src="/landing/banner-top-pattern.svg" className="image-pattern top-pattern"/>
 
 				<div className="main-wrapper">
 					<h1>Your TensorFlow Developer Certificate is Waiting</h1>
 					{!user && <button className="button primary-dark" onClick={(event) => toggleAuthModal(event, true, "Signup")}>Get Started</button>}
 				</div>
 
-				<LazyImage src="/connection-pattern.svg" alt="Connection Pattern" classes="image-pattern connection-pattern"/>
+				<LazyImage src="/connection-pattern.svg" classes="image-pattern connection-pattern"/>
 			</section>
 
 			<section className="section footer">

@@ -38,8 +38,8 @@ export default TermsConditions = () => {
 					</div>
 				</div>
 
-				<img src="/connection-pattern.svg" alt="Connection Pattern" className="image-pattern connection-pattern"/>
-				<img src="/landing/courses-bottom-pattern.svg" alt="Header Bottom Pattern" className="image-pattern bottom-pattern"/>
+				<img src="/connection-pattern.svg" className="image-pattern connection-pattern"/>
+				<img src="/landing/courses-bottom-pattern.svg" className="image-pattern bottom-pattern"/>
 			</section>
 
 			<section className="section legal-content">
