@@ -1,9 +1,9 @@
-
 import React, { useEffect, useRef, Fragment } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, useHistory  } from "react-router-dom";
 import { UnitsCollection } from "/imports/api/courses/units";
-import { capitalizeText } from "/imports/ui/components/Functions";
-import { IconMenu, IconVideo, IconText, IconQuiz, IconCheck } from "/imports/ui/components/Icons";
+import { hasRights, capitalizeText, _union } from "/imports/ui/components/Functions";
+import { useAccount } from "/imports/ui/components/hooks/useAccount";
+import { IconMenu, IconVideo, IconText, IconQuiz, IconCheck, IconLock } from "/imports/ui/components/Icons";
 
 export const UnitSidebar = ({ showSidebar, toggleSidebar, course, memberlist }) => {
 	const activeModuleRef = useRef(null);
@@ -42,23 +42,29 @@ const SidebarModule = ({ course, memberlist, module, activeModuleRef }) => {
 };
 
 const SidebarUnit = ({ course, memberlist, unit }) => {
-	// Check if unit is currently active
+	// Verify user has access to unit content
+	const { user } = useAccount();
+	const hasCourseAccess = user ? hasRights(_union(["admin"], course.accessRoles)) : false;
+
+	// Course unit access functionality
 	const { unitPermalink } = useParams();
-	const activeUnit = unit.permalink == unitPermalink;
+	const history = useHistory();
+	const handleUnitClick = () => { if (hasCourseAccess) history.push(`/courses/${course.permalink}/${unit.permalink}`); };
 
 	// Check if user already completed this unit
 	const unitCompleted = memberlist && memberlist.unitsCompleted.includes(unit._id);
+	const activeUnit = unit.permalink == unitPermalink;
 
 	// Sidebar unit icon generator
-	const icons = { IconVideo, IconText, IconQuiz, IconCheck };
-	const RenderIcon = icons[unitCompleted ? "IconCheck" : `Icon${capitalizeText(unit.type)}`];
+	const icons = { IconVideo, IconText, IconQuiz, IconLock, IconCheck };
+	const RenderIcon = icons[unitCompleted ? "IconCheck" : hasCourseAccess ? `Icon${capitalizeText(unit.type)}` : "IconLock"];
 
 	return (
-		<div className={`lecture-container ${unitCompleted ? "completed" : ""} ${activeUnit ? "active" : ""}`}>
+		<div className={`lecture-container ${hasCourseAccess ? "available" : ""} ${unitCompleted ? "completed" : ""} ${activeUnit ? "active" : ""}`}>
 			<span className="icon"><RenderIcon /></span>
 
 			<div>
-				<Link to={`/courses/${course.permalink}/${unit.permalink}`}>{unit.title}</Link>
+				<a onClick={handleUnitClick}>{unit.title}</a>
 			</div>
 		</div>
 	);

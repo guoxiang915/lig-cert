@@ -248,28 +248,11 @@ section.course-view-content .right-pattern {
 	text-align: right;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Unit View */
 .unit-container {
+	display: flex;
 	height: 100vh;
 	overflow: hidden;
-	width: 100%;
 }
 
 /* Unit view sidebar */
@@ -350,6 +333,23 @@ section.course-view-content .right-pattern {
 
 .unit-container .unit-content #unit-video-player {
 	height: 100%!important;
+}
+
+.unit-container .unit-content.blocked {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.unit-container .unit-content.blocked svg {
+	height: 30px;
+}
+
+.unit-container .unit-content.blocked a {
+	color: var(--primary);
+	cursor: pointer;
+	text-decoration: underline;
 }
 
 /* Unit view content header */
@@ -490,5 +490,10 @@ section.course-view-content .right-pattern {
 
 	.course-view-wrapper > h4 {
 		padding-top: 0;
+	}
+
+	.unit-container .unit-content.blocked {
+		padding: 15px;
+		text-align: center;
 	}
 }
