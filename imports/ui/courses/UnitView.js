@@ -7,6 +7,7 @@ import { MemberlistsCollection } from "/imports/api/courses/memberlists";
 import { SEO } from "/imports/ui/components/SEO";
 import { hasRights, _union, capitalizeText } from "/imports/ui/components/Functions";
 import { IconLock } from "/imports/ui/components/Icons";
+import { UnitHeader } from "/imports/ui/courses/UnitHeader";
 import { UnitSidebar } from "/imports/ui/courses/UnitSidebar";
 import { UnitVideo } from "/imports/ui/courses/UnitVideo";
 import { UnitText } from "/imports/ui/courses/UnitText";
@@ -19,7 +20,6 @@ export default UnitView = () => {
 	const toggleSidebar = () => setShowSidebar(!showSidebar);
 
 	const { coursePermalink, unitPermalink } = useParams();
-	const history = useHistory();
 
 	const { dataLoading, course, memberlist } = useTracker(() => {
 		const subs = Meteor.subscribe("unit/view", coursePermalink);
@@ -39,22 +39,14 @@ export default UnitView = () => {
 	return (
 		<div className="unit-container">
 			<UnitSidebar showSidebar={showSidebar} toggleSidebar={toggleSidebar} course={course} memberlist={memberlist} />
-
-			{hasCourseAccess ? (
-				<UnitContent showSidebar={showSidebar} toggleSidebar={toggleSidebar} course={course} />
-			) : (
-				<div className="unit-content blocked">
-					<IconLock/>
-					<h2>Ups, you dont have access to this lecture</h2>
-					<p>If you want to get full access to this course, please <a onClick={() => history.push(`/courses/${coursePermalink}`) }>click here</a> and purchase the course.</p>
-				</div>
-			)}
+			<UnitContent showSidebar={showSidebar} toggleSidebar={toggleSidebar} course={course} hasCourseAccess={hasCourseAccess} />
 		</div>
 	);
 };
 
-const UnitContent = ({ showSidebar, toggleSidebar, course }) => {
+const UnitContent = ({ showSidebar, toggleSidebar, course, hasCourseAccess }) => {
 	const [showPopup, setShowPopup] = useState(false);
+	const history = useHistory();
 
 	const { coursePermalink, unitPermalink } = useParams();
 	const unit = UnitsCollection.findOne({ permalink: unitPermalink });
@@ -103,8 +95,22 @@ const UnitContent = ({ showSidebar, toggleSidebar, course }) => {
 			/>
 
 			<div className={`unit-content ${showSidebar ? "visible-sidebar" : ""}`}>
-				<RenderComponent course={course} unit={unit} nextState={nextState} toggleSidebar={toggleSidebar} />
-				{showPopup && <UnitPopup nextUnit={nextUnit} isLastUnit={isLastUnit} coursePermalink={coursePermalink} setShowPopup={setShowPopup} />}
+				{hasCourseAccess ? (
+					<Fragment>
+						<RenderComponent course={course} unit={unit} nextState={nextState} toggleSidebar={toggleSidebar} />
+						{showPopup && <UnitPopup nextUnit={nextUnit} isLastUnit={isLastUnit} coursePermalink={coursePermalink} setShowPopup={setShowPopup} />}
+					</Fragment>
+				) : (
+					<Fragment>
+						<UnitHeader unit={unit} toggleSidebar={toggleSidebar} showHeader={true} />
+
+						<div className="blocked-content">
+							<IconLock />
+							<h2>Ups, you dont have access to this lecture</h2>
+							<p>If you want to get full access to this course, please <a onClick={() => history.push(`/courses/${coursePermalink}`)}>click here</a> and purchase the course.</p>
+						</div>
+					</Fragment>
+				)}
 			</div>
 		</Fragment>
 	);
