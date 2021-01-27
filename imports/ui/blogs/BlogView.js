@@ -6,7 +6,7 @@ import loadable from "@loadable/component";
 import { BlogsCollection } from "/imports/api/blogs/blogs";
 import { useAccount } from "/imports/ui/components/hooks/useAccount";
 import { SEO } from "/imports/ui/components/SEO";
-import { Dropdown } from "/imports/ui/components/Dropdown";
+import { Dropdown, DropdownExternalLink } from "/imports/ui/components/Dropdown";
 import AuthModal from "/imports/ui/authentication/AuthModal";
 import { hasRights, dateFormat } from "/imports/ui/components/Functions";
 import { LazyImage } from "/imports/ui/components/LazyImage";
@@ -80,6 +80,13 @@ export default BlogView = () => {
 										<Dropdown title={`Hi ${user.profile.name.first}`}>
 											<a className="dropdown-item" onClick={toggleProfileModal}>Profile</a>
 											{hasRights(["admin"]) && <a className="dropdown-item" onClick={() => history.push("/admin/users")}>Administrator</a>}
+
+											<div className="dropdown-container">
+												<DropdownExternalLink link="https://intercom.help/TFCertification" className="dropdown-item">Knowledge Base</DropdownExternalLink>
+												<DropdownExternalLink link="https://discord.gg/TjhK28Kr9k" className="dropdown-item">Community</DropdownExternalLink>
+												<DropdownExternalLink link="mailto:support@tfcertification.intercom.com" className="dropdown-item">Contact</DropdownExternalLink>
+											</div>
+
 											<a className="dropdown-item" onClick={() => Meteor.logout()}>Logout</a>
 										</Dropdown>
 

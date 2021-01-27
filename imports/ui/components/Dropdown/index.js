@@ -29,3 +29,5 @@ export const Dropdown = ({ title, children }) => {
 		</div>
 	);
 };
+
+export const DropdownExternalLink = ({ link, children, className }) => <a className={className} onClick={() => window.open(link, "_blank", "noopener")}>{children}</a>;
