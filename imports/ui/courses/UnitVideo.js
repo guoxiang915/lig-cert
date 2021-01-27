@@ -8,7 +8,7 @@ export const UnitVideo = ({ course, unit, nextState, toggleSidebar }) => {
 
 	const customActions = (videoPlayer) => {
 		// Add community button to player if course communityLink exists
-		if (course.communityLink) videoPlayer.addButton("/Player/community.svg", "Community", () => {
+		if (course.communityLink) videoPlayer.addButton("/player/community.svg", "Community", () => {
 			window.open(course.communityLink);
 		}, "community", "jw-icon-community");
 

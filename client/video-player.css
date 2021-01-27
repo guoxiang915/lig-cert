@@ -128,6 +128,19 @@
 	max-height: 20px;
 }
 
+/* Community Icon */
+.jw-icon-community:hover .jw-icon {
+	background-image: url('/player/community-hover.svg')!important;
+}
+
+.jw-icon-community.jw-icon-inline {
+	width: 36px;
+}
+
+.jw-controlbar .jw-icon-community .jw-button-image {
+	max-height: 20px;
+}
+
 /* Settings icon */
 .jw-svg-icon-settings path {
 	display: none;
@@ -205,5 +218,9 @@
 }
 
 .jw-breakpoint-7 .jw-controlbar .jw-icon-skip .jw-button-image {
+	max-height: 26px;
+}
+
+.jw-breakpoint-7 .jw-controlbar .jw-icon-community .jw-button-image {
 	max-height: 26px;
 }

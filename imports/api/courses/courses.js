@@ -15,6 +15,7 @@ const CourseSchema = new SimpleSchema({
 	accessRoles: { type: Array },
 	"accessRoles.$": { type: String },
 	unitCount: { type: Number },
+	communityLink: { type: String, optional: true },
 	seo: { type: Object },
 	"seo.title": { type: String },
 	"seo.description": { type: String }
