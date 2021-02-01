@@ -49,4 +49,8 @@ section.footer .main-wrapper span {
 	section.footer .main-wrapper p:first-child {
 		margin-bottom: 20px;
 	}
+
+	section.footer .main-wrapper a:first-child {
+		margin-bottom: 20px;
+	}
 }
