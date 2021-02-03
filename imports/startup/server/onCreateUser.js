@@ -1,5 +1,5 @@
 import { Accounts } from "meteor/accounts-base";
-import { fetch } from "meteor/fetch";
+import { HTTP } from "meteor/http";
 
 Accounts.onCreateUser((options, user) => {
 	const userToCreate = user;
@@ -10,23 +10,22 @@ Accounts.onCreateUser((options, user) => {
 	// Add user to Mailchimp email list
 	const mailchimp = Meteor.settings.private.mailchimp;
 
-	const body = {
-		email_address: user.emails[0].address,
-		status: "subscribed",
-		merge_fields: {
-			FNAME: user.profile.name.first,
-			LNAME: user.profile.name.last
-		}
+	const headerData = {
+		data: {
+			email_address: user.emails[0].address,
+			status: "subscribed",
+			merge_fields: {
+				FNAME: user.profile.name.first,
+				LNAME: user.profile.name.last
+			}
+		},
+		auth: `apikey:${mailchimp.apiKey}-${mailchimp.server}`,
+		headers: { "content-type": "application/json" }
 	};
 
-	fetch(`https://${mailchimp.server}.api.mailchimp.com/3.0/lists/${mailchimp.audienceId}/members/`, {
-		method: "POST",
-		headers: {
-			"Content-Type": "application/json",
-			"Authorization": `Basic ${Buffer.from(`apikey:${mailchimp.apiKey}-${mailchimp.server}`).toString("base64")}`,
-		},
-		body: JSON.stringify(body)
-	}).catch((error) => console.warn(error));
+	HTTP.call("POST", `https://${mailchimp.server}.api.mailchimp.com/3.0/lists/${mailchimp.audienceId}/members/`, headerData, function(error) {
+		if (error) console.warn(error);
+	});
 
 	return userToCreate;
 });
