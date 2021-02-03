@@ -4,7 +4,7 @@ import { Roles } from "meteor/alanning:roles";
 import { Random } from "meteor/random";
 import { Accounts } from "meteor/accounts-base";
 import { Promise } from "meteor/promise";
-import { HTTP } from "meteor/http";
+import { fetch } from "meteor/fetch";
 import md5 from "md5";
 import { sendEmail } from "/imports/startup/server/functions";
 import { templateToHtml } from "/imports/startup/server/emails/templateToHtml";
@@ -75,15 +75,14 @@ Meteor.methods({
 
 		completionData.roles.forEach(role => tags.push({ name: role, status: "active" }));
 
-		const headerData = {
-			data: { tags: tags },
-			auth: `apikey:${mailchimp.apiKey}-${mailchimp.server}`,
-			headers: { "content-type": "application/json" }
-		};
-
-		HTTP.call("POST", `https://${mailchimp.server}.api.mailchimp.com/3.0/lists/${mailchimp.audienceId}/members/${subscriberHash}/tags`, headerData, function(error) {
-			if (error) console.warn(error);
-		});
+		fetch(`https://${mailchimp.server}.api.mailchimp.com/3.0/lists/${mailchimp.audienceId}/members/${subscriberHash}/tags`, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				"Authorization": `Basic ${Buffer.from(`apikey:${mailchimp.apiKey}-${mailchimp.server}`).toString("base64")}`,
+			},
+			body: JSON.stringify({ tags })
+		}).catch((error) => console.warn(error));
 
 		// Send payment confirmation email
 		const platformName = Meteor.settings.public.productName;
