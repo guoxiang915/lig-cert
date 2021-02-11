@@ -9,13 +9,13 @@
 		"lint:fix": "npx eslint imports/**/*js --fix"
 	},
 	"dependencies": {
-		"@babel/runtime": "^7.12.5",
+		"@babel/runtime": "^7.12.13",
 		"@loadable/component": "^5.14.1",
 		"@stripe/react-stripe-js": "^1.2.2",
-		"@stripe/stripe-js": "^1.11.0",
-		"aws-sdk": "^2.834.0",
+		"@stripe/stripe-js": "^1.12.1",
+		"aws-sdk": "^2.841.0",
 		"bcrypt": "^5.0.0",
-		"copy-text-to-clipboard": "^2.2.0",
+		"copy-text-to-clipboard": "^3.0.0",
 		"dayjs": "^1.10.4",
 		"dompurify": "^2.2.6",
 		"handlebars": "^4.7.6",
@@ -28,8 +28,8 @@
 		"react-modal": "^3.12.1",
 		"react-router-dom": "^5.2.0",
 		"simpl-schema": "^1.10.2",
-		"stripe": "^8.132.0",
-		"vanilla-lazyload": "^17.3.0"
+		"stripe": "^8.135.0",
+		"vanilla-lazyload": "^17.3.1"
 	},
 	"meteor": {
 		"mainModule": {
@@ -42,7 +42,7 @@
 		"eslint": "^7.19.0",
 		"eslint-config-standard": "^16.0.2",
 		"eslint-plugin-import": "^2.22.1",
-		"eslint-plugin-promise": "^4.2.1",
+		"eslint-plugin-promise": "^4.3.1",
 		"eslint-plugin-standard": "^5.0.0"
 	}
 }
