@@ -228,7 +228,7 @@ export default Homepage = () => {
 					<div className="insurance">
 						<LazyImage src="/landing/insurance-icon.svg" alt="Insurance Icon" classes="image" />
 						<h1>With Success Insurance</h1>
-						<h2>Pass or we pay or your second exam attempt</h2>
+						<h2>Pass or we pay your second exam attempt</h2>
 
 						<LazyImage src="/landing/insurance-pattern.svg" classes="image-pattern bottom-pattern"/>
 					</div>
