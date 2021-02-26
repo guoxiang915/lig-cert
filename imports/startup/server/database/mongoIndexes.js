@@ -5,6 +5,7 @@ import { CoursesCollection } from "/imports/api/courses/courses";
 import { UnitsCollection } from "/imports/api/courses/units";
 import { MemberlistsCollection } from "/imports/api/courses/memberlists";
 import { BlogsCollection } from "/imports/api/blogs/blogs";
+import { PagesCollection } from "/imports/api/pages/pages";
 
 createIndex(CoursesCollection, { permalink: 1 });
 createIndex(UnitsCollection, { courseId: 1, moduleId: 1, permalink: 1 });
@@ -16,3 +17,4 @@ createIndex(FilesCollection, { createdAt: 1 });
 createIndex(Meteor.users, { createdAt: 1 });
 // createIndex(Meteor.users, { roles: 1 });
 createIndex(BlogsCollection, { permalink: 1 });
+createIndex(PagesCollection, { permalink: 1 });
