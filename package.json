@@ -9,11 +9,11 @@
 		"lint:fix": "npx eslint imports/**/*js --fix"
 	},
 	"dependencies": {
-		"@babel/runtime": "^7.13.7",
+		"@babel/runtime": "^7.13.9",
 		"@loadable/component": "^5.14.1",
-		"@stripe/react-stripe-js": "^1.3.0",
-		"@stripe/stripe-js": "^1.13.0",
-		"aws-sdk": "^2.852.0",
+		"@stripe/react-stripe-js": "^1.4.0",
+		"@stripe/stripe-js": "^1.13.1",
+		"aws-sdk": "^2.856.0",
 		"bcrypt": "^5.0.1",
 		"copy-text-to-clipboard": "^3.0.1",
 		"dayjs": "^1.10.4",
@@ -39,7 +39,7 @@
 		"testModule": "tests/main.js"
 	},
 	"devDependencies": {
-		"eslint": "^7.20.0",
+		"eslint": "^7.21.0",
 		"eslint-config-standard": "^16.0.2",
 		"eslint-plugin-import": "^2.22.1",
 		"eslint-plugin-promise": "^4.3.1",
