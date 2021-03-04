@@ -182,6 +182,8 @@ const Coupon = ({ data, status, setStatus }) => {
 
 		const coupons = [
 			{ code: "WEBINAR_2021", discount: 40, productId: "course-tcp" },
+			{ code: "TFC_2021", discount: 40, productId: "course-tcp" },
+			{ code: "TFC_WEB_2021", discount: 40, productId: "course-tcp" }
 		];
 
 		// const inputCoupon = _findWhere(coupons, coupon.code, "code");
