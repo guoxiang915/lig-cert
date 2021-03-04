@@ -19,7 +19,7 @@ export default UnitView = () => {
 	const [showSidebar, setShowSidebar] = useState(true);
 	const toggleSidebar = () => setShowSidebar(!showSidebar);
 
-	const { coursePermalink, unitPermalink } = useParams();
+	const { coursePermalink } = useParams();
 
 	const { dataLoading, course, memberlist } = useTracker(() => {
 		const subs = Meteor.subscribe("unit/view", coursePermalink);
@@ -30,7 +30,7 @@ export default UnitView = () => {
 			course,
 			memberlist: MemberlistsCollection.findOne({ userId: Meteor.userId(), courseId: course && course._id })
 		};
-	}, [coursePermalink, unitPermalink]);
+	}, [coursePermalink]);
 
 	if (dataLoading) return <p>Loading...</p>;
 
@@ -83,7 +83,7 @@ const UnitContent = ({ showSidebar, toggleSidebar, course, hasCourseAccess }) =>
 		}
 	};
 
-	useEffect(() => { setShowPopup(false); }, [unit._id]); // CLose UnitPopup if unit is changed (e.g. through UnitSidebar)
+	useEffect(() => { setShowPopup(false); }, [unitPermalink]); // CLose UnitPopup if unit is changed (e.g. through UnitSidebar)
 
 	return (
 		<Fragment>
