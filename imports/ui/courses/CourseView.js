@@ -4,6 +4,7 @@ import { useTracker } from "meteor/react-meteor-data";
 import { Meteor } from "meteor/meteor";
 import loadable from "@loadable/component";
 import { useAccount } from "/imports/ui/components/hooks/useAccount";
+import { useTagManager } from "/imports/ui/components/hooks/useTagManager";
 import { hasRights, capitalizeText, _union } from "/imports/ui/components/Functions";
 import { IconTrophy, IconEdit, IconPlus, IconVideo, IconText, IconQuiz, IconLock, IconCheck } from "/imports/ui/components/Icons";
 import { CoursesCollection } from "/imports/api/courses/courses";
@@ -88,6 +89,16 @@ export default CourseView = () => {
 		buttonState = { title: "Start Course", action: () => history.push(`/courses/${coursePermalink}/${nextUnit.permalink}`) };
 	} else {
 		buttonState = { title: "Purchase Course", action: () => {
+			useTagManager({
+				"event": "checkout",
+				"ecommerce": {
+					"checkout": {
+						"actionField": { "step": 1 },
+						"products": [{ "name": "TF Certification", "id": course.accessRoles.join(), "price": course.price, "brand": "TFC", "category": "Courses", "quantity": 1 }]
+					}
+				}
+			});
+
 			toggleModal("payment");
 		} };
 	}

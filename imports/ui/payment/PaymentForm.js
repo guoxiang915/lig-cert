@@ -1,12 +1,13 @@
 import React, { useState, Fragment } from "react";
 import { useStripe, useElements, CardNumberElement, CardCvcElement, CardExpiryElement } from "@stripe/react-stripe-js";
 import { useAccount } from "/imports/ui/components/hooks/useAccount";
+import { useTagManager } from "/imports/ui/components/hooks/useTagManager";
 import { _union } from "/imports/ui/components/Functions";
 import { IconPayment, IconCheck, IconWarning } from "/imports/ui/components/Icons";
 import "/imports/ui/stylesheets/form.css";
 
 export default PaymentForm = ({ onClose, data }) => {
-	const [status, setStatus] = useState ({ discount: 0, transactionId: "", submitted: false, errorMessage: "", loading: false });
+	const [status, setStatus] = useState ({ discount: 0, transactionId: "", coupon: "", submitted: false, errorMessage: "", loading: false });
 
 	const { user } = useAccount();
 	const elements = useElements();
@@ -36,12 +37,14 @@ export default PaymentForm = ({ onClose, data }) => {
 			console.warn(payload.error);
 			setStatus({ ...status, loading: false, errorMessage: payload.error.message });
 		} else {
+			const productPrice = data.price - status.discount;
+
 			const completionData = {
 				roles: _union(user.roles, data.roles),
 				userEmail: userEmail,
 				userName: userName,
 				productName: data.title,
-				productPrice: data.price - status.discount
+				productPrice: productPrice
 			};
 
 			Meteor.call("payment.complete", user._id, completionData, (error) => {
@@ -51,6 +54,16 @@ export default PaymentForm = ({ onClose, data }) => {
 					console.warn(error);
 					setStatus({ ...status, errorMessage: "There was an error on our servers, contact support" });
 				} else {
+					useTagManager({
+						"event" : "purchase",
+						"ecommerce": {
+							"purchase": {
+								"actionField": { "id": payload.paymentIntent.id, "affiliation": "", "revenue": productPrice, "tax":"0", "shipping": "0", "coupon": status.coupon },
+								"products": [{ "name": data.title, "id": data.productId, "price": data.price, "brand": "TFC", "category": "Courses", "quantity": 1 }]
+							}
+						}
+					});
+
 					setStatus({ ...status, transactionId: payload.paymentIntent.id, submitted: true });
 				}
 			});
@@ -197,7 +210,7 @@ const Coupon = ({ data, status, setStatus }) => {
 
 		// Coupon valid. Activate in final price
 		setCoupon({ ...coupon, code: "", display: false, validated: true });
-		setStatus({ ...status, discount: inputCoupon.discount, errorMessage: "" });
+		setStatus({ ...status, discount: inputCoupon.discount, coupon: inputCoupon.code, errorMessage: "" });
 	};
 
 	return (

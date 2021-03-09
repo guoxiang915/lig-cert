@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Accounts } from "meteor/accounts-base";
+import { useTagManager } from "/imports/ui/components/hooks/useTagManager";
 import { IconProfile, IconWarning } from "/imports/ui/components/Icons";
 import { isEmail, isValidPassword } from "/imports/ui/components/Functions";
 import { authHasError, authErrorMessage } from "/imports/ui/components/Validations";
@@ -44,6 +45,7 @@ export default Signup = ({ actionModal }) => {
 			if (error) {
 				if (error.reason === "Email already exists.") return setValues({ ...values, errorState: "already-used-email" });
 			} else {
+				useTagManager({ "event" : "signup" });
 				actionModal(event, false);
 			}
 		});
