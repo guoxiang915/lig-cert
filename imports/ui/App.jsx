@@ -19,6 +19,7 @@ const BlogView = loadable(() => import("/imports/ui/blogs/BlogView"));
 const PageView = loadable(() => import("/imports/ui/pages/PageView"));
 const TermsConditions = loadable(() => import("/imports/ui/legal/TermsConditions"));
 const PrivacyPolicy = loadable(() => import("/imports/ui/legal/PrivacyPolicy"));
+const Webinar = loadable(() => import("/imports/ui/webinar"));
 
 export const App = () => (
 	<Router>
@@ -39,6 +40,7 @@ export const App = () => (
 			<Route path="/pages/:permalink" exact component={PageView} />
 			<Route path="/terms-conditions" component={TermsConditions} />
 			<Route path="/privacy-policy" component={PrivacyPolicy} />
+			<Route path="/webinar" exact component={Webinar} />
 		</Switch>
 	</Router>
 );
