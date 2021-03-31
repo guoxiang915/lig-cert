@@ -18,7 +18,7 @@ export default Webinar = () => {
 		window.prerenderReady = true;
 		Intercom("boot", { app_id: "ort0cycf" });
 
-		useScript("webinarjam", "https://event.webinarjam.com/register/x4r61sm/embed-button");
+		useScript("webinarjam", "https://event.webinarjam.com/register/40kygt5/embed-button");
 
 		return () => Intercom("shutdown");
 	}, []);
@@ -51,7 +51,7 @@ export default Webinar = () => {
 						<p>Consciusness engineering is a four part method to allow you to rapidly transform in all areas of your life - work, career, health, love, self-mastery. Once you learn this, you grow like you've never grown before.</p>
 
 						<div className="signup-container" ref={signupRef}>
-							<button type="button" data-webinarhash="x4r61sm" className="button">Reserve My Spot Now</button>
+							<button type="button" data-webinarhash="40kygt5" className="button">Reserve My Spot Now</button>
 
 							<span>By clicking the button above, you are creating an account with tfcertification.com and agree to our <a href="/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a> and <a href="/terms-conditions" target="_blank" rel="noopener">Terms & Conditions</a>, including receiving emails.</span>
 						</div>
