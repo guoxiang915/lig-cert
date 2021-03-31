@@ -12,15 +12,15 @@
 		"@babel/runtime": "^7.13.10",
 		"@loadable/component": "^5.14.1",
 		"@stripe/react-stripe-js": "^1.4.0",
-		"@stripe/stripe-js": "^1.13.1",
-		"aws-sdk": "^2.864.0",
+		"@stripe/stripe-js": "^1.13.2",
+		"aws-sdk": "^2.876.0",
 		"bcrypt": "^5.0.1",
 		"copy-text-to-clipboard": "^3.0.1",
 		"dayjs": "^1.10.4",
 		"dompurify": "^2.2.7",
 		"handlebars": "^4.7.7",
 		"md5": "^2.3.0",
-		"meteor-node-stubs": "^1.0.1",
+		"meteor-node-stubs": "^1.0.3",
 		"pure-react-carousel": "^1.27.6",
 		"react": "^16.14.0",
 		"react-dom": "^16.14.0",
@@ -28,7 +28,7 @@
 		"react-modal": "^3.12.1",
 		"react-router-dom": "^5.2.0",
 		"simpl-schema": "^1.10.2",
-		"stripe": "^8.138.0",
+		"stripe": "^8.140.0",
 		"vanilla-lazyload": "^17.3.1"
 	},
 	"meteor": {
@@ -39,7 +39,7 @@
 		"testModule": "tests/main.js"
 	},
 	"devDependencies": {
-		"eslint": "^7.22.0",
+		"eslint": "^7.23.0",
 		"eslint-config-standard": "^16.0.2",
 		"eslint-plugin-import": "^2.22.1",
 		"eslint-plugin-promise": "^4.3.1",
