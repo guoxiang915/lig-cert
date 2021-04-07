@@ -26,9 +26,9 @@ export default Webinar = () => {
 	return (
 		<Fragment>
 			<SEO
-				title='Get your TensorFlow skills to the next level'
-				description='Consciusness engineering is a four part method to allow you to rapidly transform in all areas of your life - work, career, health, love, self-mastery. Once you learn this, you grow like youve never grown before.'
-				path='webinar'
+				title="Advancing Your ML skills and Career with TensorFlow Certificatio"
+				description="Learn how to grow your expertise in ML in an increasingly AI-driven global job market. Verify your skills with a badge of approval from Google: TF2 Certification."
+				path="webinar"
 				contentType="website"
 			/>
 
@@ -47,8 +47,8 @@ export default Webinar = () => {
 					</nav>
 
 					<div className="webinar information-container">
-						<h1>Get your TensorFlow skills to the next level</h1>
-						<p>Consciusness engineering is a four part method to allow you to rapidly transform in all areas of your life - work, career, health, love, self-mastery. Once you learn this, you grow like you've never grown before.</p>
+						<h1>Advancing Your ML skills and Career with TensorFlow Certification</h1>
+						<p>Learn how to grow your expertise in ML in an increasingly AI-driven global job market. Verify your skills with a badge of approval from Google: TF2 Certification.</p>
 
 						<div className="signup-container" ref={signupRef}>
 							<button type="button" data-webinarhash="40kygt5" className="button">Reserve My Spot Now</button>
@@ -70,43 +70,43 @@ export default Webinar = () => {
 						<div className="learn-item">
 							<LazyImage src="/landing/advantages-icon-1.svg" alt="Advantages Icon 1" />
 							<div>
-								<h5>Earn a Career Credential</h5>
-								<p>Build the skills to get job-ready with our complete AWS Machine Learning Specialty exam guide</p>
+								<h5>Advance Your ML Skills</h5>
+								<p>Join the webinar to learn how to acquire skills to build scalable Deep Learning applications with TensorFlow.</p>
+							</div>
+						</div>
+						<div className="learn-item">
+							<LazyImage src="/landing/advantages-icon-2.svg" alt="Advantages Icon 3" />
+							<div>
+								<h5>Get TensorFlow Certified</h5>
+								<p>Learn how to advance your ML skills and get the Google TensorFlow Certificate in under 30 days.</p>
 							</div>
 						</div>
 						<div className="learn-item">
 							<LazyImage src="/landing/advantages-icon-3.svg" alt="Advantages Icon 3" />
 							<div>
 								<h5>Earn a Career Credential</h5>
-								<p>Build the skills to get job-ready with our complete AWS Machine Learning Specialty exam guide</p>
+								<p>Learn how to get a powerful career credential and be recognized as a top candidate for recruiters seeking TensorFlow developers.s</p>
+							</div>
+						</div>
+						<div className="learn-item">
+							<LazyImage src="/landing/advantages-icon-1.svg" alt="Advantages Icon 3" />
+							<div>
+								<h5>Gain Practical Skills</h5>
+								<p>Learn on real-world case study: how Machine Learning with TensorFlow enabled mobile proof-of-purchase at Coca-Cola</p>
+							</div>
+						</div>
+						<div className="learn-item">
+							<LazyImage src="/landing/advantages-icon-2.svg" alt="Advantages Icon 3" />
+							<div>
+								<h5>Earn More</h5>
+								<p>TensorFlow Developers annual salary goes up to $204,000 according to ZipRecruter. Start learning today and get your career to the next level.</p>
 							</div>
 						</div>
 						<div className="learn-item">
 							<LazyImage src="/landing/advantages-icon-3.svg" alt="Advantages Icon 3" />
 							<div>
-								<h5>Study with Hands-On Projects</h5>
-								<p>Best-selling Udemy instructor Dr Ryan Ahmed delivers another powerful course that dives</p>
-							</div>
-						</div>
-						<div className="learn-item">
-							<LazyImage src="/landing/advantages-icon-3.svg" alt="Advantages Icon 3" />
-							<div>
-								<h5>Earn a Career Credential</h5>
-								<p>Build the skills to get job-ready with our complete AWS Machine Learning Specialty exam guide</p>
-							</div>
-						</div>
-						<div className="learn-item">
-							<LazyImage src="/landing/advantages-icon-3.svg" alt="Advantages Icon 3" />
-							<div>
-								<h5>Study with Hands-On Projects</h5>
-								<p>Best-selling Udemy instructor Dr Ryan Ahmed delivers another powerful course that dives</p>
-							</div>
-						</div>
-						<div className="learn-item">
-							<LazyImage src="/landing/advantages-icon-3.svg" alt="Advantages Icon 3" />
-							<div>
-								<h5>Earn a Career Credential</h5>
-								<p>Build the skills to get job-ready with our complete AWS Machine Learning Specialty exam guide</p>
+								<h5>Join Google’s Elite Community</h5>
+								<p>Strengthen your skills in Deep Learning and Machine Learning space and join the high league of Google Certified Developers.</p>
 							</div>
 						</div>
 					</div>
@@ -130,28 +130,28 @@ export default Webinar = () => {
 							<LazyImage src="/landing/feature-icon.svg" alt="Features Icon" classes="image-desktop" />
 							<img src="/landing/feature-icon-hover.svg" alt="Features Icon" className="image-hover" />
 							<h5>Beginners</h5>
-							<p>Learn  from the industry leaders <br /> 1,063,718 students <br /> 50,000 five-star reviews</p>
+							<p>Learn how to get your career in ML/AI field off to a great start.</p>
 						</div>
 
 						<div className="audience-item">
 							<LazyImage src="/landing/feature-icon.svg" alt="Features Icon" classes="image-desktop" />
 							<img src="/landing/feature-icon-hover.svg" alt="Features Icon" className="image-hover" />
 							<h5>Advanced</h5>
-							<p>Lifetime access to the course <br /> Receive 500+ slides of exclusive learning materials that stay with you forever</p>
+							<p>Learn how to get proficiency in using TensorFlow to solve DL and ML problems.</p>
 						</div>
 
 						<div className="audience-item">
 							<LazyImage src="/landing/feature-icon.svg" alt="Features Icon" classes="image-desktop" />
 							<img src="/landing/feature-icon-hover.svg" alt="Features Icon" className="image-hover" />
 							<h5>Career Change</h5>
-							<p>Receive 4-weeks intensive training <br /> Machine Learning <br /> Fundamentals Covered <br /> Available on Phones and TV</p>
+							<p>Advance your ML skills in an increasingly AI-driven global job market.</p>
 						</div>
 
 						<div className="audience-item">
 							<LazyImage src="/landing/feature-icon.svg" alt="Features Icon" classes="image-desktop" />
 							<img src="/landing/feature-icon-hover.svg" alt="Features Icon" className="image-hover" />
 							<h5>Data Managers</h5>
-							<p>15.5 hours on-demand video <br /> 24 articles <br /> 12 downloadable resources <br /> No prerequesites</p>
+							<p>Be recognized by TOP companies and the global TensorFlow community.</p>
 						</div>
 					</div>
 
