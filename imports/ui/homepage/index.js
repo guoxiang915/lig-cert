@@ -66,7 +66,7 @@ export default Homepage = () => {
 							<li onClick={() => advantagesRef.current.scrollIntoView({ behavior: "smooth" })}><a>Features</a></li>
 							<li onClick={() => instructorRef.current.scrollIntoView({ behavior: "smooth" })}><a>Instructor</a></li>
 							<li onClick={() => courseRef.current.scrollIntoView({ behavior: "smooth" })}><a>Course</a></li>
-							<li onClick={() => history.push("/blog")}><a>Blog</a></li>
+							<li><Link to="/blog">Blog</Link></li>
 
 							<div className="buttons">
 								{user ? (

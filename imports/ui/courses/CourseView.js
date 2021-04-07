@@ -124,8 +124,8 @@ export default CourseView = () => {
 						</div>
 
 						<ul className="actions hidden-xs">
-							<li><a onClick={() => history.push("/")}>Home</a></li>
-							<li onClick={() => history.push("/blog")}><a>Blog</a></li>
+							<li><Link to="/">Home</Link></li>
+							<li><Link to="/blog">Blog</Link></li>
 
 							<div className="buttons">
 								{user ? (

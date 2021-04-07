@@ -66,8 +66,8 @@ export default BlogsList = () => {
 						</div>
 
 						<ul className="actions hidden-xs">
-							<li onClick={() => history.push("/")}><a>Home</a></li>
-							<li onClick={() => history.push("/blog")}><a>Blog</a></li>
+							<li><Link to="/">Home</Link></li>
+							<li><Link to="/blog">Blog</Link></li>
 
 							<div className="buttons">
 								{user ? (
