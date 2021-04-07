@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Fragment } from "react";
 import { useTracker } from "meteor/react-meteor-data";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory, Link } from "react-router-dom";
 import { Accounts } from "meteor/accounts-base";
 import { Meteor } from "meteor/meteor";
 import { InvitationsCollection } from "/imports/api/invitations/invitations";
@@ -86,7 +86,7 @@ export default CompleteInvitation = () => {
 			/>
 
 			<div className="authentication-view-wrapper">
-				<img src="/logo.svg" alt="TF Certification Logo" onClick={() => history.push("/")} />
+				<Link to="/"><img src="/logo.svg" alt="TF Certification Logo" /></Link>
 
 				<form onSubmit={handleSubmit} className="form-container">
 					<div className="header">

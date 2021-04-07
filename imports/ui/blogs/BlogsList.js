@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Fragment } from "react";
 import { useTracker } from "meteor/react-meteor-data";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { Meteor } from "meteor/meteor";
 import loadable from "@loadable/component";
 import { SEO } from "/imports/ui/components/SEO";
@@ -62,7 +62,7 @@ export default BlogsList = () => {
 				<div className="main-wrapper">
 					<nav>
 						<div className="logo-label">
-							<img src="/logo.svg" alt="TF Certification Logo" onClick={() => history.push("/")} />
+							<Link to="/"><img src="/logo.svg" alt="TF Certification Logo" /></Link>
 						</div>
 
 						<ul className="actions hidden-xs">

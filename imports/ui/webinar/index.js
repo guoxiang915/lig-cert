@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, Fragment } from "react";
 import { Slide, ButtonBack, ButtonNext } from "pure-react-carousel";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { useScript } from "/imports/ui/components/hooks/useScript";
 import { SEO } from "/imports/ui/components/SEO";
 import { LazyImage } from "/imports/ui/components/LazyImage";
@@ -36,7 +36,7 @@ export default Webinar = () => {
 				<div className="main-wrapper">
 					<nav>
 						<div className="logo-label">
-							<img src="/logo.svg" alt="TF Certification Logo" onClick={() => history.push("/")} />
+							<Link to="/"><img src="/logo.svg" alt="TF Certification Logo" /></Link>
 						</div>
 
 						<ul className="actions hidden-xs">

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Fragment } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory, Link } from "react-router-dom";
 import { Accounts } from "meteor/accounts-base";
 import { isValidPassword } from "/imports/ui/components/Functions";
 import { SEO } from "/imports/ui/components/SEO";
@@ -58,7 +58,7 @@ export default ResetPassword = () => {
 			/>
 
 			<div className="authentication-view-wrapper">
-				<img src="/logo.svg" alt="TF Certification Logo" onClick={() => history.push("/")} />
+				<Link to="/"><img src="/logo.svg" alt="TF Certification Logo" /></Link>
 
 				{values.submitted ? (
 					<div>

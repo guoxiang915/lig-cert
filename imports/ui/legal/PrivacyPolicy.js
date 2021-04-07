@@ -1,5 +1,5 @@
 import React, { useEffect, Fragment } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { SEO } from "/imports/ui/components/SEO";
 import "/imports/ui/stylesheets/navbar.css";
 import "/imports/ui/stylesheets/footer.css";
@@ -23,7 +23,7 @@ export default PrivacyPolicy = () => {
 				<div className="main-wrapper">
 					<nav>
 						<div className="logo-label">
-							<img src="/logo.svg" alt="TF Certification Logo" onClick={() => history.push("/")} />
+							<Link to="/"><img src="/logo.svg" alt="TF Certification Logo" /></Link>
 						</div>
 
 						<ul className="actions hidden-xs">

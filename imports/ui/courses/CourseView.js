@@ -1,5 +1,5 @@
 import React, { useState, useEffect,Fragment } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory, Link } from "react-router-dom";
 import { useTracker } from "meteor/react-meteor-data";
 import { Meteor } from "meteor/meteor";
 import loadable from "@loadable/component";
@@ -120,7 +120,7 @@ export default CourseView = () => {
 				<div className="main-wrapper">
 					<nav>
 						<div className="logo-label">
-							<img src="/logo.svg" alt="TF Certification Logo" onClick={() => history.push("/")} />
+							<Link to="/"><img src="/logo.svg" alt="TF Certification Logo" /></Link>
 						</div>
 
 						<ul className="actions hidden-xs">

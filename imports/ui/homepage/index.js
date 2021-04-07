@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, Fragment } from "react";
 import { Meteor } from "meteor/meteor";
 import loadable from "@loadable/component";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { Slide, ButtonBack, ButtonNext } from "pure-react-carousel";
 import { SEO } from "/imports/ui/components/SEO";
 import { useAccount } from "/imports/ui/components/hooks/useAccount";
@@ -59,7 +59,7 @@ export default Homepage = () => {
 				<div className="main-wrapper">
 					<nav>
 						<div className="logo-label">
-							<img src="/logo.svg" alt="TF Certification Logo" onClick={() => history.push("/")} />
+							<Link to="/"><img src="/logo.svg" alt="TF Certification Logo" /></Link>
 						</div>
 
 						<ul className="actions hidden-xs">
