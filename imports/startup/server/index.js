@@ -1,7 +1,7 @@
 import { WebApp } from "meteor/webapp";
 import { Meteor } from "meteor/meteor";
 import { Roles } from "meteor/alanning:roles";
-import "/imports/startup/server/setHeader";
+import "/imports/startup/server/setMiddlewares";
 import "/imports/startup/server/emails/email";
 import "/imports/startup/server/emails/emailTemplates";
 import "/imports/startup/server/database/mongoIndexes";
