@@ -1,17 +1,16 @@
 import React, { useEffect, useRef, Fragment } from "react";
 import { Slide, ButtonBack, ButtonNext } from "pure-react-carousel";
-import { useHistory, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useScript } from "/imports/ui/components/hooks/useScript";
 import { SEO } from "/imports/ui/components/SEO";
+import { Footer } from "/imports/ui/components/Footer";
 import { LazyImage } from "/imports/ui/components/LazyImage";
 import { SliderWrapper } from "/imports/ui/components/SliderWrapper";
 import { IconAward, IconLinkedin, IconFacebook, IconTwitter, IconInstagram, IconYoutube, IconUdemy, IconWebsite, IconLongLeftArrow, IconLongRightArrow, IconBlockquote } from "/imports/ui/components/Icons";
 import "/imports/ui/stylesheets/navbar.css";
-import "/imports/ui/stylesheets/footer.css";
 import "/imports/ui/webinar/styles.css";
 
 export default Webinar = () => {
-	const history = useHistory();
 	const signupRef = useRef();
 
 	useEffect(() => {
@@ -236,16 +235,7 @@ export default Webinar = () => {
 			
 			<Testimonials />
 
-			<section className="section footer">
-				<div className="main-wrapper">
-					<p>&copy; Copyright 2021 — All rights reserved — TF Certification</p>
-					<p>
-						<Link to="/privacy-policy">Privacy Policy</Link>
-						<span className="hidden-xs">&bull;</span>
-						<Link to="/terms-conditions">Terms & Conditions</Link>
-					</p>
-				</div>
-			</section>
+			<Footer />
 		</Fragment>
 	);
 };

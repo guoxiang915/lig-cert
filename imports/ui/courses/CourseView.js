@@ -12,6 +12,7 @@ import { UnitsCollection } from "/imports/api/courses/units";
 import { MemberlistsCollection } from "/imports/api/courses/memberlists";
 import { Dropdown, DropdownExternalLink } from "/imports/ui/components/Dropdown";
 import { SEO } from "/imports/ui/components/SEO";
+import { Footer } from "/imports/ui/components/Footer";
 import { VideoPlayer } from "/imports/ui/components/VideoPlayer";
 import { LazyImage } from "/imports/ui/components/LazyImage";
 import AuthModal from "/imports/ui/authentication/AuthModal";
@@ -23,7 +24,6 @@ const VideoModal = loadable(() => import("/imports/ui/courses/VideoModal"));
 const TextModal = loadable(() => import("/imports/ui/courses/TextModal"));
 const QuizModal = loadable(() => import("/imports/ui/courses/QuizModal"));
 import "/imports/ui/stylesheets/navbar.css";
-import "/imports/ui/stylesheets/footer.css";
 import "/imports/ui/courses/styles.css";
 
 export default CourseView = () => {
@@ -227,16 +227,7 @@ export default CourseView = () => {
 				</div>
 			</section>
 
-			<section className="section footer">
-				<div className="main-wrapper">
-					<p>&copy; Copyright 2021 — All rights reserved — TF Certification</p>
-					<p>
-						<Link to="/privacy-policy">Privacy Policy</Link>
-						<span className="hidden-xs">&bull;</span>
-						<Link to="/terms-conditions">Terms & Conditions</Link>
-					</p>
-				</div>
-			</section>
+			<Footer />
 		</Fragment>
 	);
 };

@@ -6,6 +6,7 @@ import loadable from "@loadable/component";
 import { BlogsCollection } from "/imports/api/blogs/blogs";
 import { useAccount } from "/imports/ui/components/hooks/useAccount";
 import { SEO } from "/imports/ui/components/SEO";
+import { Footer } from "/imports/ui/components/Footer";
 import { Dropdown, DropdownExternalLink } from "/imports/ui/components/Dropdown";
 import AuthModal from "/imports/ui/authentication/AuthModal";
 import { hasRights, dateFormat } from "/imports/ui/components/Functions";
@@ -13,7 +14,6 @@ import { LazyImage } from "/imports/ui/components/LazyImage";
 import BlogItem from "/imports/ui/blogs/BlogItem";
 const ProfileModal = loadable(() => import("/imports/ui/profile/ProfileModal"));
 import "/imports/ui/stylesheets/navbar.css";
-import "/imports/ui/stylesheets/footer.css";
 import "/imports/ui/stylesheets/content-view.css";
 import "/imports/ui/blogs/styles.css";
 
@@ -137,16 +137,7 @@ export default BlogView = () => {
 				</section>
 			)}
 
-			<section className="section footer">
-				<div className="main-wrapper">
-					<p>&copy; Copyright 2021 — All rights reserved — TF Certification</p>
-					<p>
-						<Link to="/privacy-policy">Privacy Policy</Link>
-						<span className="hidden-xs">&bull;</span>
-						<Link to="/terms-conditions">Terms & Conditions</Link>
-					</p>
-				</div>
-			</section>
+			<Footer />
 		</Fragment>
 	);
 };

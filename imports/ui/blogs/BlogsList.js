@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Meteor } from "meteor/meteor";
 import loadable from "@loadable/component";
 import { SEO } from "/imports/ui/components/SEO";
+import { Footer } from "/imports/ui/components/Footer";
 import { useAccount } from "/imports/ui/components/hooks/useAccount";
 import { Dropdown, DropdownExternalLink } from "/imports/ui/components/Dropdown";
 import { hasRights } from "/imports/ui/components/Functions";
@@ -12,7 +13,6 @@ import { BlogsCollection } from "/imports/api/blogs/blogs";
 import BlogItem from "/imports/ui/blogs/BlogItem";
 const ProfileModal = loadable(() => import("/imports/ui/profile/ProfileModal"));
 import "/imports/ui/stylesheets/navbar.css";
-import "/imports/ui/stylesheets/footer.css";
 import "/imports/ui/blogs/styles.css";
 
 export default BlogsList = () => {
@@ -111,16 +111,7 @@ export default BlogsList = () => {
 				</div>
 			</section>
 
-			<section className="section footer">
-				<div className="main-wrapper">
-					<p>&copy; Copyright 2021 — All rights reserved — TF Certification</p>
-					<p>
-						<Link to="/privacy-policy">Privacy Policy</Link>
-						<span className="hidden-xs">&bull;</span>
-						<Link to="/terms-conditions">Terms & Conditions</Link>
-					</p>
-				</div>
-			</section>
+			<Footer />
 		</Fragment>
 	);
 };

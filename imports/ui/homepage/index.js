@@ -4,6 +4,7 @@ import loadable from "@loadable/component";
 import { useHistory, Link } from "react-router-dom";
 import { Slide, ButtonBack, ButtonNext } from "pure-react-carousel";
 import { SEO } from "/imports/ui/components/SEO";
+import { Footer } from "/imports/ui/components/Footer";
 import { useAccount } from "/imports/ui/components/hooks/useAccount";
 import { hasRights, _findWhere } from "/imports/ui/components/Functions";
 import AuthModal from "/imports/ui/authentication/AuthModal";
@@ -15,7 +16,6 @@ import { IconPlus, IconMinus, IconAward, IconLinkedin, IconFacebook, IconTwitter
 import { SliderWrapper } from "/imports/ui/components/SliderWrapper";
 const ProfileModal = loadable(() => import("/imports/ui/profile/ProfileModal"));
 import "/imports/ui/stylesheets/navbar.css";
-import "/imports/ui/stylesheets/footer.css";
 import "/imports/ui/homepage/styles.css";
 
 export default Homepage = () => {
@@ -290,16 +290,7 @@ export default Homepage = () => {
 				<LazyImage src="/connection-pattern.svg" classes="image-pattern connection-pattern"/>
 			</section>
 
-			<section className="section footer">
-				<div className="main-wrapper">
-					<p>&copy; Copyright 2021 — All rights reserved — TF Certification</p>
-					<p>
-						<Link to="/privacy-policy">Privacy Policy</Link>
-						<span className="hidden-xs">&bull;</span>
-						<Link to="/terms-conditions">Terms & Conditions</Link>
-					</p>
-				</div>
-			</section>
+			<Footer />
 		</Fragment>
 	);
 };
