@@ -240,9 +240,9 @@ export default Webinar = () => {
 				<div className="main-wrapper">
 					<p>&copy; Copyright 2021 — All rights reserved — TF Certification</p>
 					<p>
-						<a href="/privacy-policy">Privacy Policy</a>
+						<Link to="/privacy-policy">Privacy Policy</Link>
 						<span className="hidden-xs">&bull;</span>
-						<a href="/terms-conditions">Terms & Conditions</a>
+						<Link to="/terms-conditions">Terms & Conditions</Link>
 					</p>
 				</div>
 			</section>

@@ -63,9 +63,9 @@ export default Homepage = () => {
 						</div>
 
 						<ul className="actions hidden-xs">
-							<li onClick={() => advantagesRef.current.scrollIntoView({ behavior: "smooth" })}><a>Features</a></li>
-							<li onClick={() => instructorRef.current.scrollIntoView({ behavior: "smooth" })}><a>Instructor</a></li>
-							<li onClick={() => courseRef.current.scrollIntoView({ behavior: "smooth" })}><a>Course</a></li>
+							<li><a onClick={() => advantagesRef.current.scrollIntoView({ behavior: "smooth" })}>Features</a></li>
+							<li><a onClick={() => instructorRef.current.scrollIntoView({ behavior: "smooth" })}>Instructor</a></li>
+							<li><a onClick={() => courseRef.current.scrollIntoView({ behavior: "smooth" })}>Course</a></li>
 							<li><Link to="/blog">Blog</Link></li>
 
 							<div className="buttons">
@@ -73,7 +73,7 @@ export default Homepage = () => {
 									<Fragment>
 										<Dropdown title={`Hi ${user.profile.name.first}`}>
 											<a className="dropdown-item" onClick={toggleProfileModal}>Profile</a>
-											{hasRights(["admin"]) && <a className="dropdown-item" onClick={() => history.push("/admin/users")}>Administrator</a>}
+											{hasRights(["admin"]) && <Link to="/admin/users" className="dropdown-item">Administrator</Link>}
 
 											<div className="dropdown-container">
 												<DropdownExternalLink link="https://intercom.help/TFCertification" className="dropdown-item">Knowledge Base</DropdownExternalLink>
@@ -294,9 +294,9 @@ export default Homepage = () => {
 				<div className="main-wrapper">
 					<p>&copy; Copyright 2021 — All rights reserved — TF Certification</p>
 					<p>
-						<a href="/privacy-policy">Privacy Policy</a>
+						<Link to="/privacy-policy">Privacy Policy</Link>
 						<span className="hidden-xs">&bull;</span>
-						<a href="/terms-conditions">Terms & Conditions</a>
+						<Link to="/terms-conditions">Terms & Conditions</Link>
 					</p>
 				</div>
 			</section>
@@ -442,8 +442,8 @@ const CourseBlock = ({ history }) => {
 					</div>
 
 					<div className="actions">
-						<a className="button primary-dark primary-dark-hover" onClick={() => history.push("/courses/tensorflow-developer-professional-certificate")}>Go to Course</a>
-						<a className="button border-primary-dark primary-dark-hover" href="/landing/course-curriculum.pdf" target="_blank" rel="noopener">Download Curriculum</a>
+						<Link className="button primary-dark primary-dark-hover" to="/courses/tensorflow-developer-professional-certificate">Go to Course</Link>
+						<Link className="button border-primary-dark primary-dark-hover" to="/landing/course-curriculum.pdf" target="_blank" rel="noopener">Download Curriculum</Link>
 					</div>
 				</div>
 

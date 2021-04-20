@@ -1,13 +1,11 @@
 import React, { useEffect, Fragment } from "react";
-import { useHistory, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { SEO } from "/imports/ui/components/SEO";
 import "/imports/ui/stylesheets/navbar.css";
 import "/imports/ui/stylesheets/footer.css";
 import "/imports/ui/legal/styles.css";
 
 export default PrivacyPolicy = () => {
-	const history = useHistory();
-
 	useEffect(() => { window.prerenderReady = true; }, []);
 
 	return (
@@ -211,9 +209,9 @@ export default PrivacyPolicy = () => {
 				<div className="main-wrapper">
 					<p>&copy; Copyright 2021 — All rights reserved — TF Certification</p>
 					<p>
-						<a href="/privacy-policy">Privacy Policy</a>
+						<Link to="/privacy-policy">Privacy Policy</Link>
 						<span className="hidden-xs">&bull;</span>
-						<a href="/terms-conditions">Terms & Conditions</a>
+						<Link to="/terms-conditions">Terms & Conditions</Link>
 					</p>
 				</div>
 			</section>

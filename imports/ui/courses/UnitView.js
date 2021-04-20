@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Fragment } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory, Link } from "react-router-dom";
 import { useTracker } from "meteor/react-meteor-data";
 import { CoursesCollection } from "/imports/api/courses/courses";
 import { UnitsCollection } from "/imports/api/courses/units";
@@ -107,7 +107,7 @@ const UnitContent = ({ showSidebar, toggleSidebar, course, hasCourseAccess }) =>
 						<div className="blocked-content">
 							<IconLock />
 							<h2>Ups, you dont have access to this lecture</h2>
-							<p>If you want to get full access to this course, please <a onClick={() => history.push(`/courses/${coursePermalink}`)}>click here</a> and purchase the course.</p>
+							<p>If you want to get full access to this course, please <Link to={`/courses/${coursePermalink}`}>click here</Link> and purchase the course.</p>
 						</div>
 					</Fragment>
 				)}

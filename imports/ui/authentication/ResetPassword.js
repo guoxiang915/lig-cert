@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Fragment } from "react";
-import { useParams, useHistory, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { Accounts } from "meteor/accounts-base";
 import { isValidPassword } from "/imports/ui/components/Functions";
 import { SEO } from "/imports/ui/components/SEO";
@@ -17,7 +17,6 @@ export default ResetPassword = () => {
 		loading: false
 	});
 
-	const history = useHistory();
 	const { token } = useParams();
 
 	useEffect(() => { window.prerenderReady = true; }, []);
@@ -63,7 +62,7 @@ export default ResetPassword = () => {
 				{values.submitted ? (
 					<div>
 						<h4>Password Reseted!</h4>
-						<p>Your password was succesfully reseted. You can access the platform by <a onClick={() => history.push("/")} href="">Clicking Here</a></p>
+						<p>Your password was succesfully reseted. You can access the platform by <Link to="/">Clicking Here</Link></p>
 					</div>
 				) : (
 					<form onSubmit={handleSubmit} className="form-container">
@@ -88,7 +87,7 @@ export default ResetPassword = () => {
 							{values.loading ? "Resetting Password" : "Complete Reset Password"}
 						</button>
 
-						<p className="action">Remember your password? <a onClick={() => history.push("/")} href="">Log in</a></p>
+						<p className="action">Remember your password? <Link to="/">Log in</Link></p>
 					</form>
 				)}
 			</div>

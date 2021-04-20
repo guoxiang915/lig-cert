@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Fragment } from "react";
 import { useTracker } from "meteor/react-meteor-data";
-import { useHistory, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Meteor } from "meteor/meteor";
 import loadable from "@loadable/component";
 import { SEO } from "/imports/ui/components/SEO";
@@ -20,7 +20,6 @@ export default BlogsList = () => {
 	const [authComponent, setAuthComponent] = useState("");
 	const [showProfileModal, setShowProfileModal] = useState(false);
 
-	const history = useHistory();
 	const { user } = useAccount();
 
 	const { dataLoading, blogs } = useTracker(() => {
@@ -74,7 +73,7 @@ export default BlogsList = () => {
 									<Fragment>
 										<Dropdown title={`Hi ${user.profile.name.first}`}>
 											<a className="dropdown-item" onClick={toggleProfileModal}>Profile</a>
-											{hasRights(["admin"]) && <a className="dropdown-item" onClick={() => history.push("/admin/users")}>Administrator</a>}
+											{hasRights(["admin"]) && <Link to="/admin/users" className="dropdown-item">Administrator</Link>}
 
 											<div className="dropdown-container">
 												<DropdownExternalLink link="https://intercom.help/TFCertification" className="dropdown-item">Knowledge Base</DropdownExternalLink>
@@ -116,9 +115,9 @@ export default BlogsList = () => {
 				<div className="main-wrapper">
 					<p>&copy; Copyright 2021 — All rights reserved — TF Certification</p>
 					<p>
-						<a href="/privacy-policy">Privacy Policy</a>
+						<Link to="/privacy-policy">Privacy Policy</Link>
 						<span className="hidden-xs">&bull;</span>
-						<a href="/terms-conditions">Terms & Conditions</a>
+						<Link to="/terms-conditions">Terms & Conditions</Link>
 					</p>
 				</div>
 			</section>

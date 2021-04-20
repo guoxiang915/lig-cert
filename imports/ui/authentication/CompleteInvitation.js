@@ -117,7 +117,7 @@ export default CompleteInvitation = () => {
 						{values.loading ? "Signing Up" : "Complete Invitation Signup"}
 					</button>
 
-					<p className="action">Already have an account? <a onClick={() => history.push("/")} href="">Log in</a></p>
+					<p className="action">Already have an account? <Link to="/">Log in</Link></p>
 				</form>
 			</div>
 		</Fragment>
