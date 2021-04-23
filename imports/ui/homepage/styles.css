@@ -21,22 +21,15 @@ section.homepage-header .information-container .left-content {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	padding-right: 50px;
 	width: 50%;
 }
 
 section.homepage-header .information-container .left-content h1 {
-	margin: 0 0 10px 0;
+	margin-top: 0;
 }
 
 section.homepage-header .information-container .left-content p {
-	margin-top: 15px;
-}
-
-section.homepage-header .information-container .left-content h2 {
-	font-size: 22px;
-	margin: 20px 0 0 0;
-	font-weight: normal;
+	max-width: 400px;
 }
 
 section.homepage-header .information-container .right-content {
@@ -899,7 +892,6 @@ section.homepage-certified-banner .main-wrapper h1 {
 	section.homepage-header .information-container .left-content {
 		width: 100%;
 		margin-bottom: 30px;
-		padding-right: 0;
 		text-align: center;
 	}
 

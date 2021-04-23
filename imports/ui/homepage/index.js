@@ -100,9 +100,8 @@ export default Homepage = () => {
 
 					<div className="information-container">
 						<div className="left-content">
-							<h1>We're celebrating the 20th anniversary of modern data science in a big way! 🎉</h1>
-							<p>Introducing the Modern Machine Learning Bundle – <strong>get 40% off</strong> the TensorFlow Developer Professional Certificate Course and enjoy one additional free course from Udemy library</p>
-							<h2>Use code: <strong>20YDSC</strong></h2>
+							<h1>Become a TensorFlow Certified Professional Developer</h1>
+							<p>Join the best training ground for AI mastery and gain the skills you need to become a TensorFlow Certified Developer.</p>
 						</div>
 						<div className="right-content">
 							<VideoPlayer playerId="presentation" mediaId="npKzoDrm" />
