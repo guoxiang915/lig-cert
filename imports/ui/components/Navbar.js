@@ -13,6 +13,11 @@ export const Navbar = ({ options, buttons, toggleAuthModal }) => {
 	const [showNavbar, setShowNavbar] = useState(false);
 	const toggleNavbar = () => setShowNavbar(!showNavbar);
 
+	const handleNavigationClick = (navigation) => {
+		setShowNavbar(false);
+		navigation.action();
+	};
+
 	return (
 		<nav>
 			<div className="main-wrapper">
@@ -28,7 +33,7 @@ export const Navbar = ({ options, buttons, toggleAuthModal }) => {
 					<ul>
 						{options?.map((option, index) => (
 							<li key={`option-${index}`}>
-								{option.url ? <Link to={option.url}>{option.title}</Link> : <a onClick={option.action}>{option.title}</a>}
+								{option.url ? <Link to={option.url}>{option.title}</Link> : <a onClick={() => handleNavigationClick(option)}>{option.title}</a>}
 							</li>
 						))}
 
@@ -37,7 +42,7 @@ export const Navbar = ({ options, buttons, toggleAuthModal }) => {
 
 							{buttons?.map((button, index) =>
 								<li key={`button-${index}`}>
-									<button className={button.classes ?? ""} onClick={button.action}>{button.title}</button>
+									<button className={button.classes ?? ""} onClick={() => handleNavigationClick(button)}>{button.title}</button>
 								</li>
 							)}
 						</div>
