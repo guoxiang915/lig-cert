@@ -43,7 +43,7 @@ export default Homepage = () => {
 	const navbarOptions = [
 		{ title: "Features", action: () => advantagesRef.current.scrollIntoView({ behavior: "smooth" }) },
 		{ title: "Instructor", action: () => instructorRef.current.scrollIntoView({ behavior: "smooth" }) },
-		{ title: "Courses", action: () => courseRef.current.scrollIntoView({ behavior: "smooth" }) },
+		{ title: "Course", action: () => courseRef.current.scrollIntoView({ behavior: "smooth" }) },
 		{ title: "Blog", url: "/blog" }
 	];
 
