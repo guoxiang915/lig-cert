@@ -1,13 +1,12 @@
 import React, { useEffect, useRef, Fragment } from "react";
 import { Slide, ButtonBack, ButtonNext } from "pure-react-carousel";
-import { Link } from "react-router-dom";
 import { useScript } from "/imports/ui/components/hooks/useScript";
 import { SEO } from "/imports/ui/components/SEO";
+import { Navbar } from "/imports/ui/components/Navbar";
 import { Footer } from "/imports/ui/components/Footer";
 import { LazyImage } from "/imports/ui/components/LazyImage";
 import { SliderWrapper } from "/imports/ui/components/SliderWrapper";
 import { IconAward, IconLinkedin, IconFacebook, IconTwitter, IconInstagram, IconYoutube, IconUdemy, IconWebsite, IconLongLeftArrow, IconLongRightArrow, IconBlockquote } from "/imports/ui/components/Icons";
-import "/imports/ui/stylesheets/navbar.css";
 import "/imports/ui/webinar/styles.css";
 
 export default Webinar = () => {
@@ -32,19 +31,13 @@ export default Webinar = () => {
 			/>
 
 			<section className="section webinar-header">
+				<Navbar
+					buttons={[
+						{ title: "Reserve My Spot", classes: "button primary-dark", action: () => signupRef.current.scrollIntoView({ behavior: "smooth" }) }
+					]}
+				/>
+
 				<div className="main-wrapper">
-					<nav>
-						<div className="logo-label">
-							<Link to="/"><img src="/logo.svg" alt="TF Certification Logo" /></Link>
-						</div>
-
-						<ul className="actions hidden-xs">
-							<div className="buttons">
-								<li><button className="button primary-dark" onClick={() => signupRef.current.scrollIntoView({ behavior: "smooth" })}>Reserve My Spot</button></li>
-							</div>
-						</ul>
-					</nav>
-
 					<div className="webinar information-container">
 						<h1>Advancing Your ML skills and Career with TensorFlow Certification</h1>
 						<p>Learn how to grow your expertise in ML in an increasingly AI-driven global job market. Verify your skills with a badge of approval from Google: TF2 Certification.</p>

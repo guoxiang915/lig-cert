@@ -21,7 +21,7 @@ section.course-view-header .bottom-pattern {
 	width: 100%;
 }
 
-section.course-view-header .button {
+.course-view-header .main-wrapper > .button {
 	margin: 0 7.5px;
 }
 
@@ -485,6 +485,10 @@ section.course-view-content .right-pattern {
 }
 
 @media (max-width: 767px) {
+	.course-view-header {
+		padding-top: 70px;
+	}
+
 	.course-view-header .progression {
 		padding: 0;
 	}

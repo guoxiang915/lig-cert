@@ -1,8 +1,7 @@
 import React, { useEffect, Fragment } from "react";
-import { Link } from "react-router-dom";
 import { SEO } from "/imports/ui/components/SEO";
+import { Navbar } from "/imports/ui/components/Navbar";
 import { Footer } from "/imports/ui/components/Footer";
-import "/imports/ui/stylesheets/navbar.css";
 import "/imports/ui/legal/styles.css";
 
 export default TermsConditions = () => {
@@ -18,18 +17,14 @@ export default TermsConditions = () => {
 			/>
 
 			<section className="section legal-header">
+				<Navbar
+					options={[
+						{ title: "Home", url: "/" },
+						{ title: "Blog", url: "/blog" }
+					]}
+				/>
+
 				<div className="main-wrapper">
-					<nav>
-						<div className="logo-label">
-							<Link to="/"><img src="/logo.svg" alt="TF Certification Logo" /></Link>
-						</div>
-
-						<ul className="actions hidden-xs">
-							<li><Link to="/">Home</Link></li>
-							<li><Link to="/blog">Blog</Link></li>
-						</ul>
-					</nav>
-
 					<div className="information">
 						<h1>Terms & Conditions</h1>
 						<p>These Terms and Conditions were last modified on April 19, 2017.</p>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect,Fragment } from "react";
-import { useParams, useHistory, Link } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { useTracker } from "meteor/react-meteor-data";
 import { Meteor } from "meteor/meteor";
 import loadable from "@loadable/component";
@@ -10,26 +10,21 @@ import { IconTrophy, IconEdit, IconPlus, IconVideo, IconText, IconQuiz, IconLock
 import { CoursesCollection } from "/imports/api/courses/courses";
 import { UnitsCollection } from "/imports/api/courses/units";
 import { MemberlistsCollection } from "/imports/api/courses/memberlists";
-import { Dropdown, DropdownExternalLink } from "/imports/ui/components/Dropdown";
 import { SEO } from "/imports/ui/components/SEO";
+import { Navbar } from "/imports/ui/components/Navbar";
 import { Footer } from "/imports/ui/components/Footer";
 import { VideoPlayer } from "/imports/ui/components/VideoPlayer";
 import { LazyImage } from "/imports/ui/components/LazyImage";
 import AuthModal from "/imports/ui/authentication/AuthModal";
-const ProfileModal = loadable(() => import("/imports/ui/profile/ProfileModal"));
 const PaymentModal = loadable(() => import("/imports/ui/payment/PaymentModal"));
 const CourseModal = loadable(() => import("/imports/ui/courses/CourseModal"));
 const ModuleModal = loadable(() => import("/imports/ui/courses/ModuleModal"));
 const VideoModal = loadable(() => import("/imports/ui/courses/VideoModal"));
 const TextModal = loadable(() => import("/imports/ui/courses/TextModal"));
 const QuizModal = loadable(() => import("/imports/ui/courses/QuizModal"));
-import "/imports/ui/stylesheets/navbar.css";
 import "/imports/ui/courses/styles.css";
 
 export default CourseView = () => {
-	const [showProfileModal, setShowProfileModal] = useState(false);
-	const toggleProfileModal = () => setShowProfileModal(!showProfileModal);
-
 	const [showDescription, setShowDescription] = useState(false);
 	const toggleDescription = () => setShowDescription(!showDescription);
 
@@ -117,46 +112,16 @@ export default CourseView = () => {
 			/>
 
 			<section className="section course-view-header">
+				{showAuthModal && <AuthModal isOpen={showAuthModal} actionModal={toggleAuthModal} component={authComponent} />}
+				<Navbar
+					options={[
+						{ title: "Home", url: "/" },
+						{ title: "Blog", url: "/blog" }
+					]}
+					toggleAuthModal={toggleAuthModal}
+				/>
+
 				<div className="main-wrapper">
-					<nav>
-						<div className="logo-label">
-							<Link to="/"><img src="/logo.svg" alt="TF Certification Logo" /></Link>
-						</div>
-
-						<ul className="actions hidden-xs">
-							<li><Link to="/">Home</Link></li>
-							<li><Link to="/blog">Blog</Link></li>
-
-							<div className="buttons">
-								{user ? (
-									<Fragment>
-										<Dropdown title={`Hi ${user.profile.name.first}`}>
-											<a className="dropdown-item" onClick={toggleProfileModal}>Profile</a>
-											{hasRights(["admin"]) && <Link to="/admin/users" className="dropdown-item">Administrator</Link>}
-
-											<div className="dropdown-container">
-												<DropdownExternalLink link="https://intercom.help/TFCertification" className="dropdown-item">Knowledge Base</DropdownExternalLink>
-												<DropdownExternalLink link="https://discord.gg/TjhK28Kr9k" className="dropdown-item">Community</DropdownExternalLink>
-												<DropdownExternalLink link="mailto:support@tfcertification.intercom.com" className="dropdown-item">Contact</DropdownExternalLink>
-											</div>
-
-											<a className="dropdown-item" onClick={() => Meteor.logout()}>Logout</a>
-										</Dropdown>
-
-										{showProfileModal && <ProfileModal isOpen={showProfileModal} closeModal={toggleProfileModal} />}
-									</Fragment>
-								) : (
-									<Fragment>
-										<button type="button" className="button" onClick={(event) => toggleAuthModal(event, true, "Login")}>Login</button>
-										<button type="button" className="button primary-dark" onClick={(event) => toggleAuthModal(event, true, "Signup")}>Get Started</button>
-									</Fragment>
-								)}
-
-								{showAuthModal && <AuthModal isOpen={showAuthModal} actionModal={toggleAuthModal} component={authComponent} />}
-							</div>
-						</ul>
-					</nav>
-
 					<h1>{course.title}</h1>
 
 					{hasRights(["admin"]) && <button onClick={() => toggleModal("course")} className="button">Edit Course</button>}

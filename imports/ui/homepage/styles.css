@@ -882,7 +882,7 @@ section.homepage-certified-banner .main-wrapper h1 {
 @media (max-width: 767px) {
 	/* Header Block */
 	section.homepage-header {
-		padding-bottom: 150px;
+		padding: 70px 0 150px 0;
 	}
 
 	section.homepage-header .information-container {

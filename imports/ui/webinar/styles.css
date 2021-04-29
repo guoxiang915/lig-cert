@@ -412,7 +412,7 @@ section.webinar-testimonials .right-pattern {
 @media (max-width: 767px) {
 	/* Header Block */
 	section.webinar-header {
-		padding-bottom: 150px;
+		padding: 70px 0 150px 0;
 	}
 
 	/* Learn Block */

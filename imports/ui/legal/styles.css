@@ -64,7 +64,7 @@ section.legal-header .bottom-pattern {
 /* Mobile View */
 @media (max-width: 767px) {
 	.legal-header {
-		padding-bottom: 250px;
+		padding: 150px 0 170px 0;
 	}
 
 	.legal-content {

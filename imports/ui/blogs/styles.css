@@ -105,6 +105,10 @@ section.blog-header.blog-view .bottom-pattern {
 
 /* Mobile View */
 @media (max-width: 767px) {
+	.blog-header {
+		padding-top: 80px;
+	}
+
 	.blog-item {
 		width: 100%;
 		margin-right: 0;
