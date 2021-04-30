@@ -2,7 +2,7 @@ import React from "react";
 import loadable from "@loadable/component";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import { useAccount } from "/imports/ui/components/hooks/useAccount";
-const AdminLayout = loadable(() => import("/imports/ui/layouts/AdminLayout"));
+const Private = loadable(() => import("/imports/ui/layouts/Private"));
 const Homepage = loadable(() => import("/imports/ui/homepage"));
 const ResetPassword = loadable(() => import("/imports/ui/authentication/ResetPassword"));
 const CompleteInvitation = loadable(() => import("/imports/ui/authentication/CompleteInvitation"));
@@ -29,12 +29,12 @@ export const App = () => (
 			<Route path="/invite/:token" component={CompleteInvitation} />
 			<Route path="/courses/:coursePermalink" exact component={CourseView} />
 			<LoggedRoute path="/courses/:coursePermalink/:unitPermalink" component={UnitView} />
-			<LoggedRoute path="/admin/users" layout={AdminLayout} component={UsersList} />
-			<LoggedRoute path="/admin/files" layout={AdminLayout} component={FilesList} />
-			<LoggedRoute path="/admin/invitations" layout={AdminLayout} component={InvitationsList} />
-			<LoggedRoute path="/admin/courses" layout={AdminLayout} component={CoursesList} />
-			<LoggedRoute path="/admin/blogs" layout={AdminLayout} component={AdminBlogsList} />
-			<LoggedRoute path="/admin/pages" layout={AdminLayout} component={PagesList} />
+			<LoggedRoute path="/admin/users" layout={Private} component={UsersList} />
+			<LoggedRoute path="/admin/files" layout={Private} component={FilesList} />
+			<LoggedRoute path="/admin/invitations" layout={Private} component={InvitationsList} />
+			<LoggedRoute path="/admin/courses" layout={Private} component={CoursesList} />
+			<LoggedRoute path="/admin/blogs" layout={Private} component={AdminBlogsList} />
+			<LoggedRoute path="/admin/pages" layout={Private} component={PagesList} />
 			<Route path="/blog" exact component={BlogsList} />
 			<Route path="/blog/:permalink" exact component={BlogView} />
 			<Route path="/pages/:permalink" exact component={PageView} />

@@ -1,9 +1,9 @@
-nav {
+nav.navbar {
 	position: relative;
 	z-index: 10;
 }
 
-nav .main-wrapper {
+nav.navbar .main-wrapper {
 	align-items: center;
 	display: flex;
 	justify-content: space-between;
@@ -11,7 +11,7 @@ nav .main-wrapper {
 	color: #fff;
 }
 
-nav .logo-label {
+nav.navbar .logo-label {
 	background-color: #fff;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
@@ -20,23 +20,23 @@ nav .logo-label {
 	padding: 40px 20px 12px 20px;
 }
 
-nav img {
+nav.navbar img {
 	cursor: pointer;
 	height: 30px;
 }
 
-nav ul {
+nav.navbar ul {
 	list-style: none;
 }
 
-nav li {
+nav.navbar li {
 	display: inline-block;
 	line-height: 25px;
 	margin-left: 25px;
 	transition: .2s color ease-in-out;
 }
 
-nav li a {
+nav.navbar li a {
 	background-image: linear-gradient(0deg, rgba(255,255,255,.7) 0, rgba(255,255,255,.7) 100%);
 	background-position: 0 100%;
 	background-repeat: no-repeat;
@@ -49,27 +49,27 @@ nav li a {
 	transition: .2s all ease-in-out;
 }
 
-nav li:hover a {
+nav.navbar li:hover a {
 	background-size: 100% 2px;
 }
 
-nav .buttons {
+nav.navbar .buttons {
 	float: right;
 	margin-left: 15px;
 }
 
-nav .buttons li {
+nav.navbar .buttons li {
 	margin-left: 15px;
 }
 
-nav .button-dropdown {
+nav.navbar .button-dropdown {
 	margin-left: 15px;
 }
 
 
 /* Mobile View */
 @media (max-width: 767px) {
-	nav {
+	nav.navbar {
 		background-color: var(--primary);
 		box-shadow: 2px 2px 10px rgba(0,0,0,.3);
 		left: 0;
@@ -81,7 +81,7 @@ nav .button-dropdown {
 		z-index: 10;
 	}
 
-	nav .logo-label {
+	nav.navbar .logo-label {
 		align-items: center;
 		border-radius: 0;
 		display: flex;
@@ -90,51 +90,51 @@ nav .button-dropdown {
 		padding: 0 20px;
 	}
 
-	nav .main-wrapper {
+	nav.navbar .main-wrapper {
 		padding: 0;
 		flex-wrap: wrap;
 	}
 
-	nav img {
+	nav.navbar img {
 		height: 20px;
 		vertical-align: top;
 	}
 
-	nav svg {
+	nav.navbar svg {
 		height: 25px;
 		vertical-align: top;
 	}
 
-	nav .actions {
+	nav.navbar .actions {
 		background-color: var(--primary);
 		margin-top: 20px;
 		width: 100%;
 	}
 
-	nav ul {
+	nav.navbar ul {
 		margin-bottom: 5px;
 		padding: 0;
 	}
 
-	nav li {
+	nav.navbar li {
 		margin: 5px 0;
 		width: 100%;
 	}
 
-	nav li a {
+	nav.navbar li a {
 		float: initial;
 	}
 
-	nav .buttons {
+	nav.navbar .buttons {
 		float: initial;
 		margin: 10px 0 0 0;
 	}
 
-	nav .buttons li {
+	nav.navbar .buttons li {
 		margin: 5px 0;
 	}
 
-	nav .button-dropdown {
+	nav.navbar .button-dropdown {
 		margin-left: 0;
 	}
 }

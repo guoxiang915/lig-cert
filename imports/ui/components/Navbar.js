@@ -19,7 +19,7 @@ export const Navbar = ({ options, buttons, toggleAuthModal }) => {
 	};
 
 	return (
-		<nav>
+		<nav className="navbar">
 			<div className="main-wrapper">
 				<div className="logo-label">
 					<Link to="/"><img src="/logo.svg" alt="TF Certification Logo" /></Link>
