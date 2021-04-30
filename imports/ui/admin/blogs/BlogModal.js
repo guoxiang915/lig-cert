@@ -1,6 +1,6 @@
 import React, { useState } from "react";
+import Editor from "@codifytools/react-text-editor";
 import { Modal } from "/imports/ui/components/Modal";
-import { TextEditor } from "/imports/ui/components/TextEditor";
 import { cleanPermalink } from "/imports/ui/components/Functions";
 import { blogErrorMessage, blogHasError } from "/imports/ui/components/Validations";
 
@@ -76,8 +76,8 @@ export default BlogModal = ({ isOpen, onClose, blog }) => {
 				</label>
 
 				<label className={`${blogHasError("content", values.errorState) ? "error" : ""}`}>
-					Content
-					<TextEditor field="content" html={values.content} disabled={false} saveCallback={handleChange} placeholder="e.g. Getting a job in Data Science..." enableEditor={true} />
+					Content:
+					<Editor field="content" html={values.content} saveCallback={handleChange} placeholder="e.g. Getting a job in Data Science..." />
 				</label>
 
 				<hr/>

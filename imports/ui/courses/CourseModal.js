@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import Editor from "@codifytools/react-text-editor";
 import { Modal } from "/imports/ui/components/Modal";
 import { cleanPermalink } from "/imports/ui/components/Functions";
-import { TextEditor } from "/imports/ui/components/TextEditor";
 import { IconWarning } from "/imports/ui/components/Icons";
 import { courseHasError, courseErrorMessage } from "/imports/ui/components/Validations";
 import { ListSelector } from "/imports/ui/components/ListSelector";
@@ -85,7 +85,7 @@ export default CourseModal = ({ isOpen, onClose, course }) => {
 
 				<label className={`${courseHasError("description", values.errorState) ? "error" : ""}`}>
 					Description:
-					<TextEditor field="description" html={values.description} disabled={false} saveCallback={handleChange} placeholder="e.g. Welcome to the tableau certification course..." enableEditor={true} />
+					<Editor field="description" html={values.description} saveCallback={handleChange} placeholder="e.g. Welcome to the tableau certification course..." />
 				</label>
 
 				<label className={`${courseHasError("mediaLength", values.errorState) ? "error" : ""}`}>

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
+import Editor from "@codifytools/react-text-editor";
 import { CoursesCollection } from "/imports/api/courses/courses";
 import { UnitsCollection } from "/imports/api/courses/units";
 import { cleanPermalink, _findWhere } from "/imports/ui/components/Functions";
 import { Modal } from "/imports/ui/components/Modal";
-import { TextEditor } from "/imports/ui/components/TextEditor";
 import { IconWarning } from "/imports/ui/components/Icons";
 import { courseHasError, courseErrorMessage } from "/imports/ui/components/Validations";
 
@@ -107,7 +107,7 @@ export default TextModal = ({ isOpen, actionModal, unit, courseId, moduleId }) =
 
 				<label className={`${courseHasError("text", values.errorState) ? "error" : ""}`}>
 					Text:
-					<TextEditor field="text" html={values.text} disabled={false} saveCallback={handleChange} placeholder="e.g. Welcome to the unit number..." enableEditor={true} />
+					<Editor field="text" html={values.text} saveCallback={handleChange} placeholder="e.g. Welcome to the unit number..." />
 				</label>
 
 				{values.errorState && <p className="error-message"><IconWarning/>{courseErrorMessage(values.errorState)}</p>}

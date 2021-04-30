@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Meteor } from "meteor/meteor";
+import Editor from "@codifytools/react-text-editor";
 import { Modal } from "/imports/ui/components/Modal";
-import { TextEditor } from "/imports/ui/components/TextEditor";
 import { ArrayManager } from "/imports/ui/components/ArrayManager";
 import { cleanPermalink } from "/imports/ui/components/Functions";
 import { IconWarning } from "/imports/ui/components/Icons";
@@ -75,13 +75,13 @@ export default PageModal = ({ isOpen, onClose, page }) => {
 				</label>
 
 				<label className={`${pageHasError("content", values.errorState) ? "error" : ""}`}>
-					Content
-					<TextEditor field="content" html={values.content} disabled={false} saveCallback={handleChange} placeholder="e.g. Download course course materials for the module ..." enableEditor={true} />
+					Content:
+					<Editor field="content" html={values.content} saveCallback={handleChange} placeholder="e.g. Download course course materials for the module..." />
 				</label>
 				<hr/>
 
 				<label>
-					Scripts
+					Scripts:
 					<ArrayManager field="scripts" currentValue={values.scripts} saveCallback={handleChange} inputPlaceholder="Script..." buttonText="Add Script" />
 				</label>
 
