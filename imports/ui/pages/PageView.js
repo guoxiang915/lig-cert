@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { Meteor } from "meteor/meteor";
 import { PagesCollection } from "/imports/api/pages/pages";
 import { SEO } from "/imports/ui/components/SEO";
+import { Navbar } from "/imports/ui/components/Navbar";
 import { Footer } from "/imports/ui/components/Footer";
 import AuthModal from "/imports/ui/authentication/AuthModal";
 import { dateFormat } from "/imports/ui/components/Functions";
