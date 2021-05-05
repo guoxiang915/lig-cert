@@ -1,0 +1,10 @@
+.maintenance-banner {
+	background-color: #f0f0f0;
+	padding: 10px 0;
+}
+
+.maintenance-banner p {
+	color: #425166;
+	margin: 0;
+	text-align: center;
+}

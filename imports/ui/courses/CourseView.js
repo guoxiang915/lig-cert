@@ -23,6 +23,7 @@ const VideoModal = loadable(() => import("/imports/ui/courses/VideoModal"));
 const TextModal = loadable(() => import("/imports/ui/courses/TextModal"));
 const QuizModal = loadable(() => import("/imports/ui/courses/QuizModal"));
 import "/imports/ui/courses/styles.css";
+import { Maintenance } from "/imports/ui/maintenance/Maintenance";
 
 export default CourseView = () => {
 	const [showDescription, setShowDescription] = useState(false);
@@ -110,6 +111,8 @@ export default CourseView = () => {
 				contentType="website"
 				path={`courses/${coursePermalink}`}
 			/>
+
+			{user && <Maintenance />}
 
 			<section className="section course-view-header">
 				{showAuthModal && <AuthModal isOpen={showAuthModal} actionModal={toggleAuthModal} component={authComponent} />}
