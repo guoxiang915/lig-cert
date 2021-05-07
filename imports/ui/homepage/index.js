@@ -13,7 +13,6 @@ import { Modal } from "/imports/ui/components/Modal";
 import { IconPlus, IconMinus, IconAward, IconLinkedin, IconFacebook, IconTwitter, IconInstagram, IconYoutube, IconUdemy, IconWebsite, IconCircleCheck, IconInformation , IconLongLeftArrow, IconLongRightArrow, IconBlockquote } from "/imports/ui/components/Icons";
 import { SliderWrapper } from "/imports/ui/components/SliderWrapper";
 import "/imports/ui/homepage/styles.css";
-import { Maintenance } from "/imports/ui/maintenance/Maintenance";
 
 export default Homepage = () => {
 	const [showAuthModal, setShowAuthModal] = useState(false);
@@ -56,8 +55,6 @@ export default Homepage = () => {
 				contentType="website"
 				path='/'
 			/>
-
-			{user && <Maintenance />}
 
 			<section className="section homepage-header">
 				{showAuthModal && <AuthModal isOpen={showAuthModal} actionModal={toggleAuthModal} component={authComponent} />}
