@@ -1,9 +1,10 @@
 /* Header Block */
 section.course-view-header {
 	background-image: linear-gradient(135deg,#FF9200 0, #FF4477 100%);
+	color: #fff;
+	overflow: hidden;
 	padding-bottom: 180px;
 	text-align: center;
-	color: #fff;
 }
 
 section.course-view-header .main-wrapper {

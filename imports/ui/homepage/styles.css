@@ -1,6 +1,7 @@
 /* Header Block */
 section.homepage-header {
 	background: linear-gradient(135deg,#FF9200 0, #FF4477 100%);
+	overflow: hidden;
 	padding-bottom: 220px;
 }
 
