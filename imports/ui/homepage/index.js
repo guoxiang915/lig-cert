@@ -169,7 +169,7 @@ export default Homepage = () => {
 								<p>He is a Co-Founder and CEO at BlueLife AI, which leverages the power of Artificial Intelligence to empower businesses to make massive profits by innovating, automating processes and maximizing efficiency. He is an online entrepreneur who has created over 70 top-rated educational e-courses, which have made 2M+ sales in 210 countries.</p>
 								<p>Hadelin’s personal philosophy is to help people around the world leverage the available cutting-edge knowledge to create a better world.</p>
 								<div className="links">
-									<a href="https://www.linkedin.com/in/hadelin-de-ponteves-1425ba5b" target="_blank" rel="noopener"><IconLinkedin /></a>
+									<a href="https://www.linkedin.com/in/hadelin-de-ponteves-hon-phd-1425ba5b/" target="_blank" rel="noopener"><IconLinkedin /></a>
 									<a href="https://www.facebook.com/hadelin.ponteves" target="_blank" rel="noopener"><IconFacebook /></a>
 									<a href="https://twitter.com/hadelin2p" target="_blank" rel="noopener"><IconTwitter /></a>
 									<a href="https://www.instagram.com/hadelin2p/" target="_blank" rel="noopener"><IconInstagram /></a>

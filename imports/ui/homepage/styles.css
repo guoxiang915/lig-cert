@@ -329,6 +329,7 @@ section.homepage-expertise .instructor-container .right-content h1 {
 }
 
 section.homepage-expertise .instructor-container .right-content .links {
+	display: flex;
 	margin: 15px 0 40px 0;
 }
 
