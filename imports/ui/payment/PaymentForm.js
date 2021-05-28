@@ -200,6 +200,7 @@ const Coupon = ({ data, status, setStatus }) => {
 			{ code: "SDS_TFC", discount: 40, productId: "course-tcp" },
 			{ code: "SPECIAL_WEB", discount: 40, productId: "course-tcp" },
 			{ code: "TF_SPECIAL", discount: 40, productId: "course-tcp" },
+			{ code: "FEL_30", discount: 60, productId: "course-tcp" },
 		];
 
 		// const inputCoupon = _findWhere(coupons, coupon.code, "code");
