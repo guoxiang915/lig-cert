@@ -99,4 +99,10 @@ Meteor.methods({
 			MemberlistsCollection.insert({ ...memberlistData, startedAt: new Date() });
 		}
 	},
+	"memberlist.remove"(memberlistId) {
+		check(memberlistId, String);
+		if (!this.userId || !Roles.userIsInRole(this.userId, "admin")) { throw new Meteor.Error(401, "not-authorized"); }
+
+		MemberlistsCollection.remove(memberlistId); 
+	},
 });

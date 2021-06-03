@@ -4,7 +4,7 @@ import copy from "copy-text-to-clipboard";
 import { Modal } from "/imports/ui/components/Modal";
 import { MemberlistsCollection } from "/imports/api/courses/memberlists";
 import { CoursesCollection } from "/imports/api/courses/courses";
-import { IconEdit, IconCopy, IconSync, IconWarning } from "/imports/ui/components/Icons";
+import { IconEdit, IconCopy, IconSync, IconWarning, IconDelete } from "/imports/ui/components/Icons";
 import { authHasError, authErrorMessage } from "/imports/ui/components/Validations";
 import { isEmail, dateFormat } from "/imports/ui/components/Functions";
 import { ListSelector } from "/imports/ui/components/ListSelector";
@@ -132,11 +132,26 @@ export default UserModal = ({ isOpen, onClose, user }) => {
 const UserProgressItem = ({ memberlist }) => {
 	const course = CoursesCollection.findOne({ _id: memberlist.courseId });
 
+	const handleDelete = (event) => {
+		event.preventDefault();
+		event.stopPropagation();
+
+		Meteor.call("memberlist.remove", memberlist._id, (error) => {
+			if (error) { console.warn(error); }
+		});
+	};
+
 	return (
 		<div className="user-progression-item">
-			<p>{course.title} (Completed {Math.floor((memberlist.unitsCompleted.length / course.unitCount) * 100)}%)</p>
-			<p><strong>Start Date:</strong> {dateFormat(memberlist.startedAt, "MMM DD, YYYY - hh:mm A")}</p>
-			{memberlist.completedAt && <p><strong>Completion Date:</strong> {dateFormat(memberlist.completedAt, "MMM DD, YYYY - hh:mm A")}</p>}
+			<div>
+				<p>{course.title} (Completed {Math.floor((memberlist.unitsCompleted.length / course.unitCount) * 100)}%)</p>
+				<p><strong>Start Date:</strong> {dateFormat(memberlist.startedAt, "MMM DD, YYYY - hh:mm A")}</p>
+				{memberlist.completedAt && <p><strong>Completion Date:</strong> {dateFormat(memberlist.completedAt, "MMM DD, YYYY - hh:mm A")}</p>}
+			</div>
+
+			<div className="action-col">
+				<span onClick={handleDelete}><IconDelete /></span>
+			</div>
 		</div>
 	);
 };

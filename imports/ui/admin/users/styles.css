@@ -39,3 +39,25 @@
 	cursor: pointer;
 	height: 15px;
 }
+
+.user-modal .user-progression-item {
+	border-top: 1px solid #e6eaf3;
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 0;
+}
+
+.user-modal .user-progression-item p {
+	margin: 5px 0;
+}
+
+.user-modal .user-progression-item svg {
+	cursor: pointer;
+	height: 28px;
+	padding: 5px;
+	vertical-align: middle;
+}
+
+.user-modal .form-container > .actions {
+	margin-top: 0;
+}
