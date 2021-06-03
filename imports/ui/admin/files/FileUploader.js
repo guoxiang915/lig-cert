@@ -1,7 +1,10 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 
 export default FileUploader = ({ setUploader, fileNames }) => {
+	const [error, setError] = useState("");
+
 	const uploadFiles = (event) => {
+		setError("");
 		const fileInput = event.target;
 		const file = event.target.files[0];
 
@@ -20,7 +23,7 @@ export default FileUploader = ({ setUploader, fileNames }) => {
 			});
 			setUploader(uploader);
 		} else {
-			console.warn(`The ${file.name} has already been uploaded`);
+			setError(`The ${file.name} has already been uploaded before.`);
 			setUploader(null);
 		}
 		fileInput.value = null;
@@ -28,8 +31,8 @@ export default FileUploader = ({ setUploader, fileNames }) => {
 
 	return (
 		<Fragment>
-			<label htmlFor="file-uploader">Add File</label>
 			<input onChange={uploadFiles} id="file-uploader" type="file" />
+			{error && <p className="error">{error}</p>}
 		</Fragment>
 	);
 };
